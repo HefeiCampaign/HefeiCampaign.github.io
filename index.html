@@ -151,19 +151,7 @@
     let userCircle = null;
 
     function showUserLocation(latlng, accuracy) {
-      if (!userMarker) {
-        userMarker = L.marker(latlng).addTo(map).bindPopup('You are here');
-      } else {
-        userMarker.setLatLng(latlng);
-      }
-      if (!userCircle) {
-        userCircle = L.circle(latlng, { radius: accuracy ?? 0, color: 'blue', fillOpacity: 0.1 }).addTo(map);
-      } else {
-        userCircle.setLatLng(latlng);
-        if (typeof accuracy === 'number') userCircle.setRadius(accuracy);
-      }
       map.flyTo(latlng, Math.max(map.getZoom(), 13));
-      userMarker.openPopup();
     }
 
     async function locateWithBrowserAPI() {
