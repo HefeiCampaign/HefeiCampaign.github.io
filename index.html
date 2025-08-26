@@ -27,7 +27,7 @@
     .legend .row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
     .legend .swatch { width: 12px; height: 20px; background-size: cover; background-repeat: no-repeat; background-position: center; }
     .locate-btn {
-      position: absolute; z-index: 1000; top: 12px; left: 12px;
+      position: absolute; z-index: 1000; top: 80px; left: 12px;
       background: #fff; border: 1px solid #ccc; border-radius: 6px;
       padding: 8px 10px; cursor: pointer; font: 14px/1.2 system-ui;
       box-shadow: 0 2px 8px rgba(0,0,0,0.12);
@@ -37,7 +37,7 @@
   </style>
 </head>
 <body>
-  <button id="locateBtn" class="locate-btn" type="button" aria-label="Locate me">📍 Locate me</button>
+  <button id="locateBtn" class="locate-btn" type="button" aria-label="移到我的位置">📍 移到我的位置</button>
   <div id="map" role="region" aria-label="HIV self-tester stock map"></div>
 
   <!-- Legend -->
@@ -185,7 +185,7 @@
     async function locateUser() {
       const btn = document.getElementById('locateBtn');
       btn.disabled = true;
-      btn.textContent = 'Locating…';
+      btn.textContent = '定位中…';
       try {
         // Try Browser Geolocation API first
         const res = await locateWithBrowserAPI();
@@ -202,7 +202,7 @@
         map.locate({ setView: false, maxZoom: 13, enableHighAccuracy: true, timeout: 10000 });
       } finally {
         btn.disabled = false;
-        btn.textContent = '📍 Locate me';
+        btn.textContent = '📍 移到我的位置';
       }
     }
 
