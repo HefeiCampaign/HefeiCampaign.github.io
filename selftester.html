@@ -207,7 +207,7 @@
     }
 
     document.getElementById('locateBtn').addEventListener('click', locateUser);
-    locateUser(); // Auto-locate on page load
+    setTimeout(locateUser, 1000); // Auto-locate after 1 second
   </script>
 </body>
 </html>
