@@ -1,200 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Leaflet Map — HIV Self-Tester Stock</title>
-
-  <!-- Leaflet CSS -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""
-  />
-
+  <title>Beacon OF Love｜最即時的愛滋資訊整合網站</title>
   <style>
-    html, body { height: 100%; margin: 0; }
-    #map { height: 100%; width: 100%; }
-    .popup-title { font-weight: 700; margin-bottom: 0.25rem; }
-    .popup-desc { margin: 0.15rem 0; }
-    .legend {
-      position: absolute; z-index: 1000; bottom: 24px; right: 12px;
-      background: rgba(255,255,255,0.95); border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15); padding: 8px 10px;
-      font: 14px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    :root{
+      --bg:#0f0f11;
+      --panel:#1b1c1f;
+      --muted:#9aa0a6;
+      --text:#e6e8ea;
+      --brand:#7dd3fc;
+      --accent:#86efac;
+      --shadow: 0 8px 24px rgba(0,0,0,.25);
+      --radius: 14px;
     }
-    .legend .row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
-    .legend .swatch { width: 12px; height: 20px; background-size: cover; background-repeat: no-repeat; background-position: center; }
-    .locate-btn {
-      position: absolute; z-index: 1000; top: 80px; left: 12px;
-      background: #fff; border: 1px solid #ccc; border-radius: 6px;
-      padding: 8px 10px; cursor: pointer; font: 14px/1.2 system-ui;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+                   Roboto, "Noto Sans TC","PingFang TC","Microsoft JhengHei", Arial, sans-serif;
+      line-height:1.65;
     }
-    .locate-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .container{max-width:1100px; margin:24px auto; padding:0 16px}
+    header{
+      display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;
+      background:var(--panel); border-radius:var(--radius); padding:14px 16px; box-shadow:var(--shadow)
+    }
+    .brand{font-weight:800; letter-spacing:.2px}
+    .brand span{color:var(--brand)}
+    .tagline{opacity:.85; font-size:14px}
+    nav{
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px; margin:14px 0 22px;
+    }
+    .nav-card{
+      background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:10px 12px; display:flex; align-items:center; gap:10px;
+    }
+    label{font-weight:700; font-size:14px; white-space:nowrap}
+    select{
+      width:100%; appearance:none; border:1px solid #2b2d31; background:#121316; color:var(--text);
+      border-radius:10px; padding:10px 12px; font-size:14px
+    }
+    main{
+      background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:22px 22px 28px;
+    }
+    section{display:none; animation:fade .2s ease}
+    section.active{display:block}
+    h1{margin:.2em 0 .3em; font-size:28px}
+    h2{margin:1.4em 0 .4em; font-size:20px}
+    p{margin:.65em 0}
+    ul{margin:.4em 0 .8em 1.2em}
+    .muted{color:var(--muted)}
+    .pill{
+      display:inline-block; padding:3px 9px; border-radius:999px;
+      font-size:12px; background:#0c4a6e; color:#e0f2fe; margin-left:6px
+    }
+    .hint{font-size:14px; color:var(--muted); margin-top:6px}
+    a.btn{
+      display:inline-block; padding:10px 14px; color:white; text-decoration:none;
+      width: 100%;
+    }
+    @keyframes fade{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
   </style>
 </head>
 <body>
-  <button id="locateBtn" class="locate-btn" type="button" aria-label="移到我的位置">📍 移到我的位置</button>
-  <div id="map" role="region" aria-label="HIV self-tester stock map"></div>
+  <div class="container">
+    <header>
+      <div class="brand">Beacon <span>OF</span> Love</div>
+      <div class="tagline">最即時的愛滋資訊整合網站</div>
+    </header>
 
-  <!-- Legend -->
-  <div class="legend" aria-hidden="true">
-    <div class="row">
-      <span class="swatch" style="background-image:url('https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png');"></span>
-      <span>0（缺貨）</span>
-    </div>
-    <div class="row">
-      <span class="swatch" style="background-image:url('https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png');"></span>
-      <span>&lt; 10（低庫存）</span>
-    </div>
-    <div class="row">
-      <span class="swatch" style="background-image:url('https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png');"></span>
-      <span>其他（一般）</span>
-    </div>
+    <!-- 第二排下拉式選單 -->
+    <nav aria-label="主選單">
+      <div class="nav-card">
+        <label for="m1">認識 HIV</label>
+        <select id="m1">
+          <option value="">請選擇⋯</option>
+          <option value="about-hiv">什麼是 HIV？什麼是 AIDS？</option>
+          <option value="transmission">HIV 如何傳染？</option>
+          <option value="myths">常見迷思與破解</option>
+        </select>
+      </div>
+
+      <div class="nav-card">
+        <label for="m2">誰需要 HIV 篩檢？</label>
+        <select id="m2">
+          <option value="">請選擇⋯</option>
+          <option value="why-testing">篩檢為什麼重要</option>
+          <option value="who-testing">誰需要進行 HIV 篩檢？</option>
+          <option value="delay">延誤篩檢的後果</option>
+        </select>
+      </div>
+
+      <div class="nav-card">
+        <label for="m3">篩檢後的下一步</label>
+        <select id="m3">
+          <option value="">請選擇⋯</option>
+          <option value="negative">如果篩檢是陰性</option>
+          <option value="positive">如果篩檢是陽性</option>
+        </select>
+      </div>
+
+      <div class="nav-card">
+        <label for="m4">我要篩檢</label>
+        <select id="m4">
+          <option value="">請選擇⋯</option>
+          <option value="redirect:screening.html">實體篩檢站 →</option>
+          <option value="redirect:selftester.html">篩檢試劑（自我篩檢） →</option>
+        </select>
+      </div>
+
+      <!-- 改成直接按鈕 -->
+      <div class="nav-card">
+        <a href="consult.html" class="btn">我要諮詢→</a>
+      </div>
+    </nav>
+
+    <!-- 內容區 -->
+    <main id="content" tabindex="-1" aria-live="polite">
+      <section id="welcome" class="active">
+        <h1>歡迎使用</h1>
+        <p>請透過上方「下拉式選單」選擇你想看的主題。所有資訊皆依據你提供的版面原型整理為單頁展開，並可即時切換。</p>
+        <p class="hint">需要前往實體篩檢或購買自我篩檢試劑？請在「我要篩檢」選單中選擇對應項目，系統會帶你前往指定頁面。</p>
+      </section>
+
+      <!-- 認識 HIV / 什麼是 -->
+      <section id="about-hiv" aria-labelledby="about-hiv-title">
+        <h1 id="about-hiv-title">什麼是 HIV？什麼是 AIDS？</h1>
+        <p>HIV（人類免疫缺乏病毒） 是一種專門攻擊免疫系統的病毒，主要會破壞「CD4 T 淋巴球」。CD4 T 淋巴球是協助人體對抗細菌、病毒等外來威脅的重要免疫細胞，隨著這些細胞逐漸減少，人體的免疫防禦力就會被削弱。</p>
+        <p>如果 HIV 感染者沒有接受治療，長期下來免疫系統會越來越脆弱，當身體無法有效抵抗各種機會性感染（例如肺炎、腸胃道感染、腦部感染）或某些癌症時，就可能進展為 AIDS（愛滋病，後天免疫缺乏症候群）。</p>
+        <h2>HIV 感染 ≠ AIDS</h2>
+        <p>很多人會把「感染 HIV」和「得到 AIDS」混為一談，但其實兩者並不相同。HIV 感染只代表體內有病毒，初期通常沒有明顯症狀。AIDS則是指免疫力被嚴重破壞後，出現一連串因免疫不足引起的疾病。</p>
+        <p>在過去，感染 HIV 幾乎等同於會發展成 AIDS，但隨著醫療科技進步，這樣的觀念早已過時。現在的藥物治療已經可以有效抑制病毒複製，幫助 CD4 細胞維持在安全範圍。只要及早發現、規律服藥，HIV 感染者的壽命與健康狀態幾乎和一般人無異。甚至透過治療，可以將體內病毒量壓低到 &lt; 200 copies/ml 的程度，達到 U=U（Undetectable = Untransmittable，不可測 = 不具傳染力），使感染者在持續治療下，不會把病毒傳染給伴侶。</p>
+      </section>
+
+      <!-- 認識 HIV / 傳染 -->
+      <section id="transmission" aria-labelledby="transmission-title">
+        <h1 id="transmission-title">HIV 如何傳染？</h1>
+        <p>HIV 的傳染方式其實非常明確，必須透過<strong>含有病毒的體液</strong>進入人體，才有可能造成感染。這些體液主要包括：血液、精液、陰道分泌物、肛門分泌物與母乳。只要沒有和這些體液直接接觸，就不會被傳染。</p>
+        <h2>✔️ 會傳染的主要途徑</h2>
+        <p>常見的傳染途徑有：</p>
+        <ul>
+          <li>性行為：未使用保險套的陰道或肛交。</li>
+          <li>血液：共用針具、輸入未檢驗的血液製品。</li>
+          <li>母子垂直傳染：孕期、分娩或哺乳時病毒由母體傳給嬰兒。</li>
+        </ul>
+        <h2>❌ 不會傳染的日常互動</h2>
+        <p>HIV 並不像一般感冒或流感一樣容易透過日常生活傳染，以下情況並不會造成感染：</p>
+        <ul>
+          <li>擁抱、親吻、握手、咳嗽、打噴嚏。</li>
+          <li>共用餐具、食物、馬桶座、毛巾、床單。</li>
+          <li>在游泳池游泳、一起運動、被蚊子或其他昆蟲叮咬。</li>
+        </ul>
+        <p>這些行為雖然會讓人彼此接觸，但並沒有病毒進入體內的途徑，因此不必擔心。在日常社交中，與 HIV 感染者相處、工作、用餐完全不會造成感染，正確理解傳染途徑，才能避免不必要的擔心，也能減少對感染者的歧視。</p>
+      </section>
+
+      <!-- 認識 HIV / 迷思 -->
+      <section id="myths" aria-labelledby="myths-title">
+        <h1 id="myths-title">常見迷思與破解</h1>
+        <h2>迷思一：只有特定族群才會感染 HIV？</h2>
+        <p>錯誤。HIV 與性傾向或身分無關，只要有高風險行為（如無保護性行為），任何人都有可能感染。</p>
+
+        <h2>迷思二：感染 HIV 就等於生命結束？</h2>
+        <p>錯誤。早期HIV感染確實有很高的致死率，許多人也因此留下危險的印象，但自從1995年「雞尾酒療法」提出以後，HIV治療已有極大的進步，已不再是致命的疾病。現今藥物治療非常有效，只要規律服藥，病毒量能降到「不可測」的程度，也就是所謂的 U=U（Undetectable = Untransmittable，不可測＝不具傳染力）。這代表感染者能維持健康，也不會把病毒傳染給伴侶。</p>
+
+        <h2>迷思三：和感染者一起吃飯、同住很危險？</h2>
+        <p>錯誤。日常生活接觸完全不會造成感染，生活中的歧視反而可能讓人遠離檢測與治療，增加額外的風險。</p>
+      </section>
+
+      <!-- 誰需要 / 為什麼重要 -->
+      <section id="why-testing" aria-labelledby="why-testing-title">
+        <h1 id="why-testing-title">篩檢為什麼重要</h1>
+        <p>早期發現，早期治療</p>
+        <p>HIV 感染初期通常沒有明顯症狀，有些人甚至多年都沒有異狀。但病毒仍會持續破壞免疫系統。只有透過篩檢，才能知道自己是否感染。</p>
+        <p>及早篩檢並開始治療，能帶來許多好處：</p>
+        <ul>
+          <li>免疫力能被保護，不會進展到 AIDS。</li>
+          <li>維持健康，壽命和一般人幾乎相同。</li>
+          <li>服藥後病毒量降到「不可測」，不會傳染給伴侶。</li>
+        </ul>
+      </section>
+
+      <!-- 誰需要 / 誰需要篩檢 -->
+      <section id="who-testing" aria-labelledby="who-testing-title">
+        <h1 id="who-testing-title">誰需要進行 HIV 篩檢？</h1>
+        <p>台灣疾管署建議以下族群應該主動接受檢驗：</p>
+        <ul>
+          <li>有性行為者，建議至少進行1次愛滋篩檢。</li>
+          <li>有不安全性行為者，建議每年至少進行1次愛滋篩檢</li>
+          <li>若有感染風險行為（如感染性病、多重性伴侶、使用成癮性藥物、與人共用針具或稀釋液等）、或性伴侶有前述任一情形者，建議每3至6個月篩檢1次。</li>
+        </ul>
+        <p>「篩檢沒有限於特定族群，任何曾有風險行為的人都應該檢查，才能更好的保護自己和身邊重要的人。」</p>
+      </section>
+
+      <!-- 誰需要 / 延誤後果 -->
+      <section id="delay" aria-labelledby="delay-title">
+        <h1 id="delay-title">延誤篩檢的後果</h1>
+        <p>根據疾管署資料，台灣每年有超過三成的新確診者有延遲診斷的情形，又以65歲以上年長者居多。儘管新增感染人數中，女性比例較少，但延遲診斷比例也高於男性，也應多注意。</p>
+        <p>延誤篩檢會導致嚴重的後果：</p>
+        <ul>
+          <li><strong>個人健康：</strong>錯過早期治療黃金期，免疫力已受損。</li>
+          <li><strong>公共衛生：</strong>在不知情的情況下，可能持續將病毒傳染給伴侶。</li>
+        </ul>
+        <p>篩檢是保護自己、伴侶與社群的第一步，也是邁向健康、安心生活的關鍵。現在篩檢方式也越來越便利，包含醫療院所的實體篩檢站點，以及愛滋自我篩檢計畫。</p>
+      </section>
+
+      <!-- 下一步 / 陰性 -->
+      <section id="negative" aria-labelledby="negative-title">
+        <h1 id="negative-title">如果篩檢是陰性</h1>
+        <p>當篩檢呈現陰性時，通常表示在這次檢驗中沒有檢測到 HIV 的抗體或抗原。</p>
+        <p>不過需要特別留意「空窗期」，也就是從感染一直到病毒量足以檢驗出結果的時間差，通常約在3到12週之間，這段時間是無法檢驗出感染的，因此如果你最近曾有過高風險行為，建議可於空窗期後再次檢驗。空窗期間雖然無法檢驗出感染，但體內的病毒已具傳染力，因此在這段期間要注意避免與他人發生不安全性行為。</p>
+        <p>未來若有進行無套性行為，建議每年至少檢驗1次，若有感染風險行為（如與人共用針具、多重性伴侶、合併使用成癮性藥物、感染性病等），則建議每3至6個月檢驗1次。</p>
+        <p>預防HIV感染最基本也是最有效的方法，依然是正確使用保險套，保持穩定的伴侶關係、避免共用針具等。如果你屬於高風險族群，可以與醫師討論是否適合使用 PrEP（暴露前預防用藥），為自己多一層保護，並將篩檢納入定期體檢一般的日常習慣，也能更加安心。</p>
+      </section>
+
+      <!-- 下一步 / 陽性 -->
+      <section id="positive" aria-labelledby="positive-title">
+        <h1 id="positive-title">如果篩檢是陽性</h1>
+        <p>若檢驗結果為陽性，這並不代表人生就此被定義或結束。</p>
+        <p>隨著醫療進步，HIV 已經是一種可以長期控制的慢性疾病。透過持續治療與規律服藥，病毒量能被壓制到 &lt; 200 copies/ml 的程度。而這正是「U=U」（Undetectable = Untransmittable，不可測＝不具傳染力）的核心概念：當病毒量被控制在不可測時，你將不會把病毒傳染給伴侶。</p>
+        <p>在台灣 HIV 的治療已納入健保，服用藥物的頻率也大多能簡化至每日一次，降低了生活負擔。規律回診、檢測病毒量與免疫指標，能讓醫師根據你的身體狀況調整最合適的治療方案。除了醫療支持，社會上也有許多 NGO 與同儕團體，能提供心理陪伴與資源，幫助感染者在學業、工作甚至感情上，都能繼續擁有穩定而正常的生活。</p>
+      </section>
+    </main>
   </div>
 
-  <!-- Leaflet JS -->
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""
-  ></script>
-
   <script>
-    // Base map
-    const map = L.map('map', { center: [23.7, 121], zoom: 7 });
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-    L.control.scale().addTo(map);
-
-    // Colored marker icons (via leaflet-color-markers)
-    const shadowUrl = 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-shadow.png';
-    const iconBase = (color) => new L.Icon({
-      iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
-      shadowUrl,
-      iconSize: [25, 41],
-      iconAnchor: [12, 41],
-      popupAnchor: [1, -34],
-      shadowSize: [41, 41]
-    });
-
-    const ICONS = {
-      red: iconBase('red'),
-      yellow: iconBase('yellow'),
-      blue: iconBase('blue')
+    // 工具：切換顯示 section；若為 redirect 選項則導頁
+    const selects = Array.from(document.querySelectorAll('select'));
+    const sections = Array.from(document.querySelectorAll('main section'));
+    const show = (id)=>{
+      sections.forEach(s => s.classList.toggle('active', s.id === id));
+      document.getElementById('content').focus({preventScroll:false});
+      history.replaceState(null, '', id ? '#'+id : '#');
     };
 
-    // Decide pin color by stock
-    function colorByStock(stockRaw) {
-      const n = Number.parseInt(String(stockRaw ?? '').trim(), 10);
-      if (Number.isNaN(n)) return 'blue';
-      if (n === 0) return 'red';
-      if (n < 10) return 'yellow';
-      return 'blue';
-    }
-
-    // Popup HTML helper
-    function createPopupHTML(item) {
-      const name = item.name ?? '未命名';
-      const address = item.address ?? (item.address_info?.candidates?.[0]?.address ?? '（無地址）');
-      const stock = item.stock ?? '未知';
-      const soldout = item.is_soldout === true ? '（已售罄）' : '';
-      const selling = (item.is_selling ?? '').toString();
-      return `
-        <div>
-          <div class="popup-title">${name}</div>
-          <p class="popup-desc">地址：${address}</p>
-          <p class="popup-desc">庫存（HIV 自我篩檢）：<strong>${stock}</strong> ${soldout}</p>
-          ${selling ? `<p class="popup-desc">販售：${selling}</p>` : ''}
-          ${item.telephone ? `<p class="popup-desc">電話：${item.telephone}</p>` : ''}
-          ${item.service_time ? `<p class="popup-desc">服務時間：${item.service_time}</p>` : ''}
-        </div>
-      `;
-    }
-
-    // Load markers from selftester.json (x -> lng, y -> lat)
-    fetch('selftester.json')
-      .then((r) => r.json())
-      .then((data) => {
-        const markers = [];
-        (data || []).forEach((item) => {
-          const cand = item?.address_info?.candidates?.[0];
-          const loc = cand?.location;
-          if (!loc || typeof loc.x !== 'number' || typeof loc.y !== 'number') return;
-
-          const lat = loc.y; // y => latitude
-          const lng = loc.x; // x => longitude
-
-          const color = colorByStock(item.stock);
-          const marker = L.marker([lat, lng], { icon: ICONS[color] }).addTo(map);
-          marker.bindPopup(createPopupHTML(item));
-          markers.push(marker);
-        });
-
-        if (markers.length) {
-          const group = L.featureGroup(markers);
-          map.fitBounds(group.getBounds().pad(0.15));
-        } else {
-          console.warn('No valid marker locations found in selftester.json');
+    // 綁定四個選單
+    selects.forEach(sel=>{
+      sel.addEventListener('change', e=>{
+        const value = e.target.value;
+        if(!value) return;
+        if(value.startsWith('redirect:')){
+          const url = value.replace('redirect:','');
+          window.location.href = url;
+          return;
         }
-      })
-      .catch((err) => console.error('Failed to load selftester.json:', err));
-
-    // ===== Browser Geolocation API + Leaflet fallback =====
-    let userMarker = null;
-    let userCircle = null;
-
-    function showUserLocation(latlng, accuracy) {
-      map.flyTo(latlng, Math.max(map.getZoom(), 13));
-    }
-
-    async function locateWithBrowserAPI() {
-      if (!('geolocation' in navigator)) {
-        throw new Error('Geolocation is not supported by this browser.');
-      }
-      return new Promise((resolve, reject) => {
-        navigator.geolocation.getCurrentPosition(
-          (pos) => {
-            const { latitude, longitude, accuracy } = pos.coords;
-            resolve({ lat: latitude, lng: longitude, accuracy });
-          },
-          (err) => reject(err),
-          { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
-        );
+        show(value);
+        // 清空其他選單避免混淆
+        selects.filter(s=>s!==sel).forEach(s=>s.selectedIndex = 0);
       });
-    }
+    });
 
-    async function locateUser() {
-      const btn = document.getElementById('locateBtn');
-      btn.disabled = true;
-      btn.textContent = '定位中…';
-      try {
-        // Try Browser Geolocation API first
-        const res = await locateWithBrowserAPI();
-        showUserLocation([res.lat, res.lng], res.accuracy);
-      } catch (e) {
-        console.warn('Browser geolocation failed:', e?.message || e);
-        // Fallback to Leaflet locate (also uses browser API but through Leaflet)
-        map.once('locationfound', (ev) => {
-          showUserLocation(ev.latlng, ev.accuracy);
-        });
-        map.once('locationerror', (ev) => {
-          alert('Unable to determine your location: ' + ev.message);
-        });
-        map.locate({ setView: false, maxZoom: 13, enableHighAccuracy: true, timeout: 10000 });
-      } finally {
-        btn.disabled = false;
-        btn.textContent = '📍 移到我的位置';
-      }
-    }
-
-    document.getElementById('locateBtn').addEventListener('click', locateUser);
+    // 允許用網址 #hash 直接開啟指定區塊
+    const fromHash = () => {
+      const id = decodeURIComponent(location.hash.replace('#',''));
+      if(id && document.getElementById(id)) show(id);
+    };
+    window.addEventListener('hashchange', fromHash);
+    fromHash();
   </script>
 </body>
 </html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beacon OF Love - 我要篩檢 - 實體篩檢站</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+
+  <style>
+    html, body { height: 100%; margin: 0; }
+    #map { height: 100%; width: 100%; }
+    .popup-title { font-weight: 700; margin-bottom: 0.25rem; }
+    .popup-desc { margin: 0.15rem 0; }
+    .legend {
+      position: absolute; z-index: 1000; bottom: 24px; right: 12px;
+      background: rgba(255,255,255,0.95); border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15); padding: 8px 10px;
+      font: 14px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    .legend .row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+    .legend .swatch { width: 12px; height: 20px; background-size: cover; background-repeat: no-repeat; background-position: center; }
+    .locate-btn {
+      position: absolute; z-index: 1000; top: 80px; left: 12px;
+      background: #fff; border: 1px solid #ccc; border-radius: 6px;
+      padding: 8px 10px; cursor: pointer; font: 14px/1.2 system-ui;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .locate-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+  </style>
+</head>
+<body>
+  <button id="locateBtn" class="locate-btn" type="button" aria-label="移到我的位置">📍 移到我的位置</button>
+  <div id="map" role="region" aria-label="HIV self-tester stock map"></div>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <script>
+    // Base map
+    const map = L.map('map', { center: [23.7, 121], zoom: 7 });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.control.scale().addTo(map);
+
+    // Colored marker icons (via leaflet-color-markers)
+    const shadowUrl = 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-shadow.png';
+    const iconBase = (color) => new L.Icon({
+      iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
+      shadowUrl,
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+
+    function createMobileSitePopup(item) {
+      return `
+        <div>
+          <div class="popup-title">${item.name ?? '未命名'}</div>
+          <p class="popup-desc">類別：${item.site_type ?? ''}</p>
+          <p class="popup-desc">縣市：${item.city ?? ''}</p>
+          <p class="popup-desc">地點：${item.location ?? '（無地點）'}</p>
+          <p class="popup-desc">聯絡資訊：${item.contract ?? '無'}</p>
+        </div>
+      `;
+    }
+
+    function createSitePopup(item) {
+      return `
+        <div>
+          <div class="popup-title">${item.name ?? '未命名'}</div>
+          <p class="popup-desc">類別：${item.screening_type ?? ''}</p>
+          <p class="popup-desc">縣市：${item.city ?? ''}</p>
+          <p class="popup-desc">地點：${item.location ?? '（無地點）'}</p>
+          <p class="popup-desc">聯絡資訊：${item.contract ?? '無'}</p>
+          <p class="popup-desc">日期與時間：${item.date ?? ''} ${item.time ?? ''}</p>
+        </div>
+      `;
+    }
+
+    function findGetParameter(parameterName) {
+        var result = null,
+            tmp = [];
+        location.search
+            .substr(1)
+            .split("&")
+            .forEach(function (item) {
+            tmp = item.split("=");
+            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+            });
+        return result;
+    }
+
+    fetch('/data/aids_anonymous.json')
+      .then((r) => r.json())
+      .then((data) => {
+        const markers = [];
+        (data || []).forEach((item) => {
+          if (item.geo_point == null) {
+            return;
+          }
+          const lat = item.geo_point[0]; // y => latitude
+          const lng = item.geo_point[1]; // x => longitude
+
+          const marker = L.marker([lat, lng], { icon: iconBase('blue') }).addTo(map);
+          marker.bindPopup(createSitePopup(item));
+          markers.push(marker);
+        });
+
+        if (markers.length) {
+          const group = L.featureGroup(markers);
+          map.fitBounds(group.getBounds().pad(0.15));
+        } else {
+          console.warn('No valid marker locations found in aids_anonymous.json');
+        }
+      })
+      .catch((err) => console.error('Failed to load aids_anonymous.json:', err));
+
+    fetch('/data/monthly_screening.json')
+      .then((r) => r.json())
+      .then((data) => {
+        const markers = [];
+        (data || []).forEach((item) => {
+          if (item.geo_point == null) {
+            return;
+          }
+          const lat = item.geo_point[0]; // y => latitude
+          const lng = item.geo_point[1]; // x => longitude
+
+          const marker = L.marker([lat, lng], { icon: iconBase('blue') }).addTo(map);
+          marker.bindPopup(createMobileSitePopup(item));
+          markers.push(marker);
+        });
+
+        if (markers.length) {
+          const group = L.featureGroup(markers);
+          map.fitBounds(group.getBounds().pad(0.15));
+        } else {
+          console.warn('No valid marker locations found in monthly_screening.json');
+        }
+      })
+      .catch((err) => console.error('Failed to load monthly_screening.json:', err));
+
+    // ===== Browser Geolocation API + Leaflet fallback =====
+    let userMarker = null;
+    let userCircle = null;
+
+    function showUserLocation(latlng, accuracy) {
+      map.flyTo(latlng, Math.max(map.getZoom(), 13));
+    }
+
+    async function locateWithBrowserAPI() {
+      if (!('geolocation' in navigator)) {
+        throw new Error('Geolocation is not supported by this browser.');
+      }
+      return new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            const { latitude, longitude, accuracy } = pos.coords;
+            resolve({ lat: latitude, lng: longitude, accuracy });
+          },
+          (err) => reject(err),
+          { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+        );
+      });
+    }
+
+    async function locateUser() {
+      const btn = document.getElementById('locateBtn');
+      btn.disabled = true;
+      btn.textContent = '定位中…';
+      try {
+        // Try Browser Geolocation API first
+        const res = await locateWithBrowserAPI();
+        showUserLocation([res.lat, res.lng], res.accuracy);
+      } catch (e) {
+        console.warn('Browser geolocation failed:', e?.message || e);
+        // Fallback to Leaflet locate (also uses browser API but through Leaflet)
+        map.once('locationfound', (ev) => {
+          showUserLocation(ev.latlng, ev.accuracy);
+        });
+        map.once('locationerror', (ev) => {
+          alert('Unable to determine your location: ' + ev.message);
+        });
+        map.locate({ setView: false, maxZoom: 13, enableHighAccuracy: true, timeout: 10000 });
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '📍 移到我的位置';
+      }
+    }
+
+    document.getElementById('locateBtn').addEventListener('click', locateUser);
+    locateUser(); // Auto-locate on page load
+  </script>
+</body>
+</html>

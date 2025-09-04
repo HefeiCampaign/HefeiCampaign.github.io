@@ -1,0 +1,4213 @@
+[
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "羅東聖母醫院",
+    "city": "宜蘭縣",
+    "department": "",
+    "contract": "03-9544-106#5532\n0921-544-109\n李小姐",
+    "location": "宜蘭縣羅東鎮中正南路160號",
+    "time": "週一～週五 08:00~12:00 13:30~17:00",
+    "note": "",
+    "geo_point": [
+      24.671433993928,
+      121.770714121764
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "宜蘭縣羅東鎮中正南路160號, 26546",
+          "location": {
+            "x": 121.770714121764,
+            "y": 24.671433993928
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "宜蘭縣羅東鎮中正南路160號, 26546",
+            "Addr_type": "PointAddress",
+            "StAddr": "中正南路160號",
+            "City": "羅東鎮"
+          },
+          "extent": {
+            "xmin": 121.769714121764,
+            "ymin": 24.670433993928,
+            "xmax": 121.771714121764,
+            "ymax": 24.672433993928
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "一站式院所",
+    "name": "臺中榮民總醫院",
+    "city": "台中市",
+    "department": "門診前棟3樓 2362診間",
+    "contract": "04-2359-2525#3111\n0975-351-221\n余小姐",
+    "location": "臺中市西屯區台灣大道4段1650號",
+    "time": "週㇐～週五 08:00~12:00 13:00~17:00｜週六（不定期 08:00~12:00）",
+    "note": "",
+    "geo_point": [
+      24.183498180557,
+      120.603714818416
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台中市水崛頭台灣大道四段1650號, 407",
+          "location": {
+            "x": 120.603714818416,
+            "y": 24.183498180557
+          },
+          "score": 97.8,
+          "attributes": {
+            "Match_addr": "台中市水崛頭台灣大道四段1650號, 407",
+            "Addr_type": "PointAddress",
+            "StAddr": "台灣大道四段1650號",
+            "City": "水崛頭"
+          },
+          "extent": {
+            "xmin": 120.602714818416,
+            "ymin": 24.182498180557,
+            "xmax": 120.604714818416,
+            "ymax": 24.184498180557
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "一站式院所",
+    "name": "中山醫學大學附設醫院",
+    "city": "台中市",
+    "department": "大慶院區-內科大樓9樓 感染科衛教室",
+    "contract": "04-2473-9595#38911\n劉小姐",
+    "location": "臺中市南區建國北路一段110號",
+    "time": "週一、二、四、五 08:30~17:30｜週三 13:00~21:00｜週六（不定期外展 16:00~21:00）",
+    "note": "",
+    "geo_point": [
+      24.12093267968,
+      120.65016078793
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台中市南區建國北路一段110號, 402",
+          "location": {
+            "x": 120.65016078793,
+            "y": 24.12093267968
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台中市南區建國北路一段110號, 402",
+            "Addr_type": "PointAddress",
+            "StAddr": "建國北路一段110號",
+            "City": "南區"
+          },
+          "extent": {
+            "xmin": 120.64916078793,
+            "ymin": 24.11993267968,
+            "xmax": 120.65116078793,
+            "ymax": 24.12193267968
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "衛生福利部臺中醫院",
+    "city": "台中市",
+    "department": "",
+    "contract": "04-2229-4411#6205\n04-2229-4411#6203\n王小姐",
+    "location": "臺中市西區三民區一段199號",
+    "time": "週一、三、四 09:00~11:00｜週三、五 13:30~17:00",
+    "note": "",
+    "geo_point": [
+      24.141218,
+      120.6709945
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台中市西區",
+          "location": {
+            "x": 120.6709945,
+            "y": 24.141218
+          },
+          "score": 74.25,
+          "attributes": {
+            "Match_addr": "台中市西區",
+            "Addr_type": "Locality",
+            "StAddr": "",
+            "City": "西區"
+          },
+          "extent": {
+            "xmin": 120.6539945,
+            "ymin": 24.124218,
+            "xmax": 120.6879945,
+            "ymax": 24.158218
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "衛生福利部豐原醫院",
+    "city": "台中市",
+    "department": "",
+    "contract": "0919-542-659\n韓小姐",
+    "location": "臺中市豐原區安康路100號",
+    "time": "週一~週五 08:30~11:00 13:30~16:00（週一~週五先以電話詢問）｜13:30~16:00 週六（08:30~11:00採預約制）",
+    "note": "",
+    "geo_point": [
+      24.242707315945,
+      120.725291725586
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台中市豐原區安康路100號, 42055",
+          "location": {
+            "x": 120.725291725586,
+            "y": 24.242707315945
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台中市豐原區安康路100號, 42055",
+            "Addr_type": "PointAddress",
+            "StAddr": "安康路100號",
+            "City": "豐原區"
+          },
+          "extent": {
+            "xmin": 120.724291725586,
+            "ymin": 24.241707315945,
+            "xmax": 120.726291725586,
+            "ymax": 24.243707315945
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "中國醫藥大學附設醫院",
+    "city": "台中市",
+    "department": "",
+    "contract": "04-2208-1937\n張小姐",
+    "location": "臺中市北區育德路2號",
+    "time": "週一~週五 08:00~12:00｜週六（不定期至同志三溫暖18:30~20:30）",
+    "note": "",
+    "geo_point": [
+      24.157741011194,
+      120.680813994576
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台中市北區育德路2號, 40447",
+          "location": {
+            "x": 120.680813994576,
+            "y": 24.157741011194
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台中市北區育德路2號, 40447",
+            "Addr_type": "PointAddress",
+            "StAddr": "育德路2號",
+            "City": "北區"
+          },
+          "extent": {
+            "xmin": 120.679813994576,
+            "ymin": 24.156741011194,
+            "xmax": 120.681813994576,
+            "ymax": 24.158741011194
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "台中慈濟醫院",
+    "city": "台中市",
+    "department": "",
+    "contract": "04-3606-0666#5206\n04-3606-0666#5101\n王小姐",
+    "location": "台中市潭子區豐興路一段88號",
+    "time": "週一~週五 08:00~12:00 13:30~17:00",
+    "note": "",
+    "geo_point": [
+      24.195685006769,
+      120.721944999286
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台中市潭子區豐興路一段88號, 427",
+          "location": {
+            "x": 120.721944999286,
+            "y": 24.195685006769
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台中市潭子區豐興路一段88號, 427",
+            "Addr_type": "PointAddress",
+            "StAddr": "豐興路一段88號",
+            "City": "潭子區"
+          },
+          "extent": {
+            "xmin": 120.720944999286,
+            "ymin": 24.194685006769,
+            "xmax": 120.722944999286,
+            "ymax": 24.196685006769
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "童綜合醫院",
+    "city": "台中市",
+    "department": "",
+    "contract": "04-2658-1919#58259\n0960-610-171\n曾小姐",
+    "location": "台中市梧棲區台灣大道八段699號",
+    "time": "週一~週四 08:30~16:00｜週五 08:30~12:00",
+    "note": "",
+    "geo_point": [
+      24.247286098193,
+      120.542505467563
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台中市梧棲區台灣大道八段699號, 43549",
+          "location": {
+            "x": 120.542505467563,
+            "y": 24.247286098193
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台中市梧棲區台灣大道八段699號, 43549",
+            "Addr_type": "PointAddress",
+            "StAddr": "台灣大道八段699號",
+            "City": "梧棲區"
+          },
+          "extent": {
+            "xmin": 120.541505467563,
+            "ymin": 24.246286098193,
+            "xmax": 120.543505467563,
+            "ymax": 24.248286098193
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "光田綜合醫院",
+    "city": "台中市",
+    "department": "大甲院區",
+    "contract": "04-2688-5599#1241\n0910-665-113\n朱小姐",
+    "location": "臺中市大甲區經國路321號",
+    "time": "週四、五 09:00~11:30｜週一、二 14:00~16:30",
+    "note": "",
+    "geo_point": [
+      24.346577620295,
+      120.616656728376
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台中市大甲區經國路321號, 437",
+          "location": {
+            "x": 120.616656728376,
+            "y": 24.346577620295
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台中市大甲區經國路321號, 437",
+            "Addr_type": "PointAddress",
+            "StAddr": "經國路321號",
+            "City": "大甲區"
+          },
+          "extent": {
+            "xmin": 120.615656728376,
+            "ymin": 24.345577620295,
+            "xmax": 120.617656728376,
+            "ymax": 24.347577620295
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "澄清綜合醫院中港分院",
+    "city": "台中市",
+    "department": "",
+    "contract": "04-2463-2000#55286\n0961-586-098\n黃小姐",
+    "location": "臺中市西屯區台灣大道四段966號",
+    "time": "週一～週五 14:00~16:30",
+    "note": "",
+    "geo_point": [
+      24.182850007984,
+      120.617033997838
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台中市水崛頭台灣大道四段966號, 40764",
+          "location": {
+            "x": 120.617033997838,
+            "y": 24.182850007984
+          },
+          "score": 97.8,
+          "attributes": {
+            "Match_addr": "台中市水崛頭台灣大道四段966號, 40764",
+            "Addr_type": "PointAddress",
+            "StAddr": "台灣大道四段966號",
+            "City": "水崛頭"
+          },
+          "extent": {
+            "xmin": 120.616033997838,
+            "ymin": 24.181850007984,
+            "xmax": 120.618033997838,
+            "ymax": 24.183850007984
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "林新醫院",
+    "city": "台中市",
+    "department": "",
+    "contract": "04-2258-6688#1606\n黃小姐",
+    "location": "臺中市南屯區惠中路三段36號",
+    "time": "週一、三 09:00~11:00｜週四 14:00~16:30｜週三 18:00~20:30",
+    "note": "",
+    "geo_point": [
+      24.149193984526,
+      120.640387991741
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台中市南屯區惠中路三段36號, 40867",
+          "location": {
+            "x": 120.640387991741,
+            "y": 24.149193984526
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台中市南屯區惠中路三段36號, 40867",
+            "Addr_type": "PointAddress",
+            "StAddr": "惠中路三段36號",
+            "City": "南屯區"
+          },
+          "extent": {
+            "xmin": 120.639387991741,
+            "ymin": 24.148193984526,
+            "xmax": 120.641387991741,
+            "ymax": 24.150193984526
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "昭安泌尿科診所",
+    "city": "台中市",
+    "department": "",
+    "contract": "04-2321-2520\n陳先生",
+    "location": "臺中市西區博館二街98號",
+    "time": "週一~週五 09:00~12:00 14:30~17:30 19:00~21:00｜週六 09:00~12:00",
+    "note": "",
+    "geo_point": [
+      24.152632892294,
+      120.668989622254
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台中市博館二街98號, 40354",
+          "location": {
+            "x": 120.668989622254,
+            "y": 24.152632892294
+          },
+          "score": 97.88,
+          "attributes": {
+            "Match_addr": "台中市博館二街98號, 40354",
+            "Addr_type": "StreetAddress",
+            "StAddr": "博館二街98號",
+            "City": "台中市"
+          },
+          "extent": {
+            "xmin": 120.667989622254,
+            "ymin": 24.151632892294,
+            "xmax": 120.669989622254,
+            "ymax": 24.153632892294
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "上佳醫事檢驗所",
+    "city": "台中市",
+    "department": "",
+    "contract": "04-2588-0129臺中市東勢區東關路7段382號\n0975-768-955\n劉小姐",
+    "location": "臺中市東勢區東關路7段382號",
+    "time": "週一~週五 07:30~17:00｜週六 07:30~12:00",
+    "note": "",
+    "geo_point": [
+      24.254144003733,
+      120.826042872307
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台中市東勢區東關路七段382號, 42353",
+          "location": {
+            "x": 120.826042872307,
+            "y": 24.254144003733
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台中市東勢區東關路七段382號, 42353",
+            "Addr_type": "PointAddress",
+            "StAddr": "東關路七段382號",
+            "City": "東勢區"
+          },
+          "extent": {
+            "xmin": 120.825042872307,
+            "ymin": 24.253144003733,
+            "xmax": 120.827042872307,
+            "ymax": 24.255144003733
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "一站式院所",
+    "name": "臺北市立聯合醫院林森中醫昆明院區",
+    "city": "台北市",
+    "department": "",
+    "contract": "0979-306-875\nLINE：kmat7908\n王先生/許先生",
+    "location": "臺北市萬華區昆明街100號4樓",
+    "time": "週一～週五 08:00~12:00｜週一、四 13:00~17:00 18:00~20:00｜週六（僅提供快篩服務）08:00~12:00 13:00~17:00",
+    "note": "",
+    "geo_point": [
+      25.044284013586,
+      121.504990021468
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台北市萬華區西門町昆明街100號, 10844",
+          "location": {
+            "x": 121.504990021468,
+            "y": 25.044284013586
+          },
+          "score": 98.67,
+          "attributes": {
+            "Match_addr": "台北市萬華區西門町昆明街100號, 10844",
+            "Addr_type": "PointAddress",
+            "StAddr": "昆明街100號",
+            "City": "萬華區"
+          },
+          "extent": {
+            "xmin": 121.503990021468,
+            "ymin": 25.043284013586,
+            "xmax": 121.505990021468,
+            "ymax": 25.045284013586
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "一站式院所",
+    "name": "國立臺灣大學醫學院附設醫院",
+    "city": "台北市",
+    "department": "舊大樓5東3樓 諮詢篩檢辦公室",
+    "contract": "02-2312-3456#267552\n0978-195-151\nLINE：0978195151\n張小姐",
+    "location": "臺北市中正區常德街1號5東3樓",
+    "time": "週一～週五 08:30~18:30",
+    "note": "",
+    "geo_point": [
+      25.041401979998,
+      121.517170016429
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台北市中正區常德街1號, 10048",
+          "location": {
+            "x": 121.517170016429,
+            "y": 25.041401979998
+          },
+          "score": 97.33,
+          "attributes": {
+            "Match_addr": "台北市中正區常德街1號, 10048",
+            "Addr_type": "PointAddress",
+            "StAddr": "常德街1號",
+            "City": "中正區"
+          },
+          "extent": {
+            "xmin": 121.516170016429,
+            "ymin": 25.040401979998,
+            "xmax": 121.518170016429,
+            "ymax": 25.042401979998
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "一站式院所",
+    "name": "臺北榮民總醫院",
+    "city": "台北市",
+    "department": "湖畔門診2樓（感染科衛教室）",
+    "contract": "02-2875-1997\n陳小姐",
+    "location": "臺北市北投區石牌路2段201號",
+    "time": "週一～週五 09:00~21:00｜週六 09:00~12:00",
+    "note": "",
+    "geo_point": [
+      25.119174600169,
+      121.520530740507
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台北市北投區石牌路二段201號, 112",
+          "location": {
+            "x": 121.520530740507,
+            "y": 25.119174600169
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台北市北投區石牌路二段201號, 112",
+            "Addr_type": "PointAddress",
+            "StAddr": "石牌路二段201號",
+            "City": "北投區"
+          },
+          "extent": {
+            "xmin": 121.519530740507,
+            "ymin": 25.118174600169,
+            "xmax": 121.521530740507,
+            "ymax": 25.120174600169
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "臺北市立萬芳醫院",
+    "city": "台北市",
+    "department": "",
+    "contract": "02-2930-7930#1763\n0970-746-575\n張小姐",
+    "location": "臺北市文山區興隆路三段111號",
+    "time": "週一～週五 09:00~12:00 13:00~16:00",
+    "note": "",
+    "geo_point": [
+      24.999679003376,
+      121.557368031497
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台北市文山區萬芳醫院商圈興隆路三段111號, 11696",
+          "location": {
+            "x": 121.557368031497,
+            "y": 24.999679003376
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台北市文山區萬芳醫院商圈興隆路三段111號, 11696",
+            "Addr_type": "PointAddress",
+            "StAddr": "興隆路三段111號",
+            "City": "文山區"
+          },
+          "extent": {
+            "xmin": 121.556368031497,
+            "ymin": 24.998679003376,
+            "xmax": 121.558368031497,
+            "ymax": 25.000679003376
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "臺北醫學大學附設醫院",
+    "city": "台北市",
+    "department": "",
+    "contract": "0970-405-473\n高小姐\n0970-405-471\n洪小姐",
+    "location": "臺北市信義區吳興街252號",
+    "time": "週一～週五 08:30~11:30 13:00~16:30",
+    "note": "",
+    "geo_point": [
+      25.026638011926,
+      121.563637778891
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台北市吳興街252號, 11031",
+          "location": {
+            "x": 121.563637778891,
+            "y": 25.026638011926
+          },
+          "score": 97.88,
+          "attributes": {
+            "Match_addr": "台北市吳興街252號, 11031",
+            "Addr_type": "PointAddress",
+            "StAddr": "吳興街252號",
+            "City": "台北市"
+          },
+          "extent": {
+            "xmin": 121.562637778891,
+            "ymin": 25.025638011926,
+            "xmax": 121.564637778891,
+            "ymax": 25.027638011926
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "禾馨民權婦幼診所",
+    "city": "",
+    "department": "",
+    "contract": "02-5571-3333 #3216\n邱小姐",
+    "location": "臺北市內湖區民權東路6段42號",
+    "time": "週一  09:00~12:00｜週三 13:30~16:30",
+    "note": "",
+    "geo_point": [
+      25.067711307233,
+      121.581394505492
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台北市內湖區民權東路六段42號, 11466",
+          "location": {
+            "x": 121.581394505492,
+            "y": 25.067711307233
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台北市內湖區民權東路六段42號, 11466",
+            "Addr_type": "PointAddress",
+            "StAddr": "民權東路六段42號",
+            "City": "內湖區"
+          },
+          "extent": {
+            "xmin": 121.580394505492,
+            "ymin": 25.066711307233,
+            "xmax": 121.582394505492,
+            "ymax": 25.068711307233
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "親親家庭診所",
+    "city": "台北市",
+    "department": "",
+    "contract": "02-2528-3232\n李小姐",
+    "location": "臺北市松山區南京東路5段347號",
+    "time": "週一、二、四、五 16:30~18:30 19:00~21:00｜週六 19:00~21:00",
+    "note": "",
+    "geo_point": [
+      25.051547980426,
+      121.567750024408
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台北市松山區南京東路五段347號, 10569",
+          "location": {
+            "x": 121.567750024408,
+            "y": 25.051547980426
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台北市松山區南京東路五段347號, 10569",
+            "Addr_type": "PointAddress",
+            "StAddr": "南京東路五段347號",
+            "City": "松山區"
+          },
+          "extent": {
+            "xmin": 121.566750024408,
+            "ymin": 25.050547980426,
+            "xmax": 121.568750024408,
+            "ymax": 25.052547980426
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "美兆診所",
+    "city": "台北市",
+    "department": "",
+    "contract": "02-7725-1177#684\n謝小姐",
+    "location": "臺北市中正區忠孝西路1段66號44-45樓",
+    "time": "週二～週五 14:30~16:00",
+    "note": "",
+    "geo_point": [
+      25.046225807185,
+      121.515302025487
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台北市中正區忠孝西路一段66號, 10018",
+          "location": {
+            "x": 121.515302025487,
+            "y": 25.046225807185
+          },
+          "score": 97.5,
+          "attributes": {
+            "Match_addr": "台北市中正區忠孝西路一段66號, 10018",
+            "Addr_type": "PointAddress",
+            "StAddr": "忠孝西路一段66號",
+            "City": "中正區"
+          },
+          "extent": {
+            "xmin": 121.514302025487,
+            "ymin": 25.045225807185,
+            "xmax": 121.516302025487,
+            "ymax": 25.047225807185
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "衛生福利部臺東醫院",
+    "city": "台東縣",
+    "department": "",
+    "contract": "089-324-112#1311\n0978-863-908\n蘇小姐",
+    "location": "臺東縣台東市五權街1號",
+    "time": "週一～週五 08:30~12:00 13:30~17:00",
+    "note": "",
+    "geo_point": [
+      22.757024994473,
+      121.150648501306
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台東縣五權街1號, 95043",
+          "location": {
+            "x": 121.150648501306,
+            "y": 22.757024994473
+          },
+          "score": 92.67,
+          "attributes": {
+            "Match_addr": "台東縣五權街1號, 95043",
+            "Addr_type": "PointAddress",
+            "StAddr": "五權街1號",
+            "City": "台東縣"
+          },
+          "extent": {
+            "xmin": 121.149648501306,
+            "ymin": 22.756024994473,
+            "xmax": 121.151648501306,
+            "ymax": 22.758024994473
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "一站式院所",
+    "name": "國立成功大學醫學院附設醫院",
+    "city": "台南市",
+    "department": "",
+    "contract": "06-235-3535#4100\n0910-279-225\n毛小姐",
+    "location": "臺南市勝利路138號",
+    "time": "週一～週五 09:00~12:00｜週一、二、三、五 13:00~18:00｜週四 13:00~22:00｜週日（需預約）14:00~22:00",
+    "note": "",
+    "geo_point": [
+      22.955586203819,
+      120.262328200164
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台南市仁德區勝利路138號, 71752",
+          "location": {
+            "x": 120.262328200164,
+            "y": 22.955586203819
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台南市仁德區勝利路138號, 71752",
+            "Addr_type": "PointAddress",
+            "StAddr": "勝利路138號",
+            "City": "仁德區"
+          },
+          "extent": {
+            "xmin": 120.261328200164,
+            "ymin": 22.954586203819,
+            "xmax": 120.263328200164,
+            "ymax": 22.956586203819
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "一站式院所",
+    "name": "奇美醫療財團法人奇美醫院",
+    "city": "台南市",
+    "department": "樹林院區",
+    "contract": "06-281-2811#53689\n0911-787-672\n劉小姐",
+    "location": "臺南市南區樹林街2段442號",
+    "time": "週一～週五 09:00~11:00 13:00~16:00",
+    "note": "",
+    "geo_point": [
+      22.9865808892,
+      120.196111332716
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台南市南區樹林街二段442號, 70246",
+          "location": {
+            "x": 120.196111332716,
+            "y": 22.9865808892
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台南市南區樹林街二段442號, 70246",
+            "Addr_type": "PointAddress",
+            "StAddr": "樹林街二段442號",
+            "City": "南區"
+          },
+          "extent": {
+            "xmin": 120.195111332716,
+            "ymin": 22.9855808892,
+            "xmax": 120.197111332717,
+            "ymax": 22.9875808892
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "衛生福利部臺南醫院",
+    "city": "台南市",
+    "department": "",
+    "contract": "06-2200-055#3125\n潘小姐",
+    "location": "臺南市中西區中山路125號",
+    "time": "週一～週五 08:00~12:00 13:30~17:30（週一～週五可免預約 週六需提前預約）",
+    "note": "",
+    "geo_point": [
+      22.995818794237,
+      120.209227418624
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台南市中山路125號, 70043",
+          "location": {
+            "x": 120.209227418624,
+            "y": 22.995818794237
+          },
+          "score": 97.88,
+          "attributes": {
+            "Match_addr": "台南市中山路125號, 70043",
+            "Addr_type": "PointAddress",
+            "StAddr": "中山路125號",
+            "City": "台南市"
+          },
+          "extent": {
+            "xmin": 120.208227418624,
+            "ymin": 22.994818794237,
+            "xmax": 120.210227418624,
+            "ymax": 22.996818794237
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "奇美醫療財團法人奇美醫院",
+    "city": "台南市",
+    "department": "柳營奇美",
+    "contract": "06-6226-999#77377\n林小姐",
+    "location": "臺南市柳營區太康里太康201號",
+    "time": "週一~週五 08:00~12:00 13:00~17:00｜週六 08:00~12:00",
+    "note": "",
+    "geo_point": [
+      23.291737,
+      120.32786
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台南市柳營區太康",
+          "location": {
+            "x": 120.32786,
+            "y": 23.291737
+          },
+          "score": 81.67,
+          "attributes": {
+            "Match_addr": "台南市柳營區太康",
+            "Addr_type": "Locality",
+            "StAddr": "",
+            "City": "柳營區"
+          },
+          "extent": {
+            "xmin": 120.32086,
+            "ymin": 23.284737,
+            "xmax": 120.33486,
+            "ymax": 23.298737
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "現代醫事檢驗所",
+    "city": "台南市",
+    "department": "",
+    "contract": "06-6332-100\n潘小姐",
+    "location": "臺南市新營區中山路236號",
+    "time": "週一～週六 09:00~21:00（可免預約）",
+    "note": "",
+    "geo_point": [
+      23.303261009652,
+      120.314820036439
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台南市新營區中山路236號, 73065",
+          "location": {
+            "x": 120.314820036439,
+            "y": 23.303261009652
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台南市新營區中山路236號, 73065",
+            "Addr_type": "PointAddress",
+            "StAddr": "中山路236號",
+            "City": "新營區"
+          },
+          "extent": {
+            "xmin": 120.313820036439,
+            "ymin": 23.302261009652,
+            "xmax": 120.315820036439,
+            "ymax": 23.304261009652
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "衛生福利部花蓮醫院",
+    "city": "花蓮縣",
+    "department": "",
+    "contract": "03-8358-141#7201\n0972-152-990\n許小姐",
+    "location": "花蓮縣花蓮市中正路600號",
+    "time": "週一～週五 08:00~12:00 13:30~17:30",
+    "note": "",
+    "geo_point": [
+      23.979480394153,
+      121.611180520435
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "花蓮縣中正路600號, 97061",
+          "location": {
+            "x": 121.611180520435,
+            "y": 23.979480394153
+          },
+          "score": 92.67,
+          "attributes": {
+            "Match_addr": "花蓮縣中正路600號, 97061",
+            "Addr_type": "PointAddress",
+            "StAddr": "中正路600號",
+            "City": "花蓮縣"
+          },
+          "extent": {
+            "xmin": 121.610180520435,
+            "ymin": 23.978480394153,
+            "xmax": 121.612180520435,
+            "ymax": 23.980480394153
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "花蓮慈濟醫院",
+    "city": "花蓮縣",
+    "department": "",
+    "contract": "03-8463-989\n吳小姐",
+    "location": "花蓮縣花蓮市中央路三段707號",
+    "time": "週一～週五 08:30~12:00｜週一、二、四 13:30~17:30",
+    "note": "",
+    "geo_point": [
+      23.994751342949,
+      121.593140034636
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "花蓮縣中央路三段707號, 970",
+          "location": {
+            "x": 121.593140034636,
+            "y": 23.994751342949
+          },
+          "score": 92.67,
+          "attributes": {
+            "Match_addr": "花蓮縣中央路三段707號, 970",
+            "Addr_type": "StreetAddress",
+            "StAddr": "中央路三段707號",
+            "City": "花蓮縣"
+          },
+          "extent": {
+            "xmin": 121.592140034636,
+            "ymin": 23.993751342949,
+            "xmax": 121.594140034636,
+            "ymax": 23.995751342949
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "門諾醫院",
+    "city": "花蓮縣",
+    "department": "",
+    "contract": "03-8241-455\n林小姐",
+    "location": "花蓮縣花蓮市民權路44號",
+    "time": "週一～週五 09:00~12:00 14:00~17:00",
+    "note": "",
+    "geo_point": [
+      23.988473002793,
+      121.626649741841
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "花蓮縣民權路44號, 97059",
+          "location": {
+            "x": 121.626649741841,
+            "y": 23.988473002793
+          },
+          "score": 92.67,
+          "attributes": {
+            "Match_addr": "花蓮縣民權路44號, 97059",
+            "Addr_type": "PointAddress",
+            "StAddr": "民權路44號",
+            "City": "花蓮縣"
+          },
+          "extent": {
+            "xmin": 121.625649741841,
+            "ymin": 23.987473002793,
+            "xmax": 121.627649741841,
+            "ymax": 23.989473002793
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "聯合醫學檢驗所",
+    "city": "花蓮縣",
+    "department": "",
+    "contract": "03-8336-795\n \n郭小姐",
+    "location": "花蓮縣花蓮市中華路373-7號",
+    "time": "週一~週五 10:00~13:00 18:00~20:00｜週六 10:00~17:00",
+    "note": "",
+    "geo_point": [
+      23.974584985513,
+      121.595168989895
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "花蓮縣中華路373-7號, 97044",
+          "location": {
+            "x": 121.595168989895,
+            "y": 23.974584985513
+          },
+          "score": 92.67,
+          "attributes": {
+            "Match_addr": "花蓮縣中華路373-7號, 97044",
+            "Addr_type": "PointAddress",
+            "StAddr": "中華路373-7號",
+            "City": "花蓮縣"
+          },
+          "extent": {
+            "xmin": 121.594168989895,
+            "ymin": 23.973584985513,
+            "xmax": 121.596168989895,
+            "ymax": 23.975584985513
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "衛生福利部金門醫院",
+    "city": "金門縣",
+    "department": "",
+    "contract": "082-332546#11835\n莊小姐",
+    "location": "金門縣金湖鎮復興路2號",
+    "time": "週一~週五 09:00~12:00 13:00~16:00",
+    "note": "",
+    "geo_point": [
+      24.440643989686,
+      118.418030970925
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "金門縣金湖鎮復興路2號, 89148",
+          "location": {
+            "x": 118.418030970925,
+            "y": 24.440643989686
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "金門縣金湖鎮復興路2號, 89148",
+            "Addr_type": "PointAddress",
+            "StAddr": "復興路2號",
+            "City": "金湖鎮"
+          },
+          "extent": {
+            "xmin": 118.417030970925,
+            "ymin": 24.439643989686,
+            "xmax": 118.419030970925,
+            "ymax": 24.441643989686
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "衛生福利部南投醫院",
+    "city": "南投縣",
+    "department": "",
+    "contract": "049-2231-150#2298\n0932-686-934\n李小姐",
+    "location": "南投縣南投市復興路478號",
+    "time": "週一、三、四、五 13:30~16:30｜週一 18:30~20:30",
+    "note": "",
+    "geo_point": [
+      23.969669292667,
+      120.66834348285
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "南投縣草屯鎮復興路478號, 542",
+          "location": {
+            "x": 120.66834348285,
+            "y": 23.969669292667
+          },
+          "score": 97.8,
+          "attributes": {
+            "Match_addr": "南投縣草屯鎮復興路478號, 542",
+            "Addr_type": "PointAddress",
+            "StAddr": "復興路478號",
+            "City": "草屯鎮"
+          },
+          "extent": {
+            "xmin": 120.66734348285,
+            "ymin": 23.968669292667,
+            "xmax": 120.66934348285,
+            "ymax": 23.970669292667
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "埔里基督教醫院",
+    "city": "南投縣",
+    "department": "",
+    "contract": "049-291-2151#1231\n陳小姐",
+    "location": "南投縣埔里鎮鐵山路1號",
+    "time": "週一～週五 09:00~12:00 14:00~16:00",
+    "note": "",
+    "geo_point": [
+      23.970701985048,
+      120.946473973313
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "南投縣埔里鎮鐵山路1號, 54546",
+          "location": {
+            "x": 120.946473973313,
+            "y": 23.970701985048
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "南投縣埔里鎮鐵山路1號, 54546",
+            "Addr_type": "PointAddress",
+            "StAddr": "鐵山路1號",
+            "City": "埔里鎮"
+          },
+          "extent": {
+            "xmin": 120.945473973313,
+            "ymin": 23.969701985048,
+            "xmax": 120.947473973313,
+            "ymax": 23.971701985048
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "竹山秀傳醫院",
+    "city": "南投縣",
+    "department": "",
+    "contract": "049-262-4266#36768\n簡小姐",
+    "location": "南投縣竹山鎮集山路二段75號 ",
+    "time": "週二、週三 08:30~12:00｜週二、週四 13:00~17:00",
+    "note": "",
+    "geo_point": [
+      23.80024600951,
+      120.713879010041
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "南投縣竹山鎮集山路二段75號, 55782",
+          "location": {
+            "x": 120.713879010041,
+            "y": 23.80024600951
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "南投縣竹山鎮集山路二段75號, 55782",
+            "Addr_type": "PointAddress",
+            "StAddr": "集山路二段75號",
+            "City": "竹山鎮"
+          },
+          "extent": {
+            "xmin": 120.712879010041,
+            "ymin": 23.79924600951,
+            "xmax": 120.714879010041,
+            "ymax": 23.80124600951
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "東華醫院",
+    "city": "南投縣",
+    "department": "",
+    "contract": "049-2658-949#2806\n李小姐",
+    "location": "南投縣竹山鎮集山路三段272巷16號",
+    "time": "週一～週五 08:00~12:00 13:00~17:00",
+    "note": "",
+    "geo_point": [
+      23.764374690952,
+      120.700267972751
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "南投縣竹山鎮集山路三段272巷16號, 557",
+          "location": {
+            "x": 120.700267972751,
+            "y": 23.764374690952
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "南投縣竹山鎮集山路三段272巷16號, 557",
+            "Addr_type": "PointAddress",
+            "StAddr": "集山路三段272巷16號",
+            "City": "竹山鎮"
+          },
+          "extent": {
+            "xmin": 120.699267972751,
+            "ymin": 23.763374690952,
+            "xmax": 120.701267972751,
+            "ymax": 23.765374690952
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "衛生福利部屏東醫院",
+    "city": "屏東縣",
+    "department": "",
+    "contract": "08-7363-011#2238\n0975-287-733\n陳小姐",
+    "location": "屏東縣屏東市自由路270號",
+    "time": "週一～週五 08:30~16:30",
+    "note": "",
+    "geo_point": [
+      22.673264007398,
+      120.495546022661
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "屏東縣自由路270號, 90054",
+          "location": {
+            "x": 120.495546022661,
+            "y": 22.673264007398
+          },
+          "score": 92.67,
+          "attributes": {
+            "Match_addr": "屏東縣自由路270號, 90054",
+            "Addr_type": "PointAddress",
+            "StAddr": "自由路270號",
+            "City": "屏東縣"
+          },
+          "extent": {
+            "xmin": 120.494546022661,
+            "ymin": 22.672264007398,
+            "xmax": 120.496546022661,
+            "ymax": 22.674264007398
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "屏東基督教醫院",
+    "city": "屏東縣",
+    "department": "",
+    "contract": "08-7385-909\n0970-679-218\n蘇小姐",
+    "location": "屏東縣屏東市大連路60號",
+    "time": "週一、四、五 09:00~12:00｜週一、三、五 13:00~17:00｜週二 13:00~19:00",
+    "note": "",
+    "geo_point": [
+      22.684433434175,
+      120.510307636811
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "屏東縣屏東市大連路60號, 90050",
+          "location": {
+            "x": 120.510307636811,
+            "y": 22.684433434175
+          },
+          "score": 98.9,
+          "attributes": {
+            "Match_addr": "屏東縣屏東市大連路60號, 90050",
+            "Addr_type": "StreetAddressExt",
+            "StAddr": "大連路60號",
+            "City": "屏東市"
+          },
+          "extent": {
+            "xmin": 120.509307636811,
+            "ymin": 22.683433434175,
+            "xmax": 120.511307636811,
+            "ymax": 22.685433434175
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "安泰醫院",
+    "city": "屏東縣",
+    "department": "",
+    "contract": "08-8329-966#3055\n王小姐",
+    "location": "屏東縣東港鎮中正路一段210號",
+    "time": "週二～週五 14:00~17:00",
+    "note": "",
+    "geo_point": [
+      22.474389985425,
+      120.45919798336
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "屏東縣東港鎮中正路一段210號, 92842",
+          "location": {
+            "x": 120.45919798336,
+            "y": 22.474389985425
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "屏東縣東港鎮中正路一段210號, 92842",
+            "Addr_type": "PointAddress",
+            "StAddr": "中正路一段210號",
+            "City": "東港鎮"
+          },
+          "extent": {
+            "xmin": 120.45819798336,
+            "ymin": 22.473389985425,
+            "xmax": 120.46019798336,
+            "ymax": 22.475389985425
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "潮州安泰醫院",
+    "city": "屏東縣",
+    "department": "",
+    "contract": "08-7800-888#2855\n洪小姐",
+    "location": "屏東縣潮州鎮四維路162號",
+    "time": "週一～週五 08:30~12:00 14:30~17:00",
+    "note": "",
+    "geo_point": [
+      22.554020999257,
+      120.5469639695
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "屏東縣潮州鎮四維路162號, 92048",
+          "location": {
+            "x": 120.5469639695,
+            "y": 22.554020999257
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "屏東縣潮州鎮四維路162號, 92048",
+            "Addr_type": "PointAddress",
+            "StAddr": "四維路162號",
+            "City": "潮州鎮"
+          },
+          "extent": {
+            "xmin": 120.5459639695,
+            "ymin": 22.553020999257,
+            "xmax": 120.5479639695,
+            "ymax": 22.555020999257
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "安和醫院",
+    "city": "屏東縣",
+    "department": "",
+    "contract": "08-7651828#308\n洪小姐",
+    "location": "屏東縣屏東市崇蘭里自由路598號",
+    "time": "週一~週五 08:30~11:30 14:30~17:30",
+    "note": "",
+    "geo_point": [
+      22.683468010595,
+      120.483659981044
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "屏東縣自由路598號, 90064",
+          "location": {
+            "x": 120.483659981044,
+            "y": 22.683468010595
+          },
+          "score": 92.22,
+          "attributes": {
+            "Match_addr": "屏東縣自由路598號, 90064",
+            "Addr_type": "PointAddress",
+            "StAddr": "自由路598號",
+            "City": "屏東縣"
+          },
+          "extent": {
+            "xmin": 120.482659981044,
+            "ymin": 22.682468010595,
+            "xmax": 120.484659981044,
+            "ymax": 22.684468010595
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "衛生福利部苗栗醫院",
+    "city": "苗栗縣",
+    "department": "",
+    "contract": "037-261920#1110\n林小姐",
+    "location": "苗栗縣苗栗市為公路747號 ",
+    "time": "週一~週五 08:30~11:30 13:30~16:00 免預約（隨到隨驗）",
+    "note": "",
+    "geo_point": [
+      24.574811982259,
+      120.84134697022
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "苗栗縣為公路747號, 360",
+          "location": {
+            "x": 120.84134697022,
+            "y": 24.574811982259
+          },
+          "score": 92.67,
+          "attributes": {
+            "Match_addr": "苗栗縣為公路747號, 360",
+            "Addr_type": "PointAddress",
+            "StAddr": "為公路747號",
+            "City": "苗栗縣"
+          },
+          "extent": {
+            "xmin": 120.84034697022,
+            "ymin": 24.573811982259,
+            "xmax": 120.84234697022,
+            "ymax": 24.575811982259
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "為恭紀念醫院",
+    "city": "苗栗縣",
+    "department": "",
+    "contract": "037-676-811#83253\n黃小姐",
+    "location": "苗栗縣頭份市信義路128號",
+    "time": "週一~週五 08:00~12:00 13:00~17:00",
+    "note": "",
+    "geo_point": [
+      24.687096418202,
+      120.907345321452
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "苗栗縣頭份市信義路128號, 35159",
+          "location": {
+            "x": 120.907345321452,
+            "y": 24.687096418202
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "苗栗縣頭份市信義路128號, 35159",
+            "Addr_type": "PointAddress",
+            "StAddr": "信義路128號",
+            "City": "頭份市"
+          },
+          "extent": {
+            "xmin": 120.906345321452,
+            "ymin": 24.686096418202,
+            "xmax": 120.908345321452,
+            "ymax": 24.688096418202
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "一站式院所",
+    "name": "衛生福利部桃園醫院",
+    "city": "桃園市",
+    "department": "",
+    "contract": "03-369-9721#3255\n \n曾小姐",
+    "location": "桃園市桃園區中山路1492號",
+    "time": "週一、二、四、五 08:00~20:00｜週三 08:00~17:00",
+    "note": "",
+    "geo_point": [
+      24.977454110176,
+      121.269616056768
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "桃園市八德區中山路1492號, 334",
+          "location": {
+            "x": 121.269616056768,
+            "y": 24.977454110176
+          },
+          "score": 97.88,
+          "attributes": {
+            "Match_addr": "桃園市八德區中山路1492號, 334",
+            "Addr_type": "StreetAddress",
+            "StAddr": "中山路1492號",
+            "City": "八德區"
+          },
+          "extent": {
+            "xmin": 121.268616056768,
+            "ymin": 24.976454110176,
+            "xmax": 121.270616056768,
+            "ymax": 24.978454110176
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "一站式院所",
+    "name": "長庚醫療財團法人林口長庚紀念醫院",
+    "city": "桃園市",
+    "department": "",
+    "contract": "03-328-1200#5486\n0975-367-981 \n林先生 電話：",
+    "location": "桃園市龜山區復興街5號 ",
+    "time": "週一～週五 08:30~12:30 13:00~17:00｜週一～週四 18:00~21:00",
+    "note": "",
+    "geo_point": [
+      25.061525001685,
+      121.36950401653
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "桃園市龜山區復興街5號, 33305",
+          "location": {
+            "x": 121.36950401653,
+            "y": 25.061525001685
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "桃園市龜山區復興街5號, 33305",
+            "Addr_type": "PointAddress",
+            "StAddr": "復興街5號",
+            "City": "龜山區"
+          },
+          "extent": {
+            "xmin": 121.36850401653,
+            "ymin": 25.060525001685,
+            "xmax": 121.37050401653,
+            "ymax": 25.062525001685
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "天晟醫院",
+    "city": "桃園市",
+    "department": "",
+    "contract": "03-4629-292#22866\n劉小姐",
+    "location": "桃園市中壢區延平路155號",
+    "time": "週一~週五 08:30~11:30 13:30~16:30",
+    "note": "",
+    "geo_point": [
+      24.962794815638,
+      121.229326995662
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "桃園市中壢區延平路155號, 32043",
+          "location": {
+            "x": 121.229326995662,
+            "y": 24.962794815638
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "桃園市中壢區延平路155號, 32043",
+            "Addr_type": "PointAddress",
+            "StAddr": "延平路155號",
+            "City": "中壢區"
+          },
+          "extent": {
+            "xmin": 121.228326995662,
+            "ymin": 24.961794815638,
+            "xmax": 121.230326995662,
+            "ymax": 24.963794815638
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "天成醫院",
+    "city": "桃園市",
+    "department": "",
+    "contract": "03-4782-350#62856\n03-4782-350#62866\n李小姐",
+    "location": "桃園市楊梅區中山北路1段356號",
+    "time": "週一~週五 08:30~11:30 13:30~16:30",
+    "note": "",
+    "geo_point": [
+      24.908764983951,
+      121.157667004111
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "桃園市楊梅區中山北路一段356號, 32665",
+          "location": {
+            "x": 121.157667004111,
+            "y": 24.908764983951
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "桃園市楊梅區中山北路一段356號, 32665",
+            "Addr_type": "PointAddress",
+            "StAddr": "中山北路一段356號",
+            "City": "楊梅區"
+          },
+          "extent": {
+            "xmin": 121.156667004111,
+            "ymin": 24.907764983951,
+            "xmax": 121.158667004111,
+            "ymax": 24.909764983951
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "一站式院所",
+    "name": "高雄榮民總醫院",
+    "city": "高雄市",
+    "department": "醫療大樓10樓感染症篩檢諮詢中心",
+    "contract": "07-346-8299\n王小姐\n陳小姐",
+    "location": "高雄市左營區大中一路386號",
+    "time": "週一～週四 09:00~21:00｜週五 09:00~17:30｜週六 08:00~12:00",
+    "note": "",
+    "geo_point": [
+      22.677439997288,
+      120.32247598298
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "高雄市左營區大中一路386號, 81362",
+          "location": {
+            "x": 120.32247598298,
+            "y": 22.677439997288
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "高雄市左營區大中一路386號, 81362",
+            "Addr_type": "PointAddress",
+            "StAddr": "大中一路386號",
+            "City": "左營區"
+          },
+          "extent": {
+            "xmin": 120.32147598298,
+            "ymin": 22.676439997288,
+            "xmax": 120.32347598298,
+            "ymax": 22.678439997288
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "一站式院所",
+    "name": "財團法人私立高雄醫學大學附設中和紀念醫院",
+    "city": "高雄市",
+    "department": "",
+    "contract": "07-321-4227\n楊先生",
+    "location": "高雄市三民區自由一路100號",
+    "time": "週一～週五 09:00~12:00 13:30~17:30 18:30~20:30｜隔週日 14:00~17:00",
+    "note": "",
+    "geo_point": [
+      22.645186014774,
+      120.309630967821
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "高雄市三民區自由一路100號, 80756",
+          "location": {
+            "x": 120.309630967821,
+            "y": 22.645186014774
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "高雄市三民區自由一路100號, 80756",
+            "Addr_type": "PointAddress",
+            "StAddr": "自由一路100號",
+            "City": "三民區"
+          },
+          "extent": {
+            "xmin": 120.308630967821,
+            "ymin": 22.644186014774,
+            "xmax": 120.310630967821,
+            "ymax": 22.646186014774
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "一站式院所",
+    "name": "高雄市立大同醫院",
+    "city": "高雄市",
+    "department": "",
+    "contract": "07-2911-101#8071\n0903-553-030\n陳先生",
+    "location": "高雄市前金區中華三路68號",
+    "time": "週一～週五 08:00~12:00 13:30~17:30",
+    "note": "",
+    "geo_point": [
+      22.627066980408,
+      120.297086024795
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "高雄市前金區中華三路68號, 80145",
+          "location": {
+            "x": 120.297086024795,
+            "y": 22.627066980408
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "高雄市前金區中華三路68號, 80145",
+            "Addr_type": "PointAddress",
+            "StAddr": "中華三路68號",
+            "City": "前金區"
+          },
+          "extent": {
+            "xmin": 120.296086024795,
+            "ymin": 22.626066980408,
+            "xmax": 120.298086024795,
+            "ymax": 22.628066980408
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "一站式院所",
+    "name": "高雄市立民生醫院",
+    "city": "高雄市",
+    "department": "感染控制室2樓",
+    "contract": "07-751-1131#4091\n07-751-1131#8010\n0972-815-069\nLINE：hero4090\n楊先生",
+    "location": "高雄市苓雅區凱旋二路134號",
+    "time": "週一～週五 09:00~21:00｜週六 09:00~12:00",
+    "note": "",
+    "geo_point": [
+      22.628253983626,
+      120.322710005717
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "高雄市凱旋二路134號, 80276",
+          "location": {
+            "x": 120.322710005717,
+            "y": 22.628253983626
+          },
+          "score": 97.88,
+          "attributes": {
+            "Match_addr": "高雄市凱旋二路134號, 80276",
+            "Addr_type": "PointAddress",
+            "StAddr": "凱旋二路134號",
+            "City": "高雄市"
+          },
+          "extent": {
+            "xmin": 120.321710005717,
+            "ymin": 22.627253983626,
+            "xmax": 120.323710005717,
+            "ymax": 22.629253983626
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "高雄市立小港醫院",
+    "city": "高雄市",
+    "department": "",
+    "contract": "07-803-6783#3275\n0981-916-101\n蕭小姐",
+    "location": "高雄市小港區山明路482號",
+    "time": "週二、四、五 09:00~17:00｜週一、三 14:00~21:00",
+    "note": "",
+    "geo_point": [
+      22.567543020736,
+      120.363011034375
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "高雄市小港區山明路482號, 81267",
+          "location": {
+            "x": 120.363011034375,
+            "y": 22.567543020736
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "高雄市小港區山明路482號, 81267",
+            "Addr_type": "PointAddress",
+            "StAddr": "山明路482號",
+            "City": "小港區"
+          },
+          "extent": {
+            "xmin": 120.362011034375,
+            "ymin": 22.566543020736,
+            "xmax": 120.364011034375,
+            "ymax": 22.568543020736
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "阮綜合醫院",
+    "city": "高雄市",
+    "department": "",
+    "contract": "07-3351-121#2295\n0912-591-387 \n邵小姐",
+    "location": "高雄市苓雅區成功一路162號",
+    "time": "週一～週五 09:00~12:00 14:00~17:00",
+    "note": "",
+    "geo_point": [
+      22.61559999204,
+      120.297310995076
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "高雄市成功一路162號, 80249",
+          "location": {
+            "x": 120.297310995076,
+            "y": 22.61559999204
+          },
+          "score": 97.88,
+          "attributes": {
+            "Match_addr": "高雄市成功一路162號, 80249",
+            "Addr_type": "PointAddress",
+            "StAddr": "成功一路162號",
+            "City": "高雄市"
+          },
+          "extent": {
+            "xmin": 120.296310995076,
+            "ymin": 22.61459999204,
+            "xmax": 120.298310995076,
+            "ymax": 22.61659999204
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "義大醫院",
+    "city": "高雄市",
+    "department": "",
+    "contract": "07-6150-011#257380\n0975-106-269\n郭小姐",
+    "location": "高雄市燕巢區義大路1號",
+    "time": "週一～週五 09:00~12:00 13:30~17:00",
+    "note": "",
+    "geo_point": [
+      22.765480197391,
+      120.364446183836
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "高雄市燕巢區義大路1號, 824",
+          "location": {
+            "x": 120.364446183836,
+            "y": 22.765480197391
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "高雄市燕巢區義大路1號, 824",
+            "Addr_type": "PointAddress",
+            "StAddr": "義大路1號",
+            "City": "燕巢區"
+          },
+          "extent": {
+            "xmin": 120.363446183836,
+            "ymin": 22.764480197391,
+            "xmax": 120.365446183836,
+            "ymax": 22.766480197391
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "高大美杏生醫院",
+    "city": "高雄市",
+    "department": "",
+    "contract": "07-3658885#8122\n0983-532-637\n \n楊小姐",
+    "location": "高雄市楠梓區大學東路1號",
+    "time": "週一～週六 09:00~12:00 15:00~18:00 18:30~21:30｜週日 09:00~12:00",
+    "note": "",
+    "geo_point": [
+      22.725396437899,
+      120.289651524896
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "高雄市楠梓區大學東路1號, 81148",
+          "location": {
+            "x": 120.289651524896,
+            "y": 22.725396437899
+          },
+          "score": 98.9,
+          "attributes": {
+            "Match_addr": "高雄市楠梓區大學東路1號, 81148",
+            "Addr_type": "StreetAddressExt",
+            "StAddr": "大學東路1號",
+            "City": "楠梓區"
+          },
+          "extent": {
+            "xmin": 120.288651524896,
+            "ymin": 22.724396437899,
+            "xmax": 120.290651524896,
+            "ymax": 22.726396437899
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "鳳山李嘉文泌尿科診所",
+    "city": "高雄市",
+    "department": "",
+    "contract": "07-7659-229\n0921-539-366\n王小姐",
+    "location": "高雄市鳳山區新富路266號",
+    "time": "週一~週五 09:00~12:00 14:30~17:30 19:00~21:00｜週六 09:00~12:00",
+    "note": "",
+    "geo_point": [
+      22.612599983165,
+      120.341057991768
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "高雄市鳳山區新富路266號, 83080",
+          "location": {
+            "x": 120.341057991768,
+            "y": 22.612599983165
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "高雄市鳳山區新富路266號, 83080",
+            "Addr_type": "PointAddress",
+            "StAddr": "新富路266號",
+            "City": "鳳山區"
+          },
+          "extent": {
+            "xmin": 120.340057991768,
+            "ymin": 22.611599983165,
+            "xmax": 120.342057991768,
+            "ymax": 22.613599983165
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "聯合醫事檢驗所",
+    "city": "高雄市",
+    "department": "",
+    "contract": "07-2693-130 \n涂先生",
+    "location": "高雄市苓雅區成功一路212號",
+    "time": "週一~週六 09:00~20:00",
+    "note": "",
+    "geo_point": [
+      22.617072985795,
+      120.296752005954
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "高雄市成功一路212號, 80249",
+          "location": {
+            "x": 120.296752005954,
+            "y": 22.617072985795
+          },
+          "score": 97.88,
+          "attributes": {
+            "Match_addr": "高雄市成功一路212號, 80249",
+            "Addr_type": "PointAddress",
+            "StAddr": "成功一路212號",
+            "City": "高雄市"
+          },
+          "extent": {
+            "xmin": 120.295752005954,
+            "ymin": 22.616072985795,
+            "xmax": 120.297752005954,
+            "ymax": 22.618072985795
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "基隆長庚紀念醫院",
+    "city": "基隆市",
+    "department": "",
+    "contract": "02-2431-3131#2302\n0917-500-301\n田小姐",
+    "location": "基隆市麥金路222號 ",
+    "time": "週一～週四 08:30~17:00",
+    "note": "",
+    "geo_point": [
+      25.12088249676,
+      121.722367639524
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "基隆市安樂區麥金路222號, 204",
+          "location": {
+            "x": 121.722367639524,
+            "y": 25.12088249676
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "基隆市安樂區麥金路222號, 204",
+            "Addr_type": "PointAddress",
+            "StAddr": "麥金路222號",
+            "City": "安樂區"
+          },
+          "extent": {
+            "xmin": 121.721367639524,
+            "ymin": 25.11988249676,
+            "xmax": 121.723367639524,
+            "ymax": 25.12188249676
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "王孫斌婦產科診所",
+    "city": "基隆市",
+    "department": "",
+    "contract": "02-2424-8125 \n黃小姐",
+    "location": "基隆市中正區義一路69號",
+    "time": "週一~週五 09:00~12:00 14:30~17:30 18:30~21:30｜週六 09:00~12:00 14:30~17:30｜週日 09:00~10:30",
+    "note": "",
+    "geo_point": [
+      25.134175985648,
+      121.746307025545
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "基隆市義一路69號, 20241",
+          "location": {
+            "x": 121.746307025545,
+            "y": 25.134175985648
+          },
+          "score": 97.8,
+          "attributes": {
+            "Match_addr": "基隆市義一路69號, 20241",
+            "Addr_type": "PointAddress",
+            "StAddr": "義一路69號",
+            "City": "基隆市"
+          },
+          "extent": {
+            "xmin": 121.745307025545,
+            "ymin": 25.133175985648,
+            "xmax": 121.747307025545,
+            "ymax": 25.135175985648
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "臺灣大學醫學院附設醫院雲林分院",
+    "city": "雲林縣",
+    "department": "虎尾院區",
+    "contract": "週一～週五 08:00~12:00李小姐",
+    "location": "雲林縣虎尾鎮廉使里學府路95號",
+    "time": "週一～週五 08:00~12:00 13:00~17:00",
+    "note": "",
+    "geo_point": [
+      23.735368989285,
+      120.426635965904
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "雲林縣虎尾鎮學府路95號, 63247",
+          "location": {
+            "x": 120.426635965904,
+            "y": 23.735368989285
+          },
+          "score": 92,
+          "attributes": {
+            "Match_addr": "雲林縣虎尾鎮學府路95號, 63247",
+            "Addr_type": "PointAddress",
+            "StAddr": "學府路95號",
+            "City": "虎尾鎮"
+          },
+          "extent": {
+            "xmin": 120.425635965904,
+            "ymin": 23.734368989285,
+            "xmax": 120.427635965904,
+            "ymax": 23.736368989285
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "成功大學醫學院附設醫院斗六分院",
+    "city": "雲林縣",
+    "department": "",
+    "contract": "05-5332-121#5514\n0972-402-010 \n吳小姐",
+    "location": "雲林縣斗六市莊敬路345號",
+    "time": "週一～週五 09:00~12:00｜週一、三、四、五 13:00-17:00",
+    "note": "",
+    "geo_point": [
+      23.703133991781,
+      120.545624625192
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "雲林縣莊敬路345號, 64043",
+          "location": {
+            "x": 120.545624625192,
+            "y": 23.703133991781
+          },
+          "score": 97.8,
+          "attributes": {
+            "Match_addr": "雲林縣莊敬路345號, 64043",
+            "Addr_type": "PointAddress",
+            "StAddr": "莊敬路345號",
+            "City": "雲林縣"
+          },
+          "extent": {
+            "xmin": 120.544624625192,
+            "ymin": 23.702133991781,
+            "xmax": 120.546624625192,
+            "ymax": 23.704133991781
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "若瑟醫院",
+    "city": "雲林縣",
+    "department": "",
+    "contract": "05-6337333#8282\n網頁（點我前往）\n林小姐",
+    "location": "雲林縣虎尾鎮新生路74號",
+    "time": "週一～週五 08:00~12:00 13:30~17:30｜週六（不定期，線上預約為主）",
+    "note": "",
+    "geo_point": [
+      23.708215017667,
+      120.437885988708
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "雲林縣虎尾鎮新生路74號, 63241",
+          "location": {
+            "x": 120.437885988708,
+            "y": 23.708215017667
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "雲林縣虎尾鎮新生路74號, 63241",
+            "Addr_type": "PointAddress",
+            "StAddr": "新生路74號",
+            "City": "虎尾鎮"
+          },
+          "extent": {
+            "xmin": 120.436885988708,
+            "ymin": 23.707215017667,
+            "xmax": 120.438885988708,
+            "ymax": 23.709215017667
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "安生醫院",
+    "city": "雲林縣",
+    "department": "",
+    "contract": "05-5353-951#1605\n陳小姐",
+    "location": "雲林縣斗六市永樂街120號",
+    "time": "週一~週五 08:00~12:00｜ 週一~週四 14:00~18:00",
+    "note": "",
+    "geo_point": [
+      23.708329807831,
+      120.546964640053
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "雲林縣永樂街120號, 64046",
+          "location": {
+            "x": 120.546964640053,
+            "y": 23.708329807831
+          },
+          "score": 97.8,
+          "attributes": {
+            "Match_addr": "雲林縣永樂街120號, 64046",
+            "Addr_type": "PointAddress",
+            "StAddr": "永樂街120號",
+            "City": "雲林縣"
+          },
+          "extent": {
+            "xmin": 120.545964640053,
+            "ymin": 23.707329807831,
+            "xmax": 120.547964640053,
+            "ymax": 23.709329807831
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "一站式院所",
+    "name": "台灣基督長老教會馬偕醫療財團法人新竹馬偕紀念醫院",
+    "city": "新竹市",
+    "department": "",
+    "contract": "03-611-9595#2936\nLINE：@jsq3061k（採預約制以安排匿篩順 ）\n王先生",
+    "location": "新竹市東區光復路2段690號",
+    "time": "週一~週五 08:00~12:00 13:00~17:00｜週一、二 17:00~21:00｜週六 08:00-12:00",
+    "note": "",
+    "geo_point": [
+      24.80008849632,
+      120.990780881136
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "新竹市東區光復路二段690號, 30071",
+          "location": {
+            "x": 120.990780881136,
+            "y": 24.80008849632
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "新竹市東區光復路二段690號, 30071",
+            "Addr_type": "PointAddress",
+            "StAddr": "光復路二段690號",
+            "City": "東區"
+          },
+          "extent": {
+            "xmin": 120.989780881136,
+            "ymin": 24.79908849632,
+            "xmax": 120.991780881136,
+            "ymax": 24.80108849632
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "",
+    "name": "新竹臺大分院新竹醫院",
+    "city": "新竹市",
+    "department": "",
+    "contract": "03-532-6151#522026\n0972-155-170 \n彭小姐",
+    "location": "新竹市北區經國路一段442巷25號",
+    "time": "週一、三、四、五 09:00~12:00 14:00~17:00｜週二 13:00~17:00",
+    "note": "",
+    "geo_point": [
+      24.815769722742,
+      120.980100974167
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "新竹市東區經國路一段442巷25號, 300",
+          "location": {
+            "x": 120.980100974167,
+            "y": 24.815769722742
+          },
+          "score": 98.17,
+          "attributes": {
+            "Match_addr": "新竹市東區經國路一段442巷25號, 300",
+            "Addr_type": "StreetAddress",
+            "StAddr": "經國路一段442巷25號",
+            "City": "東區"
+          },
+          "extent": {
+            "xmin": 120.979100974167,
+            "ymin": 24.814769722742,
+            "xmax": 120.981100974167,
+            "ymax": 24.816769722742
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "江婦產科診所",
+    "city": "新竹市",
+    "department": "",
+    "contract": "03-5350-299\n徐小姐",
+    "location": "新竹市東區民族路125號",
+    "time": "週一~週五 09:00~17:00｜週六 09:00~17:00",
+    "note": "",
+    "geo_point": [
+      24.808345006224,
+      120.97770100505
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "新竹市東區民族路125號, 30043",
+          "location": {
+            "x": 120.97770100505,
+            "y": 24.808345006224
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "新竹市東區民族路125號, 30043",
+            "Addr_type": "PointAddress",
+            "StAddr": "民族路125號",
+            "City": "東區"
+          },
+          "extent": {
+            "xmin": 120.97670100505,
+            "ymin": 24.807345006224,
+            "xmax": 120.97870100505,
+            "ymax": 24.809345006224
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "新竹臺大分院生醫醫院",
+    "city": "新竹縣",
+    "department": "",
+    "contract": "03-6677-600#531803\n0972-654-228\n王小姐",
+    "location": "新竹縣竹北市生醫路一段2號",
+    "time": "週一~週五 08:00-17:00",
+    "note": "",
+    "geo_point": [
+      24.805399018715,
+      121.04401895825
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "新竹縣竹北市生醫路一段2號, 30261",
+          "location": {
+            "x": 121.04401895825,
+            "y": 24.805399018715
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "新竹縣竹北市生醫路一段2號, 30261",
+            "Addr_type": "PointAddress",
+            "StAddr": "生醫路一段2號",
+            "City": "竹北市"
+          },
+          "extent": {
+            "xmin": 121.04301895825,
+            "ymin": 24.804399018715,
+            "xmax": 121.04501895825,
+            "ymax": 24.806399018715
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "東元綜合醫院",
+    "city": "新竹縣",
+    "department": "",
+    "contract": "0900-216-233\n劉小姐",
+    "location": "新竹縣竹北市縣政二路69號",
+    "time": "週一、二、四、五 13:00~18:00｜週二、三、四、五 09:00~11:00",
+    "note": "",
+    "geo_point": [
+      24.823314188077,
+      121.014426711743
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "新竹縣縣政二路69號, 30268",
+          "location": {
+            "x": 121.014426711743,
+            "y": 24.823314188077
+          },
+          "score": 97.8,
+          "attributes": {
+            "Match_addr": "新竹縣縣政二路69號, 30268",
+            "Addr_type": "StreetAddress",
+            "StAddr": "縣政二路69號",
+            "City": "新竹縣"
+          },
+          "extent": {
+            "xmin": 121.013426711743,
+            "ymin": 24.822314188077,
+            "xmax": 121.015426711743,
+            "ymax": 24.824314188077
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "衛生福利部嘉義醫院",
+    "city": "嘉義市",
+    "department": "",
+    "contract": "05-2319-090#8561\n劉小姐",
+    "location": "嘉義市西區北港路312號",
+    "time": "週三 17:00~20:00",
+    "note": "",
+    "geo_point": [
+      23.481170005855,
+      120.429069986767
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "嘉義市西區北港路312號, 60096",
+          "location": {
+            "x": 120.429069986767,
+            "y": 23.481170005855
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "嘉義市西區北港路312號, 60096",
+            "Addr_type": "PointAddress",
+            "StAddr": "北港路312號",
+            "City": "西區"
+          },
+          "extent": {
+            "xmin": 120.428069986767,
+            "ymin": 23.480170005855,
+            "xmax": 120.430069986767,
+            "ymax": 23.482170005855
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "臺中榮民總醫院嘉義分院",
+    "city": "嘉義市",
+    "department": "",
+    "contract": "05-235-9630#2505 \n0966-607-701 \n陳小姐",
+    "location": "嘉義市西區世賢路二段600號 ",
+    "time": "週一～週五 09:00~12:00 14:00~17:00",
+    "note": "",
+    "geo_point": [
+      23.468252193866,
+      120.42286620495
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "嘉義市西區世賢路二段600號, 600",
+          "location": {
+            "x": 120.42286620495,
+            "y": 23.468252193866
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "嘉義市西區世賢路二段600號, 600",
+            "Addr_type": "PointAddress",
+            "StAddr": "世賢路二段600號",
+            "City": "西區"
+          },
+          "extent": {
+            "xmin": 120.42186620495,
+            "ymin": 23.467252193866,
+            "xmax": 120.42386620495,
+            "ymax": 23.469252193866
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "嘉義基督教醫院",
+    "city": "嘉義市",
+    "department": "",
+    "contract": "05-276-5041#2733\n0905-203-695\n0972-951-768\n金小姐",
+    "location": "嘉義市東區忠孝路539號",
+    "time": "週一、四 08:00~12:00｜週二、四、五 13:30~17:30",
+    "note": "",
+    "geo_point": [
+      23.499400016619,
+      120.450049974234
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "嘉義市忠孝路539號, 30069",
+          "location": {
+            "x": 120.450049974234,
+            "y": 23.499400016619
+          },
+          "score": 97.8,
+          "attributes": {
+            "Match_addr": "嘉義市忠孝路539號, 30069",
+            "Addr_type": "PointAddress",
+            "StAddr": "忠孝路539號",
+            "City": "嘉義市"
+          },
+          "extent": {
+            "xmin": 120.449049974234,
+            "ymin": 23.498400016619,
+            "xmax": 120.451049974234,
+            "ymax": 23.500400016619
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "衛生福利部朴子醫院",
+    "city": "嘉義縣",
+    "department": "",
+    "contract": "05-3790-600#297\n05-3790-600#500\n05-3701-875（匿篩專線）\n何小姐",
+    "location": "嘉義朴子市永和里42-50號",
+    "time": "週一～週五 08:30~12:00 13:30~17:30",
+    "note": "",
+    "geo_point": [
+      23.464452,
+      120.2320641
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": []
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "嘉義長庚紀念醫院",
+    "city": "嘉義縣",
+    "department": "",
+    "contract": "05-3621-000#3803\n0975-353-189\n侯小姐",
+    "location": "嘉義縣朴子市嘉朴路西段6號",
+    "time": "週一～週五 08:30~16:00  ",
+    "note": "",
+    "geo_point": [
+      23.461938986304,
+      120.283367028592
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "嘉義縣朴子市嘉朴路西段6號, 61363",
+          "location": {
+            "x": 120.283367028592,
+            "y": 23.461938986304
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "嘉義縣朴子市嘉朴路西段6號, 61363",
+            "Addr_type": "PointAddress",
+            "StAddr": "嘉朴路西段6號",
+            "City": "朴子市"
+          },
+          "extent": {
+            "xmin": 120.282367028592,
+            "ymin": 23.460938986304,
+            "xmax": 120.284367028592,
+            "ymax": 23.462938986304
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "大林慈濟醫院",
+    "city": "嘉義縣",
+    "department": "",
+    "contract": "05-2648000#5931\n網頁（網路預約）\n鄭小姐",
+    "location": "嘉義縣大林鎮民生路2號",
+    "time": "週三、週四 14:00~16:00",
+    "note": "",
+    "geo_point": [
+      23.596312293595,
+      120.457449602176
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "嘉義縣大林鎮民生路2號, 62251",
+          "location": {
+            "x": 120.457449602176,
+            "y": 23.596312293595
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "嘉義縣大林鎮民生路2號, 62251",
+            "Addr_type": "PointAddress",
+            "StAddr": "民生路2號",
+            "City": "大林鎮"
+          },
+          "extent": {
+            "xmin": 120.456449602176,
+            "ymin": 23.595312293595,
+            "xmax": 120.458449602176,
+            "ymax": 23.597312293595
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "衛生福利部彰化醫院",
+    "city": "彰化縣",
+    "department": "",
+    "contract": "04-8298-686#1219\n劉小姐",
+    "location": "彰化縣埔心鄉舊館村中正路2段80號",
+    "time": "週一、週三 08:30~11:30｜週四 14:00~16:30｜週二 18:30~20:30｜國定假日（視當日門診時段）",
+    "note": "",
+    "geo_point": [
+      23.95022499559,
+      120.527299018822
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "彰化縣埔心鄉中正路二段80號, 51341",
+          "location": {
+            "x": 120.527299018822,
+            "y": 23.95022499559
+          },
+          "score": 97.36,
+          "attributes": {
+            "Match_addr": "彰化縣埔心鄉中正路二段80號, 51341",
+            "Addr_type": "PointAddress",
+            "StAddr": "中正路二段80號",
+            "City": "埔心鄉"
+          },
+          "extent": {
+            "xmin": 120.526299018822,
+            "ymin": 23.94922499559,
+            "xmax": 120.528299018822,
+            "ymax": 23.95122499559
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "彰化基督教醫院",
+    "city": "彰化縣",
+    "department": "",
+    "contract": "04-723-8595#4090\n0983-145-043 \n程小姐",
+    "location": "彰化縣彰化市南校街135號 ",
+    "time": "週一~週五 08:30~12:00 13:30~17:30",
+    "note": "",
+    "geo_point": [
+      24.071490012143,
+      120.544460965574
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "彰化縣南校街135號, 50006",
+          "location": {
+            "x": 120.544460965574,
+            "y": 24.071490012143
+          },
+          "score": 92.67,
+          "attributes": {
+            "Match_addr": "彰化縣南校街135號, 50006",
+            "Addr_type": "PointAddress",
+            "StAddr": "南校街135號",
+            "City": "彰化縣"
+          },
+          "extent": {
+            "xmin": 120.543460965574,
+            "ymin": 24.070490012143,
+            "xmax": 120.545460965574,
+            "ymax": 24.072490012143
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "秀傳紀念醫院",
+    "city": "彰化縣",
+    "department": "",
+    "contract": "04-7256-166#81283\n04-7256-166#85609\n0905-091-239\n薛小姐",
+    "location": "彰化縣彰化市中山路一段542號",
+    "time": "週一～週五 08:30~17:00｜週六及國定假日 08:30~12:00",
+    "note": "",
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "彰化縣秀水鄉中山路1號, 504",
+          "location": {
+            "x": 120.509330751383,
+            "y": 24.03989821455
+          },
+          "score": 94.54,
+          "attributes": {
+            "Match_addr": "彰化縣秀水鄉中山路1號, 504",
+            "Addr_type": "StreetAddress",
+            "StAddr": "中山路1號",
+            "City": "秀水鄉"
+          },
+          "extent": {
+            "xmin": 120.508330751383,
+            "ymin": 24.03889821455,
+            "xmax": 120.510330751383,
+            "ymax": 24.04089821455
+          }
+        }
+      ]
+    },
+    "geo_point": [
+      24.03989821455,
+      120.509330751383
+    ]
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "員林基督教醫院",
+    "city": "彰化縣",
+    "department": "",
+    "contract": "04-838-1456#1935\n0961-521-986\n黃小姐",
+    "location": "彰化縣員林市莒光路456號 ",
+    "time": "週一～週五 09:00~12:00 13:30~17:00",
+    "note": "",
+    "geo_point": [
+      23.962217571739,
+      120.566741125301
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "彰化縣員林市莒光路456號, 510",
+          "location": {
+            "x": 120.566741125301,
+            "y": 23.962217571739
+          },
+          "score": 98.9,
+          "attributes": {
+            "Match_addr": "彰化縣員林市莒光路456號, 510",
+            "Addr_type": "StreetAddressExt",
+            "StAddr": "莒光路456號",
+            "City": "員林市"
+          },
+          "extent": {
+            "xmin": 120.565741125301,
+            "ymin": 23.961217571739,
+            "xmax": 120.567741125301,
+            "ymax": 23.963217571739
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "匿名篩檢院所",
+    "name": "衛生福利部澎湖醫院",
+    "city": "澎湖縣",
+    "department": "",
+    "contract": "06-9261-151#50306\n許小姐",
+    "location": "澎湖縣馬公市中正路10號",
+    "time": "週一～週五 09:00~12:00 14:00~17:00",
+    "note": "",
+    "geo_point": [
+      23.564573001845,
+      119.565372029117
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "澎湖縣中正路10號, 88041",
+          "location": {
+            "x": 119.565372029117,
+            "y": 23.564573001845
+          },
+          "score": 97.8,
+          "attributes": {
+            "Match_addr": "澎湖縣中正路10號, 88041",
+            "Addr_type": "PointAddress",
+            "StAddr": "中正路10號",
+            "City": "澎湖縣"
+          },
+          "extent": {
+            "xmin": 119.564372029117,
+            "ymin": 23.563573001845,
+            "xmax": 119.566372029117,
+            "ymax": 23.565573001845
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "G籠同學會",
+    "city": "基隆市",
+    "department": "",
+    "contract": "02-24281528",
+    "location": "基隆市信義區信二路266號1樓",
+    "time": "週一～週五 09:00-17:00",
+    "note": "",
+    "geo_point": [
+      25.12990800437,
+      121.74910800613
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "基隆市信義區信二路266號, 20147",
+          "location": {
+            "x": 121.74910800613,
+            "y": 25.12990800437
+          },
+          "score": 98.67,
+          "attributes": {
+            "Match_addr": "基隆市信義區信二路266號, 20147",
+            "Addr_type": "PointAddress",
+            "StAddr": "信二路266號",
+            "City": "信義區"
+          },
+          "extent": {
+            "xmin": 121.74810800613,
+            "ymin": 25.12890800437,
+            "xmax": 121.75010800613,
+            "ymax": 25.13090800437
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "彩虹酷兒健康文化中心",
+    "city": "台北市",
+    "department": "",
+    "contract": "02-23920010",
+    "location": "台北市中正區羅斯福路二段70號9樓之4",
+    "time": "週二～週六 14:00-22:00｜週日 13:00-18:00",
+    "note": "",
+    "geo_point": [
+      25.027234007151,
+      121.52203504067
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台北市中正區羅斯福路二段70號, 10084",
+          "location": {
+            "x": 121.52203504067,
+            "y": 25.027234007151
+          },
+          "score": 97.89,
+          "attributes": {
+            "Match_addr": "台北市中正區羅斯福路二段70號, 10084",
+            "Addr_type": "PointAddress",
+            "StAddr": "羅斯福路二段70號",
+            "City": "中正區"
+          },
+          "extent": {
+            "xmin": 121.52103504067,
+            "ymin": 25.026234007151,
+            "xmax": 121.52303504067,
+            "ymax": 25.028234007151
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "當我們同在一起",
+    "city": "台北市",
+    "department": "",
+    "contract": "02-23703738",
+    "location": "台北市萬華區昆明街100號5樓",
+    "time": "週一～週五 09:00-17:00",
+    "note": "",
+    "geo_point": [
+      25.044284013586,
+      121.504990021468
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台北市萬華區西門町昆明街100號, 10844",
+          "location": {
+            "x": 121.504990021468,
+            "y": 25.044284013586
+          },
+          "score": 98.67,
+          "attributes": {
+            "Match_addr": "台北市萬華區西門町昆明街100號, 10844",
+            "Addr_type": "PointAddress",
+            "StAddr": "昆明街100號",
+            "City": "萬華區"
+          },
+          "extent": {
+            "xmin": 121.503990021468,
+            "ymin": 25.043284013586,
+            "xmax": 121.505990021468,
+            "ymax": 25.045284013586
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "紅樓部屋",
+    "city": "台北市",
+    "department": "",
+    "contract": "02-23611069",
+    "location": "台北市萬華區成都路10巷19號2樓",
+    "time": "週二～週日 18:00-23:00",
+    "note": "",
+    "geo_point": [
+      25.041892991886,
+      121.506945016564
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台北市萬華區西門町成都路10巷19號, 10845",
+          "location": {
+            "x": 121.506945016564,
+            "y": 25.041892991886
+          },
+          "score": 98.82,
+          "attributes": {
+            "Match_addr": "台北市萬華區西門町成都路10巷19號, 10845",
+            "Addr_type": "PointAddress",
+            "StAddr": "成都路10巷19號",
+            "City": "萬華區"
+          },
+          "extent": {
+            "xmin": 121.505945016564,
+            "ymin": 25.040892991886,
+            "xmax": 121.507945016564,
+            "ymax": 25.042892991886
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "大台北同學會",
+    "city": "新北市",
+    "department": "",
+    "contract": "02-22505110",
+    "location": "僅提供網路服務",
+    "time": "週三～週日 13:30-21:30",
+    "note": "",
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": []
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "性福巴士192-1號",
+    "city": "新北市",
+    "department": "衛生局9樓",
+    "contract": "0800-001-069",
+    "location": "新北市板橋區英士路192-1號9樓",
+    "time": "週一～週五 09:00-17:00｜其餘時間採預約制",
+    "note": "",
+    "geo_point": [
+      25.023710336438,
+      121.458019512985
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "新北市英士路192號, 220",
+          "location": {
+            "x": 121.458019512985,
+            "y": 25.023710336438
+          },
+          "score": 95.44,
+          "attributes": {
+            "Match_addr": "新北市英士路192號, 220",
+            "Addr_type": "StreetAddress",
+            "StAddr": "英士路192號",
+            "City": "新北市"
+          },
+          "extent": {
+            "xmin": 121.457019512985,
+            "ymin": 25.022710336438,
+            "xmax": 121.459019512985,
+            "ymax": 25.024710336438
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "愛在彩虹橋",
+    "city": "宜蘭縣",
+    "department": "",
+    "contract": "03-9356519",
+    "location": "宜蘭縣宜蘭市女中路2段287號",
+    "time": "週一～週五 08:00-12:00 13:00- 17:00",
+    "note": "",
+    "geo_point": [
+      24.745811901403,
+      121.754740225968
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "宜蘭縣宜蘭市女中路二段287號, 26051",
+          "location": {
+            "x": 121.754740225968,
+            "y": 24.745811901403
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "宜蘭縣宜蘭市女中路二段287號, 26051",
+            "Addr_type": "PointAddress",
+            "StAddr": "女中路二段287號",
+            "City": "宜蘭市"
+          },
+          "extent": {
+            "xmin": 121.753740225968,
+            "ymin": 24.744811901403,
+            "xmax": 121.755740225968,
+            "ymax": 24.746811901403
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "風城部屋",
+    "city": "新竹市",
+    "department": "",
+    "contract": "03-5237969",
+    "location": "新竹市民族路25號6樓",
+    "time": "週二～週六 14:00-22:00",
+    "note": "",
+    "geo_point": [
+      24.803587982805,
+      120.971853035023
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "新竹市東區民族路25號, 30043",
+          "location": {
+            "x": 120.971853035023,
+            "y": 24.803587982805
+          },
+          "score": 92.73,
+          "attributes": {
+            "Match_addr": "新竹市東區民族路25號, 30043",
+            "Addr_type": "PointAddress",
+            "StAddr": "民族路25號",
+            "City": "東區"
+          },
+          "extent": {
+            "xmin": 120.970853035023,
+            "ymin": 24.802587982805,
+            "xmax": 120.972853035023,
+            "ymax": 24.804587982805
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "桃園市桃園區復興路70號4樓之17",
+    "city": "桃園市",
+    "department": "",
+    "contract": "0920-696610",
+    "location": "桃園市桃園區復興路70號4樓之17",
+    "time": "週二、週四、週五 17:00-21:00｜週六 13:00-21:00",
+    "note": "",
+    "geo_point": [
+      24.991045098282,
+      121.317021567988
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "桃園市復興路70號, 33065",
+          "location": {
+            "x": 121.317021567988,
+            "y": 24.991045098282
+          },
+          "score": 82.01,
+          "attributes": {
+            "Match_addr": "桃園市復興路70號, 33065",
+            "Addr_type": "PointAddress",
+            "StAddr": "復興路70號",
+            "City": "桃園市"
+          },
+          "extent": {
+            "xmin": 121.316021567988,
+            "ymin": 24.990045098282,
+            "xmax": 121.318021567988,
+            "ymax": 24.992045098282
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "彩虹風城",
+    "city": "新竹市",
+    "department": "",
+    "contract": "03-5234647",
+    "location": "新竹市集賢街3號",
+    "time": "週二、週三及週四 15:00-19:00｜每月第二個星期六 13:00-16:00",
+    "note": "",
+    "geo_point": [
+      24.804837012107,
+      120.961497026012
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "新竹市集賢街3號, 30045",
+          "location": {
+            "x": 120.961497026012,
+            "y": 24.804837012107
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "新竹市集賢街3號, 30045",
+            "Addr_type": "PointAddress",
+            "StAddr": "集賢街3號",
+            "City": "新竹市"
+          },
+          "extent": {
+            "xmin": 120.960497026012,
+            "ymin": 24.803837012107,
+            "xmax": 120.962497026012,
+            "ymax": 24.805837012107
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "彩虹山城",
+    "city": "苗栗縣",
+    "department": "",
+    "contract": "037-722630",
+    "location": "苗栗縣後龍鎮大庄里光華路373號",
+    "time": "週一～週五 08:00-17:00｜每月第一週星期六 08:00-12:00｜其餘週末時間須提前預約",
+    "note": "",
+    "geo_point": [
+      24.611869067298,
+      120.792381581289
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "苗栗縣後龍鎮光華路373號, 35646",
+          "location": {
+            "x": 120.792381581289,
+            "y": 24.611869067298
+          },
+          "score": 91.4,
+          "attributes": {
+            "Match_addr": "苗栗縣後龍鎮光華路373號, 35646",
+            "Addr_type": "StreetAddressExt",
+            "StAddr": "光華路373號",
+            "City": "後龍鎮"
+          },
+          "extent": {
+            "xmin": 120.791381581289,
+            "ymin": 24.610869067298,
+            "xmax": 120.793381581289,
+            "ymax": 24.612869067298
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "台中基地",
+    "city": "台中市",
+    "department": "",
+    "contract": "04-22333252",
+    "location": "台中市北區雙十路二段82號",
+    "time": "週二至週六 13:30-21:30",
+    "note": "",
+    "geo_point": [
+      24.15870660644,
+      120.691380305538
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台中市北區雙十路二段82號, 40455",
+          "location": {
+            "x": 120.691380305538,
+            "y": 24.15870660644
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "台中市北區雙十路二段82號, 40455",
+            "Addr_type": "PointAddress",
+            "StAddr": "雙十路二段82號",
+            "City": "北區"
+          },
+          "extent": {
+            "xmin": 120.690380305538,
+            "ymin": 24.15770660644,
+            "xmax": 120.692380305538,
+            "ymax": 24.15970660644
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "彩虹奇蹟",
+    "city": "彰化縣",
+    "department": "",
+    "contract": "04-7114560",
+    "location": "彰化縣彰化市中山路2段162號",
+    "time": "週四～週五 18:00-21:00｜每週六 14:00-17:00",
+    "note": "",
+    "geo_point": [
+      24.029263995601,
+      120.538400011388
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "彰化縣花壇鄉中山路二段162號, 50352",
+          "location": {
+            "x": 120.538400011388,
+            "y": 24.029263995601
+          },
+          "score": 97.8,
+          "attributes": {
+            "Match_addr": "彰化縣花壇鄉中山路二段162號, 50352",
+            "Addr_type": "PointAddress",
+            "StAddr": "中山路二段162號",
+            "City": "花壇鄉"
+          },
+          "extent": {
+            "xmin": 120.537400011388,
+            "ymin": 24.028263995601,
+            "xmax": 120.539400011388,
+            "ymax": 24.030263995601
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "彩虹部落",
+    "city": "南投縣",
+    "department": "",
+    "contract": "049-2220740",
+    "location": "南投縣南投市復興路6號",
+    "time": "週一～週五 08:30-17:30",
+    "note": "",
+    "geo_point": [
+      23.962574514543,
+      120.669332212149
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "南投縣草屯鎮復興路6號, 54259",
+          "location": {
+            "x": 120.669332212149,
+            "y": 23.962574514543
+          },
+          "score": 97.8,
+          "attributes": {
+            "Match_addr": "南投縣草屯鎮復興路6號, 54259",
+            "Addr_type": "PointAddress",
+            "StAddr": "復興路6號",
+            "City": "草屯鎮"
+          },
+          "extent": {
+            "xmin": 120.668332212149,
+            "ymin": 23.961574514543,
+            "xmax": 120.670332212149,
+            "ymax": 23.963574514543
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "雲林彩虹工作坊",
+    "city": "雲林縣",
+    "department": "",
+    "contract": "0937-171216",
+    "location": "雲林縣斗六市鎮西里公園路75號",
+    "time": "週一～週五 08:30-17:30",
+    "note": "",
+    "geo_point": [
+      23.698409986541,
+      120.529341865533
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "雲林縣公園路, 64054",
+          "location": {
+            "x": 120.529341865533,
+            "y": 23.698409986541
+          },
+          "score": 88.66,
+          "attributes": {
+            "Match_addr": "雲林縣公園路, 64054",
+            "Addr_type": "StreetName",
+            "StAddr": "公園路",
+            "City": "雲林縣"
+          },
+          "extent": {
+            "xmin": 120.528341865533,
+            "ymin": 23.697409986541,
+            "xmax": 120.530341865533,
+            "ymax": 23.699409986541
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "諸羅部屋",
+    "city": "嘉義縣",
+    "department": "",
+    "contract": "05-2266910",
+    "location": "嘉義縣民雄鄉中樂村文化路7之2號",
+    "time": "週二～週六 13:30-21:30",
+    "note": "",
+    "geo_point": [
+      23.551468315325,
+      120.428267670995
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "嘉義縣民雄鄉文化路7號, 62142",
+          "location": {
+            "x": 120.428267670995,
+            "y": 23.551468315325
+          },
+          "score": 97.1,
+          "attributes": {
+            "Match_addr": "嘉義縣民雄鄉文化路7號, 62142",
+            "Addr_type": "PointAddress",
+            "StAddr": "文化路7號",
+            "City": "民雄鄉"
+          },
+          "extent": {
+            "xmin": 120.427267670995,
+            "ymin": 23.550468315325,
+            "xmax": 120.429267670995,
+            "ymax": 23.552468315325
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "南方彩虹街6號",
+    "city": "台南市",
+    "department": "",
+    "contract": "06-2631841",
+    "location": "台南市南區南和路6號3樓",
+    "time": "週二～週日 13:00-20:00",
+    "note": "",
+    "geo_point": [
+      22.960676491708,
+      120.188067387877
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "台南市南區南和路6號, 70261",
+          "location": {
+            "x": 120.188067387877,
+            "y": 22.960676491708
+          },
+          "score": 98.33,
+          "attributes": {
+            "Match_addr": "台南市南區南和路6號, 70261",
+            "Addr_type": "PointAddress",
+            "StAddr": "南和路6號",
+            "City": "南區"
+          },
+          "extent": {
+            "xmin": 120.187067387877,
+            "ymin": 22.959676491708,
+            "xmax": 120.189067387877,
+            "ymax": 22.961676491708
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "陽光酷兒中心",
+    "city": "高雄市",
+    "department": "",
+    "contract": "07-2351010",
+    "location": "高雄市新興區河南一路120號2樓",
+    "time": "週一～週二 14:00-23:00｜週四～週日 14:00-23:00",
+    "note": "",
+    "geo_point": [
+      22.636471014766,
+      120.303087970383
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "高雄市新興區河南一路120號, 80050",
+          "location": {
+            "x": 120.303087970383,
+            "y": 22.636471014766
+          },
+          "score": 98.75,
+          "attributes": {
+            "Match_addr": "高雄市新興區河南一路120號, 80050",
+            "Addr_type": "PointAddress",
+            "StAddr": "河南一路120號",
+            "City": "新興區"
+          },
+          "extent": {
+            "xmin": 120.302087970383,
+            "ymin": 22.635471014766,
+            "xmax": 120.304087970383,
+            "ymax": 22.637471014766
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "彩虹逗陣聯盟",
+    "city": "高雄市",
+    "department": "",
+    "contract": "07-7134000#1354\n臉書粉專私訊預約",
+    "location": "高雄市苓雅區凱旋二路132-1號",
+    "time": "週一～週五 08:00-17:30",
+    "note": "",
+    "geo_point": [
+      22.626023014368,
+      120.324226040544
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "高雄市凱旋二路132號, 80276",
+          "location": {
+            "x": 120.324226040544,
+            "y": 22.626023014368
+          },
+          "score": 96.58,
+          "attributes": {
+            "Match_addr": "高雄市凱旋二路132號, 80276",
+            "Addr_type": "PointAddress",
+            "StAddr": "凱旋二路132號",
+            "City": "高雄市"
+          },
+          "extent": {
+            "xmin": 120.323226040544,
+            "ymin": 22.625023014368,
+            "xmax": 120.325226040544,
+            "ymax": 22.627023014368
+          }
+        }
+      ]
+    }
+  },
+  {
+    "retrieved_at": 1757006931.047092,
+    "site_type": "多元性別健康\n社區服務中心",
+    "name": "屏水相逢健康中心",
+    "city": "屏東縣",
+    "department": "",
+    "contract": "08-7379006\nLine：@800wmuni",
+    "location": "屏東市自由路272號2樓",
+    "time": "週一～週五 08:00-17:00",
+    "note": "",
+    "geo_point": [
+      22.675164017209,
+      120.496374992885
+    ],
+    "address_info": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "屏東縣自由路272號, 90054",
+          "location": {
+            "x": 120.496374992885,
+            "y": 22.675164017209
+          },
+          "score": 84.56,
+          "attributes": {
+            "Match_addr": "屏東縣自由路272號, 90054",
+            "Addr_type": "PointAddress",
+            "StAddr": "自由路272號",
+            "City": "屏東縣"
+          },
+          "extent": {
+            "xmin": 120.495374992885,
+            "ymin": 22.674164017209,
+            "xmax": 120.497374992885,
+            "ymax": 22.676164017209
+          }
+        }
+      ]
+    }
+  }
+]
