@@ -34,9 +34,16 @@
     }
     .locate-btn:disabled { opacity: 0.6; cursor: not-allowed; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .go-back-btn {
+      position: absolute; z-index: 1000; top: 10px; left: 50%; transform: translateX(-50%);
+      background: #fff; border: 1px solid #ccc; border-radius: 6px;
+      padding: 8px 10px; cursor: pointer; font: 14px/1.2 system-ui;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
   </style>
 </head>
 <body>
+  <button id="goBackBtn" class="go-back-btn" type="button" aria-label="回上頁" onclick="javascript:history.back()">回到上頁</button>
   <button id="locateBtn" class="locate-btn" type="button" aria-label="移到我的位置">📍 移到我的位置</button>
   <div id="map" role="region" aria-label="HIV self-tester stock map"></div>
 
@@ -180,7 +187,7 @@
       });
     }
 
-    async function locateUser() {
+    async function locateUser(showAlertOnError = true) {
       const btn = document.getElementById('locateBtn');
       btn.disabled = true;
       btn.textContent = '定位中…';
@@ -195,7 +202,8 @@
           showUserLocation(ev.latlng, ev.accuracy);
         });
         map.once('locationerror', (ev) => {
-          alert('Unable to determine your location: ' + ev.message);
+          console.warn('Unable to determine your location: ', ev?.message || ev);
+          if (showAlertOnError) alert('無法抓取到你的位置，請確定位置權限是否開啟。');
         });
         map.locate({ setView: false, maxZoom: 13, enableHighAccuracy: true, timeout: 10000 });
       } finally {
@@ -205,7 +213,7 @@
     }
 
     document.getElementById('locateBtn').addEventListener('click', locateUser);
-    setTimeout(locateUser, 1000); // Auto-locate after 1 second
+    setTimeout(() => locateUser(false), 1000); // Auto-locate after 1 second
   </script>
 </body>
 </html>

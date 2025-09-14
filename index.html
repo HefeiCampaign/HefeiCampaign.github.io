@@ -6,74 +6,143 @@
   <title>Beacon OF Love｜最即時的愛滋資訊整合網站</title>
   <style>
     :root{
-      --bg:#0f0f11;
-      --panel:#1b1c1f;
-      --muted:#9aa0a6;
-      --text:#e6e8ea;
-      --brand:#7dd3fc;
-      --accent:#86efac;
-      --shadow: 0 8px 24px rgba(0,0,0,.25);
-      --radius: 14px;
+      --bg:#0f0f11; --panel:#1b1c1f; --muted:#9aa0a6; --text:#e6e8ea;
+      --brand:#7dd3fc; --shadow:0 8px 24px rgba(0,0,0,.25); --radius:14px; --drawer-w:320px;
     }
-    html,body{height:100%}
-    body{
-      margin:0; background:var(--bg); color:var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-                   Roboto, "Noto Sans TC","PingFang TC","Microsoft JhengHei", Arial, sans-serif;
-      line-height:1.65;
-    }
-    .container{max-width:1100px; margin:24px auto; padding:0 16px}
+    body{margin:0; background:var(--bg); color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC","PingFang TC","Microsoft JhengHei", Arial, sans-serif;
+      line-height:1.65;}
+    .container{max-width:1100px; margin:0 auto; padding:0 16px}
     header{
-      display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;
-      background:var(--panel); border-radius:var(--radius); padding:14px 16px; box-shadow:var(--shadow)
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      background:var(--panel); border-radius:var(--radius); padding:12px 14px; box-shadow:var(--shadow);
+      margin-bottom: 12px; margin-top: 12px;
     }
+    .left{display:flex; align-items:center; gap:10px}
     .brand{font-weight:800; letter-spacing:.2px}
     .brand span{color:var(--brand)}
-    .tagline{opacity:.85; font-size:14px}
-    nav{
-      display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px; margin:14px 0 22px;
+    .brand a{color:var(--text); text-decoration:none; font-size:20px}
+    .tagline{opacity:.85; font-size:20px}
+    .tagline a{color:var(--text); text-decoration:none; font-size:20px}
+
+    /* ===== Desktop nav (你的原樣式) ===== */
+    .nav-desktop{
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+      gap:12px; margin:12px 0 12px;
     }
-    .nav-card{
-      background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow);
-      padding:10px 12px; display:flex; align-items:center; gap:10px;
+    .nav-card{background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:10px 12px; display:flex; align-items:center; gap:10px; justify-content:space-between;}
+    label{font-weight:700; font-size:14px}
+    select{width:100%; appearance:none; border:1px solid #2b2d31; background:#121316; color:var(--text);
+      border-radius:10px; padding:10px 12px; font-size:14px}
+    a.btn{display:inline-block; padding:10px 14px; color:#fff; text-decoration:none; border-radius:10px; font-size:14px; width: 100%;}
+
+    /* ===== Mobile hamburger + drawer ===== */
+    .hamburger{
+      width:40px; height:40px; border:0; border-radius:10px; background:#121316; color:var(--text);
+      display:none; /* desktop 隱藏，mobile 顯示 */
+      place-items:center; cursor:pointer;
     }
-    label{font-weight:700; font-size:14px; white-space:nowrap}
-    select{
-      width:100%; appearance:none; border:1px solid #2b2d31; background:#121316; color:var(--text);
-      border-radius:10px; padding:10px 12px; font-size:14px
+    .hamburger:focus-visible{outline:2px solid var(--brand)}
+    .hamburger svg{width:22px; height:22px}
+
+    .overlay{position:fixed; inset:0; background:rgba(0,0,0,.45); opacity:0; pointer-events:none;
+      transition:opacity .18s ease; z-index:40;}
+    .overlay.show{opacity:1; pointer-events:auto}
+    nav.drawer{
+      position:fixed; top:0; left:0; height:100vh; width:var(--drawer-w);
+      background:#121316; color:var(--text); box-shadow:var(--shadow);
+      transform:translateX(-100%); transition:transform .22s ease; z-index:50; display:flex; flex-direction:column;
     }
-    main{
-      background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow);
-      padding:22px 22px 28px;
+    nav.drawer.open{transform:none}
+    .drawer-header{display:flex; align-items:center; justify-content:space-between; gap:8px;
+      padding:12px 14px; background:#0f0f11; border-bottom:1px solid #232428;}
+    .drawer-title{font-weight:800}
+    .drawer-close{border:0; background:#1f2126; color:var(--text); border-radius:10px; width:36px; height:36px; cursor:pointer;}
+    .drawer-body{padding:10px 8px; overflow:auto}
+    .menu{list-style:none; margin:0; padding:0}
+    .menu > li{margin:6px 0}
+    details.menu-node{background:#191b20; border:1px solid #2b2d31; border-radius:12px; overflow:hidden;}
+    details.menu-node + details.menu-node{margin-top:8px}
+    summary.menu-head{list-style:none; cursor:pointer; padding:12px 14px; font-weight:700; position:relative;}
+    summary.menu-head::-webkit-details-marker{display:none}
+    summary.menu-head:after{content:"▾"; position:absolute; right:12px; top:50%; transform:translateY(-50%); opacity:.75; font-size:12px;}
+    .submenu{padding:10px 0; background:#14161a; border-top:1px solid #2b2d31}
+    .submenu a, .submenu button{width:100%; text-align:left; border:0; background:transparent; color:var(--text);
+      padding:10px 14px; cursor:pointer; display:block; font-size:15px;}
+    .submenu a:hover, .submenu button:hover{background:#0f1115}
+    .menu-link{border-left:3px solid transparent; text-decoration:none;}
+    .menu-link.active{border-left-color:var(--brand); background:#0f1115}
+    .menu-link.consult-link{display:block; border-radius:12px; padding:12px 14px; margin-top:8px; color:#fff;}
+    /* Mobile 專用：顯示漢堡，隱藏 desktop nav */
+    @media (max-width: 991.98px){
+      .hamburger{display:inline-grid}
+      .nav-desktop{display:none}
     }
+
+    /* Content */
+    main{background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px 22px 28px;}
     section{display:none; animation:fade .2s ease}
     section.active{display:block}
     h1{margin:.2em 0 .3em; font-size:28px}
-    h2{margin:1.4em 0 .4em; font-size:20px}
-    p{margin:.65em 0}
+    h2{margin:1.2em 0 .4em; font-size:20px}
     ul{margin:.4em 0 .8em 1.2em}
     .muted{color:var(--muted)}
-    .pill{
-      display:inline-block; padding:3px 9px; border-radius:999px;
-      font-size:12px; background:#0c4a6e; color:#e0f2fe; margin-left:6px
-    }
-    .hint{font-size:14px; color:var(--muted); margin-top:6px}
-    a.btn{
-      display:inline-block; padding:10px 14px; color:white; text-decoration:none;
-      width: 100%;
-    }
+    .pill{display:inline-block; padding:3px 9px; border-radius:999px; font-size:12px; background:#0c4a6e; color:#e0f2fe; margin-left:6px}
     @keyframes fade{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
+
+    /* ===== Welcome hero (首頁左右欄) ===== */
+    .hero{
+      display:flex; gap:24px; align-items:flex-start;
+    }
+    .hero-left{
+      flex:0 0 340px; /* 左欄寬：可調整 320~380 */
+    }
+    .game-preview{
+      background:#14161a; border:1px solid #2b2d31;
+      border-radius:12px; box-shadow:var(--shadow);
+      aspect-ratio: 4 / 3; /* 預覽比例；可改 16/9 */
+      display:grid; place-items:center;
+      font-weight:700; color:var(--muted);
+      user-select:none;
+    }
+    .game-cta{ margin-top:12px; }
+    .btn-primary{
+      display:block;
+      padding:12px 16px; border:0; border-radius:12px;
+      background:#0ea5e9; color:#fff; font-weight:700; cursor:pointer;
+      text-align:center; text-decoration:none;
+      box-shadow:var(--shadow);
+    }
+    .btn-primary:hover{ filter:brightness(0.95); }
+    .btn-primary:active{ transform:translateY(1px); }
+
+    /* RWD：手機直式改為上下堆疊 */
+    @media (max-width: 991.98px){
+      .hero{ flex-direction:column; }
+      .hero-left{ flex:unset; width:100%; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="brand">Beacon <span>OF</span> Love</div>
-      <div class="tagline">最即時的愛滋資訊整合網站</div>
+      <div class="left">
+        <!-- 漢堡鍵（只在手機顯示） -->
+        <button class="hamburger" id="openMenu" aria-label="開啟主選單" aria-controls="drawer" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
+        </button>
+        <div class="brand">
+          <a href="#welcome">Beacon <span>OF</span> Love</a>
+        </div>
+      </div>
+      <div class="tagline">
+        <a href="#welcome">最即時的愛滋資訊整合網站</a>
+      </div>
     </header>
 
-    <!-- 第二排下拉式選單 -->
-    <nav aria-label="主選單">
+    <!-- 桌面版導覽（維持你原本樣式） -->
+    <nav class="nav-desktop" aria-label="桌面導覽">
       <div class="nav-card">
         <label for="m1">認識 HIV</label>
         <select id="m1">
@@ -83,7 +152,6 @@
           <option value="myths">常見迷思與破解</option>
         </select>
       </div>
-
       <div class="nav-card">
         <label for="m2">誰需要 HIV 篩檢？</label>
         <select id="m2">
@@ -93,7 +161,6 @@
           <option value="delay">延誤篩檢的後果</option>
         </select>
       </div>
-
       <div class="nav-card">
         <label for="m3">篩檢後的下一步</label>
         <select id="m3">
@@ -102,7 +169,6 @@
           <option value="positive">如果篩檢是陽性</option>
         </select>
       </div>
-
       <div class="nav-card">
         <label for="m4">我要篩檢</label>
         <select id="m4">
@@ -111,19 +177,89 @@
           <option value="redirect:selftester.html">篩檢試劑（自我篩檢） →</option>
         </select>
       </div>
-
-      <!-- 改成直接按鈕 -->
       <div class="nav-card">
-        <a href="consult.html" class="btn">我要諮詢→</a>
+        <a href="consult.html" class="btn">前往諮詢服務 →</a>
+      </div>
+    </nav>
+
+    <!-- 手機版抽屜選單 -->
+    <div class="overlay" id="overlay"></div>
+    <nav class="drawer" id="drawer" aria-label="手機抽屜選單">
+      <div class="drawer-header">
+        <div class="drawer-title">網站選單</div>
+        <button class="drawer-close" id="closeMenu" aria-label="關閉主選單">✕</button>
+      </div>
+      <div class="drawer-body">
+        <ul class="menu">
+          <li>
+            <details class="menu-node" id="node-1">
+              <summary class="menu-head">認識 HIV</summary>
+              <div class="submenu">
+                <button class="menu-link" data-target="about-hiv">什麼是 HIV？什麼是 AIDS？</button>
+                <button class="menu-link" data-target="transmission">HIV 如何傳染？</button>
+                <button class="menu-link" data-target="myths">常見迷思與破解</button>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="menu-node" id="node-2">
+              <summary class="menu-head">誰需要 HIV 篩檢？</summary>
+              <div class="submenu">
+                <button class="menu-link" data-target="why-testing">篩檢為什麼重要</button>
+                <button class="menu-link" data-target="who-testing">誰需要進行 HIV 篩檢？</button>
+                <button class="menu-link" data-target="delay">延誤篩檢的後果</button>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="menu-node" id="node-3">
+              <summary class="menu-head">篩檢後的下一步</summary>
+              <div class="submenu">
+                <button class="menu-link" data-target="negative">如果篩檢是陰性</button>
+                <button class="menu-link" data-target="positive">如果篩檢是陽性</button>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="menu-node" id="node-4">
+              <summary class="menu-head">我要篩檢</summary>
+              <div class="submenu">
+                <a class="menu-link" href="screening.html">實體篩檢站 →</a>
+                <a class="menu-link" href="selftester.html">篩檢試劑（自我篩檢） →</a>
+              </div>
+            </details>
+          </li>
+          <li>
+            <a class="menu-link consult-link" href="consult.html">我要諮詢 →</a>
+          </li>
+        </ul>
       </div>
     </nav>
 
     <!-- 內容區 -->
     <main id="content" tabindex="-1" aria-live="polite">
-      <section id="welcome" class="active">
-        <h1>歡迎使用</h1>
-        <p>請透過上方「下拉式選單」選擇你想看的主題。所有資訊皆依據你提供的版面原型整理為單頁展開，並可即時切換。</p>
-        <p class="hint">需要前往實體篩檢或購買自我篩檢試劑？請在「我要篩檢」選單中選擇對應項目，系統會帶你前往指定頁面。</p>
+      <!-- 首頁 hero 版型 -->
+      <section id="welcome" class="active" aria-labelledby="welcome-title">
+        <div class="hero">
+          <!-- 左欄：遊戲預覽 + CTA -->
+          <aside class="hero-left">
+            <div class="game-preview" aria-label="遊戲預覽圖">
+              遊戲預覽圖
+            </div>
+            <div class="game-cta">
+              <!-- 依你的實際連結調整 href -->
+              <a class="btn-primary" href="https://aids-protect-game.vercel.app/" id="game-cta">點擊體驗遊戲</a>
+            </div>
+          </aside>
+          <!-- 右欄：標題與內文 -->
+          <div class="hero-body">
+            <h1 id="welcome-title">關於這個平台</h1>
+            <p>我們建立這個平台的初衷，是希望解決愛滋相關資訊分散、更新不易的問題。許多人在自我評估、篩檢或尋求諮詢時，常因缺乏整合資訊而感到困惑與不安。</p>
+            <p>本平台匯集政府機構、專業醫療院所與非政府組織的可靠資源，同時提供北、中、南各地的服務據點。無論你需要快速自我檢測、專人線上回覆，或進一步預約篩檢，都能在這裡找到最合適的管道。</p>
+            <p>除了資訊，我們也設計了互動遊戲，以輕鬆有趣的方式帶你了解愛滋防治的重要觀念。誠摯邀請你邊玩邊學，並鼓勵身邊的朋友一起參與。</p>
+            <p>我們強調匿名、免費與友善，確保隱私安全，讓每個人都能安心獲得支持。未來，我們也期望這個平台能成為大眾了解愛滋、減少恐懼與誤解的重要入口。</p>
+          </div>
+        </div>
       </section>
 
       <!-- 認識 HIV / 什麼是 -->
@@ -227,38 +363,72 @@
   </div>
 
   <script>
-    // 工具：切換顯示 section；若為 redirect 選項則導頁
-    const selects = Array.from(document.querySelectorAll('select'));
+    // ===== 共用：section 切換 =====
     const sections = Array.from(document.querySelectorAll('main section'));
-    const show = (id)=>{
+    function showSection(id){
       sections.forEach(s => s.classList.toggle('active', s.id === id));
-      document.getElementById('content').focus({preventScroll:false});
       history.replaceState(null, '', id ? '#'+id : '#');
-    };
+      // 高亮手機抽屜的目前項目
+      document.querySelectorAll('.menu-link').forEach(el=>{
+        el.classList.toggle('active', el.dataset?.target === id);
+      });
+      closeDrawer();
+    }
+    function fromHash(){
+      const id = decodeURIComponent(location.hash.replace('#',''));
+      if(id && document.getElementById(id)) showSection(id);
+    }
+    window.addEventListener('hashchange', fromHash);
+    // 初始顯示
+    if(location.hash){ fromHash(); } else { showSection('welcome'); }
 
-    // 綁定四個選單
+    // ===== 桌面版 select 操作（維持原本行為）=====
+    const selects = Array.from(document.querySelectorAll('.nav-desktop select'));
     selects.forEach(sel=>{
       sel.addEventListener('change', e=>{
         const value = e.target.value;
         if(!value) return;
         if(value.startsWith('redirect:')){
-          const url = value.replace('redirect:','');
-          window.location.href = url;
+          window.location.href = value.replace('redirect:','');
           return;
         }
-        show(value);
-        // 清空其他選單避免混淆
+        showSection(value);
         selects.filter(s=>s!==sel).forEach(s=>s.selectedIndex = 0);
       });
     });
 
-    // 允許用網址 #hash 直接開啟指定區塊
-    const fromHash = () => {
-      const id = decodeURIComponent(location.hash.replace('#',''));
-      if(id && document.getElementById(id)) show(id);
-    };
-    window.addEventListener('hashchange', fromHash);
-    fromHash();
+    // ===== 手機抽屜：開合 =====
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('overlay');
+    const openBtn = document.getElementById('openMenu');
+    const closeBtn = document.getElementById('closeMenu');
+
+    function openDrawer(){
+      document.getElementById('drawer').classList.add('open');
+      document.getElementById('overlay').classList.add('show');
+      document.getElementById('openMenu')?.setAttribute('aria-expanded','true');
+      // 預設展開第一節
+      const first = document.getElementById('node-1');
+      if(first) first.open = true;
+    }
+    function closeDrawer(){
+      document.getElementById('drawer').classList.remove('open');
+      document.getElementById('overlay').classList.remove('show');
+      document.getElementById('openMenu')?.setAttribute('aria-expanded','false');
+    }
+    // 綁定事件（確保元素存在）
+    if(openBtn){ openBtn.addEventListener('click', openDrawer); }
+    if(closeBtn){ closeBtn.addEventListener('click', closeDrawer); }
+    if(overlay){ overlay.addEventListener('click', closeDrawer); }
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeDrawer(); });
+
+    // 手機抽屜子選單 → 顯示對應 section
+    document.querySelectorAll('.submenu button.menu-link').forEach(btn=>{
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.target;
+        if(id) showSection(id);
+      });
+    });
   </script>
 </body>
 </html>
