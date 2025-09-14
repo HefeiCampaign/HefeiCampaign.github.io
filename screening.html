@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Beacon OF Love - 我要篩檢 - 實體篩檢站</title>
+  <title>Beacon OF Love｜最即時的愛滋資訊整合網站 - 我要篩檢 - 實體篩檢站</title>
 
   <!-- Leaflet CSS -->
   <link
@@ -80,11 +80,11 @@
       return `
         <div>
           <div class="popup-title">${item.name ?? '未命名'}${item.retrieved_at ? `<span class="popup-retrieve-time">(資料抓取時間：${new Date(item.retrieved_at * 1000).toLocaleString()})</span>` : ''}</div>
-          <p class="popup-desc">類別：${item.site_type ?? ''}</p>
+          <p class="popup-desc">類別：${item.screening_type ?? ''}</p>
           <p class="popup-desc">縣市：${item.city ?? ''}</p>
           <p class="popup-desc">地點：${item.location ?? '（無地點）'}</p>
           <p class="popup-desc">聯絡資訊：${item.contract ?? '無'}</p>
-          ${item.retrieved_at ? `<p class="popup-desc">資料抓取時間：${new Date(item.retrieved_at * 1000).toLocaleString()}</p>` : ''}
+          <p class="popup-desc">日期與時間：${item.date ?? ''} ${item.time ?? ''}</p>
         </div>
       `;
     }
@@ -93,11 +93,10 @@
       return `
         <div>
           <div class="popup-title">${item.name ?? '未命名'}${item.retrieved_at ? `<span class="popup-retrieve-time">(資料抓取時間：${new Date(item.retrieved_at * 1000).toLocaleString()})</span>` : ''}</div>
-          <p class="popup-desc">類別：${item.screening_type ?? ''}</p>
+          <p class="popup-desc">類別：${item.site_type ?? ''}</p>
           <p class="popup-desc">縣市：${item.city ?? ''}</p>
           <p class="popup-desc">地點：${item.location ?? '（無地點）'}</p>
           <p class="popup-desc">聯絡資訊：${item.contract ?? '無'}</p>
-          <p class="popup-desc">日期與時間：${item.date ?? ''} ${item.time ?? ''}</p>
           
         </div>
       `;
