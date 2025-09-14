@@ -18,6 +18,7 @@
     #map { height: 100%; width: 100%; }
     .popup-title { font-weight: 700; margin-bottom: 0.25rem; }
     .popup-desc { margin: 0.15rem 0; }
+    .popup-retrieve-time { font-size: 0.65rem; color: #999; font-weight: 400; margin-left: 8px; }
     .legend {
       position: absolute; z-index: 1000; bottom: 24px; right: 12px;
       background: rgba(255,255,255,0.95); border-radius: 8px;
@@ -115,7 +116,7 @@
       const selling = (item.is_selling ?? '').toString();
       return `
         <div>
-          <div class="popup-title">${name}</div>
+          <div class="popup-title">${name}${item.retrieved_at ? `<span class="popup-retrieve-time">(資料抓取時間：${new Date(item.retrieved_at * 1000).toLocaleString()})</span>` : ''}</div>
           <p class="popup-desc">地址：${address}</p>
           <p class="popup-desc">庫存（HIV 自我篩檢）：<strong>${stock}</strong> ${soldout}</p>
           ${selling ? `<p class="popup-desc">販售：${selling}</p>` : ''}

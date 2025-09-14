@@ -18,6 +18,7 @@
     #map { height: 100%; width: 100%; }
     .popup-title { font-weight: 700; margin-bottom: 0.25rem; }
     .popup-desc { margin: 0.15rem 0; }
+    .popup-retrieve-time { font-size: 0.65rem; color: #999; font-weight: 400; margin-left: 8px; }
     .legend {
       position: absolute; z-index: 1000; bottom: 24px; right: 12px;
       background: rgba(255,255,255,0.95); border-radius: 8px;
@@ -78,11 +79,12 @@
     function createMobileSitePopup(item) {
       return `
         <div>
-          <div class="popup-title">${item.name ?? '未命名'}</div>
+          <div class="popup-title">${item.name ?? '未命名'}${item.retrieved_at ? `<span class="popup-retrieve-time">(資料抓取時間：${new Date(item.retrieved_at * 1000).toLocaleString()})</span>` : ''}</div>
           <p class="popup-desc">類別：${item.site_type ?? ''}</p>
           <p class="popup-desc">縣市：${item.city ?? ''}</p>
           <p class="popup-desc">地點：${item.location ?? '（無地點）'}</p>
           <p class="popup-desc">聯絡資訊：${item.contract ?? '無'}</p>
+          ${item.retrieved_at ? `<p class="popup-desc">資料抓取時間：${new Date(item.retrieved_at * 1000).toLocaleString()}</p>` : ''}
         </div>
       `;
     }
@@ -90,12 +92,13 @@
     function createSitePopup(item) {
       return `
         <div>
-          <div class="popup-title">${item.name ?? '未命名'}</div>
+          <div class="popup-title">${item.name ?? '未命名'}${item.retrieved_at ? `<span class="popup-retrieve-time">(資料抓取時間：${new Date(item.retrieved_at * 1000).toLocaleString()})</span>` : ''}</div>
           <p class="popup-desc">類別：${item.screening_type ?? ''}</p>
           <p class="popup-desc">縣市：${item.city ?? ''}</p>
           <p class="popup-desc">地點：${item.location ?? '（無地點）'}</p>
           <p class="popup-desc">聯絡資訊：${item.contract ?? '無'}</p>
           <p class="popup-desc">日期與時間：${item.date ?? ''} ${item.time ?? ''}</p>
+          
         </div>
       `;
     }

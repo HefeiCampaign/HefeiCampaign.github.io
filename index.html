@@ -30,12 +30,18 @@
       display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
       gap:12px; margin:12px 0 12px;
     }
-    .nav-card{background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow);
-      padding:10px 12px; display:flex; align-items:center; gap:10px; justify-content:space-between;}
-    label{font-weight:700; font-size:14px}
+    .nav-card{
+      background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:10px 12px; display:flex; align-items:center; gap:10px; justify-content:space-between;
+      flex-wrap: wrap;
+    }
+    label{font-weight:700; font-size:18px}
     select{width:100%; appearance:none; border:1px solid #2b2d31; background:#121316; color:var(--text);
       border-radius:10px; padding:10px 12px; font-size:14px}
-    a.btn{display:inline-block; padding:10px 14px; color:#fff; text-decoration:none; border-radius:10px; font-size:14px; width: 100%;}
+    a.btn{
+      display:inline-block; padding:10px 14px; color:#fff; text-decoration:none;
+      font-weight:700; border-radius:10px; font-size:18px; width: 100%;
+    }
 
     /* ===== Mobile hamburger + drawer ===== */
     .hamburger{
