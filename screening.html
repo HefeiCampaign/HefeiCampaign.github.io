@@ -10,9 +10,10 @@
     <!-- Leaflet CSS -->
     <link
       rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+      integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
 
     <style>
@@ -65,7 +66,7 @@
       }
       .locate-btn {
         position: absolute;
-        z-index: 1000;
+        z-index: 1001;
         top: 80px;
         left: 12px;
         background: #fff;
@@ -76,23 +77,21 @@
         font: 14px/1.2 system-ui;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
       }
+      .locate-btn .text {
+        margin-left: 5px;
+      }
+      @media (max-width: 380px) {
+        .locate-btn .text {
+          display: none;
+        }
+      }
       .locate-btn:disabled {
         opacity: 0.6;
         cursor: not-allowed;
       }
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        border: 0;
-      }
       .go-back-btn {
         position: absolute;
-        z-index: 1000;
+        z-index: 1001;
         top: 10px;
         left: 50%;
         transform: translateX(-50%);
@@ -104,7 +103,21 @@
         font: 14px/1.2 system-ui;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
       }
-
+      .go-back-btn .text {
+        margin-left: 5px;
+      }
+      @media (max-width: 566px) {
+        .go-back-btn {
+          top: 120px;
+          left: 12px;
+          transform: translateX(0%);
+        }
+      }
+      @media (max-width: 380px) {
+        .go-back-btn .text {
+          display: none;
+        }
+      }
       .admin-panel {
         position: absolute;
         z-index: 1000;
@@ -122,14 +135,15 @@
         border-radius: 6px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
       }
-
+      .admin-panel .admin-panel-item:not(:last-child) {
+        margin-bottom: 10px;
+      }
       .admin-panel label {
         display: block;
         font-size: 12px;
         color: #333;
         margin-bottom: 4px;
       }
-
       .admin-panel select,
       .admin-panel input {
         width: 100%;
@@ -186,6 +200,20 @@
         padding: 0 1px;
         border-radius: 2px;
       }
+      .details,
+      .show,
+      .hide:target {
+        display: none;
+      }
+      .hide:target + .show,
+      .hide:target ~ .details {
+        display: block;
+      }
+      .expand-collapse-text {
+        text-decoration: none;
+        cursor: pointer;
+        color: #333;
+      }
     </style>
   </head>
   <body>
@@ -196,7 +224,7 @@
       aria-label="回上頁"
       onclick="javascript:history.back()"
     >
-      回到上頁
+      ↩<span id="goBackBtnText" class="text">回到上頁</span>
     </button>
     <button
       id="locateBtn"
@@ -204,36 +232,40 @@
       type="button"
       aria-label="移到我的位置"
     >
-      📍 移到我的位置
+      📍<span id="locateBtnText" class="text">移到我的位置</span>
     </button>
 
     <!-- 行政區控制面板 -->
     <div class="admin-panel" role="form" aria-label="行政區選擇">
-      <div>
-        <label for="countySelect">縣市</label>
-        <select id="countySelect" aria-label="選擇縣市">
-          <option value="">（全部）</option>
-        </select>
-      </div>
-      <div>
-        <label for="districtSelect">鄉鎮市區</label>
-        <select id="districtSelect" aria-label="選擇鄉鎮市區" disabled>
-          <option value="">（請先選縣市）</option>
-        </select>
-      </div>
-      <div class="search-wrap">
-        <label for="searchInput">🔎 模糊搜尋（縣市或「縣市 區」）</label>
-        <input
-          id="searchInput"
-          type="text"
-          placeholder="例：臺北市 或 臺北市 大安區 / 大安"
-          autocomplete="off"
-        />
-        <div
-          id="searchResults"
-          class="search-results"
-          style="display: none"
-        ></div>
+      <a id="admin-panel-hide" href="#admin-panel-hide" class="hide expand-collapse-text" onclick="javascript:history.replaceState(null, '', '#admin-panel-hide')">▶ 行政區選擇</a>
+      <a id="admin-panel-show" href="#admin-panel-show" class="show expand-collapse-text" onclick="javascript:history.replaceState(null, '', '#admin-panel-show')">▼ 行政區選擇</a>
+      <div class="details">
+        <div class="admin-panel-item">
+          <label for="countySelect">縣市</label>
+          <select id="countySelect" aria-label="選擇縣市">
+            <option value="">（全部）</option>
+          </select>
+        </div>
+        <div class="admin-panel-item">
+          <label for="districtSelect">鄉鎮市區</label>
+          <select id="districtSelect" aria-label="選擇鄉鎮市區" disabled>
+            <option value="">（請先選縣市）</option>
+          </select>
+        </div>
+        <div class="admin-panel-item search-wrap">
+          <label for="searchInput">🔎 模糊搜尋（縣市或「縣市 區」）</label>
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="例：臺北市 或 臺北市 大安區 / 大安"
+            autocomplete="off"
+          />
+          <div
+            id="searchResults"
+            class="search-results"
+            style="display: none"
+          ></div>
+        </div>
       </div>
     </div>
 
@@ -241,9 +273,10 @@
 
     <!-- Leaflet JS -->
     <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
+      src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
+      integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
 
     <script>
@@ -268,7 +301,6 @@
           popupAnchor: [1, -34],
           shadowSize: [41, 41],
         });
-
 
       // ===== UI refs =====
       const countySelect = document.getElementById("countySelect");
@@ -699,8 +731,9 @@
 
       async function locateUser(showAlertOnError = true) {
         const btn = document.getElementById("locateBtn");
+        const btnText = document.getElementById("locateBtnText");
         btn.disabled = true;
-        btn.textContent = "定位中…";
+        btnText.textContent = "定位中…";
         try {
           // Try Browser Geolocation API first
           const res = await locateWithBrowserAPI();
@@ -727,7 +760,7 @@
           });
         } finally {
           btn.disabled = false;
-          btn.textContent = "📍 移到我的位置";
+          btnText.textContent = "移到我的位置";
         }
       }
 

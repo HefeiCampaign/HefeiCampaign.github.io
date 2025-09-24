@@ -1,440 +1,996 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Beacon OF Love｜最即時的愛滋資訊整合網站</title>
-  <style>
-    :root{
-      --bg:#0f0f11; --panel:#1b1c1f; --muted:#9aa0a6; --text:#e6e8ea;
-      --brand:#7dd3fc; --shadow:0 8px 24px rgba(0,0,0,.25); --radius:14px; --drawer-w:320px;
-    }
-    body{margin:0; background:var(--bg); color:var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC","PingFang TC","Microsoft JhengHei", Arial, sans-serif;
-      line-height:1.65;}
-    .container{max-width:1100px; margin:0 auto; padding:0 16px}
-    header{
-      display:flex; gap:12px; align-items:center; justify-content:space-between;
-      background:var(--panel); border-radius:var(--radius); padding:12px 14px; box-shadow:var(--shadow);
-      margin-bottom: 12px; margin-top: 12px;
-    }
-    .left{display:flex; align-items:center; gap:10px}
-    .brand{font-weight:800; letter-spacing:.2px}
-    .brand span{color:var(--brand)}
-    .brand a{color:var(--text); text-decoration:none; font-size:20px}
-    .tagline{opacity:.85; font-size:20px}
-    .tagline a{color:var(--text); text-decoration:none; font-size:20px}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Beacon OF Love｜最即時的愛滋資訊整合網站</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"
+      integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      :root {
+        --bg: #0f0f11;
+        --panel: #1b1c1f;
+        --muted: #9aa0a6;
+        --text: #e6e8ea;
+        --brand: #7dd3fc;
+        --shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        --radius: 14px;
+        --drawer-w: 320px;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+        line-height: 1.65;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      header {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--panel);
+        border-radius: var(--radius);
+        padding: 12px 14px;
+        box-shadow: var(--shadow);
+        margin-bottom: 12px;
+        margin-top: 12px;
+      }
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .brand {
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .brand span {
+        color: var(--brand);
+      }
+      .brand a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 20px;
+      }
+      .tagline {
+        opacity: 0.85;
+        font-size: 20px;
+      }
+      .tagline a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 20px;
+      }
 
-    /* ===== Desktop nav (你的原樣式) ===== */
-    .nav-desktop{
-      display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
-      gap:12px; margin:12px 0 12px;
-    }
-    .nav-card{
-      background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow);
-      padding:10px 12px; display:flex; align-items:center; gap:10px; justify-content:space-between;
-      flex-wrap: wrap;
-    }
-    label{font-weight:700; font-size:18px}
-    select{width:100%; appearance:none; border:1px solid #2b2d31; background:#121316; color:var(--text);
-      border-radius:10px; padding:10px 12px; font-size:14px}
-    a.btn{
-      display:inline-block; padding:10px 14px; color:#fff; text-decoration:none;
-      font-weight:700; border-radius:10px; font-size:18px; width: 100%;
-    }
+      /* ===== Desktop nav (你的原樣式) ===== */
+      .nav-desktop {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin: 12px 0 12px;
+      }
+      .nav-card {
+        background: var(--panel);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      label {
+        font-weight: 700;
+        font-size: 18px;
+      }
+      select {
+        width: 100%;
+        appearance: none;
+        border: 1px solid #2b2d31;
+        background: #121316;
+        color: var(--text);
+        border-radius: 10px;
+        padding: 10px 12px;
+        font-size: 14px;
+      }
+      a.btn {
+        display: inline-block;
+        padding: 10px 14px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        border-radius: 10px;
+        font-size: 18px;
+        width: 100%;
+      }
 
-    /* ===== Mobile hamburger + drawer ===== */
-    .hamburger{
-      width:40px; height:40px; border:0; border-radius:10px; background:#121316; color:var(--text);
-      display:none; /* desktop 隱藏，mobile 顯示 */
-      place-items:center; cursor:pointer;
-    }
-    .hamburger:focus-visible{outline:2px solid var(--brand)}
-    .hamburger svg{width:22px; height:22px}
+      /* ===== Mobile hamburger + drawer ===== */
+      .hamburger {
+        width: 40px;
+        height: 40px;
+        border: 0;
+        border-radius: 10px;
+        background: #121316;
+        color: var(--text);
+        display: none; /* desktop 隱藏，mobile 顯示 */
+        place-items: center;
+        cursor: pointer;
+      }
+      .hamburger:focus-visible {
+        outline: 2px solid var(--brand);
+      }
+      .hamburger svg {
+        width: 22px;
+        height: 22px;
+      }
 
-    .overlay{position:fixed; inset:0; background:rgba(0,0,0,.45); opacity:0; pointer-events:none;
-      transition:opacity .18s ease; z-index:40;}
-    .overlay.show{opacity:1; pointer-events:auto}
-    nav.drawer{
-      position:fixed; top:0; left:0; height:100vh; width:var(--drawer-w);
-      background:#121316; color:var(--text); box-shadow:var(--shadow);
-      transform:translateX(-100%); transition:transform .22s ease; z-index:50; display:flex; flex-direction:column;
-    }
-    nav.drawer.open{transform:none}
-    .drawer-header{display:flex; align-items:center; justify-content:space-between; gap:8px;
-      padding:12px 14px; background:#0f0f11; border-bottom:1px solid #232428;}
-    .drawer-title{font-weight:800}
-    .drawer-close{border:0; background:#1f2126; color:var(--text); border-radius:10px; width:36px; height:36px; cursor:pointer;}
-    .drawer-body{padding:10px 8px; overflow:auto}
-    .menu{list-style:none; margin:0; padding:0}
-    .menu > li{margin:6px 0}
-    details.menu-node{background:#191b20; border:1px solid #2b2d31; border-radius:12px; overflow:hidden;}
-    details.menu-node + details.menu-node{margin-top:8px}
-    summary.menu-head{list-style:none; cursor:pointer; padding:12px 14px; font-weight:700; position:relative;}
-    summary.menu-head::-webkit-details-marker{display:none}
-    summary.menu-head:after{content:"▾"; position:absolute; right:12px; top:50%; transform:translateY(-50%); opacity:.75; font-size:12px;}
-    .submenu{padding:10px 0; background:#14161a; border-top:1px solid #2b2d31}
-    .submenu a, .submenu button{width:100%; text-align:left; border:0; background:transparent; color:var(--text);
-      padding:10px 14px; cursor:pointer; display:block; font-size:15px;}
-    .submenu a:hover, .submenu button:hover{background:#0f1115}
-    .menu-link{border-left:3px solid transparent; text-decoration:none;}
-    .menu-link.active{border-left-color:var(--brand); background:#0f1115}
-    .menu-link.consult-link{display:block; border-radius:12px; padding:12px 14px; margin-top:8px; color:#fff;}
-    /* Mobile 專用：顯示漢堡，隱藏 desktop nav */
-    @media (max-width: 991.98px){
-      .hamburger{display:inline-grid}
-      .nav-desktop{display:none}
-    }
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.18s ease;
+        z-index: 40;
+      }
+      .overlay.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      nav.drawer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: var(--drawer-w);
+        background: #121316;
+        color: var(--text);
+        box-shadow: var(--shadow);
+        transform: translateX(-100%);
+        transition: transform 0.22s ease;
+        z-index: 50;
+        display: flex;
+        flex-direction: column;
+      }
+      nav.drawer.open {
+        transform: none;
+      }
+      .drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 12px 14px;
+        background: #0f0f11;
+        border-bottom: 1px solid #232428;
+      }
+      .drawer-title {
+        font-weight: 800;
+      }
+      .drawer-close {
+        border: 0;
+        background: #1f2126;
+        color: var(--text);
+        border-radius: 10px;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+      }
+      .drawer-body {
+        padding: 10px 8px;
+        overflow: auto;
+      }
+      .menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .menu > li {
+        margin: 6px 0;
+      }
+      details.menu-node {
+        background: #191b20;
+        border: 1px solid #2b2d31;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      details.menu-node + details.menu-node {
+        margin-top: 8px;
+      }
+      summary.menu-head {
+        list-style: none;
+        cursor: pointer;
+        padding: 12px 14px;
+        font-weight: 700;
+        position: relative;
+      }
+      summary.menu-head::-webkit-details-marker {
+        display: none;
+      }
+      summary.menu-head:after {
+        content: "▾";
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.75;
+        font-size: 12px;
+      }
+      .submenu {
+        padding: 10px 0;
+        background: #14161a;
+        border-top: 1px solid #2b2d31;
+      }
+      .submenu a,
+      .submenu button {
+        width: 100%;
+        text-align: left;
+        border: 0;
+        background: transparent;
+        color: var(--text);
+        padding: 10px 14px;
+        cursor: pointer;
+        display: block;
+        font-size: 15px;
+      }
+      .submenu a:hover,
+      .submenu button:hover {
+        background: #0f1115;
+      }
+      .menu-link {
+        border-left: 3px solid transparent;
+        text-decoration: none;
+      }
+      .menu-link.active {
+        border-left-color: var(--brand);
+        background: #0f1115;
+      }
+      .menu-link.consult-link {
+        display: block;
+        border-radius: 12px;
+        padding: 12px 14px;
+        margin-top: 8px;
+        color: #fff;
+      }
+      /* Mobile 專用：顯示漢堡，隱藏 desktop nav */
+      @media (max-width: 991.98px) {
+        .hamburger {
+          display: inline-grid;
+        }
+        .nav-desktop {
+          display: none;
+        }
+      }
 
-    /* Content */
-    main{background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px 22px 28px;}
-    section{display:none; animation:fade .2s ease}
-    section.active{display:block}
-    h1{margin:.2em 0 .3em; font-size:28px}
-    h2{margin:1.2em 0 .4em; font-size:20px}
-    ul{margin:.4em 0 .8em 1.2em}
-    .muted{color:var(--muted)}
-    .pill{display:inline-block; padding:3px 9px; border-radius:999px; font-size:12px; background:#0c4a6e; color:#e0f2fe; margin-left:6px}
-    @keyframes fade{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
+      /* Content */
+      main {
+        background: var(--panel);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 22px 22px 28px;
+      }
+      section {
+        display: none;
+        animation: fade 0.2s ease;
+      }
+      section.active {
+        display: block;
+      }
+      h1 {
+        margin: 0.2em 0 0.3em;
+        font-size: 28px;
+      }
+      h2 {
+        margin: 1.2em 0 0.4em;
+        font-size: 20px;
+      }
+      ul {
+        margin: 0.4em 0 0.8em 1.2em;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .pill {
+        display: inline-block;
+        padding: 3px 9px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: #0c4a6e;
+        color: #e0f2fe;
+        margin-left: 6px;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(4px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
 
-    /* ===== Welcome hero (首頁左右欄) ===== */
-    .hero{
-      display:flex; gap:24px; align-items:flex-start;
-    }
-    .hero-left{
-      flex:0 0 340px; /* 左欄寬：可調整 320~380 */
-    }
-    .game-preview{
-      background:#14161a; border:1px solid #2b2d31;
-      border-radius:12px; box-shadow:var(--shadow);
-      aspect-ratio: 4 / 3; /* 預覽比例；可改 16/9 */
-      display:grid; place-items:center;
-      font-weight:700; color:var(--muted);
-      user-select:none;
-    }
-    .game-cta{ margin-top:12px; }
-    .btn-primary{
-      display:block;
-      padding:12px 16px; border:0; border-radius:12px;
-      background:#0ea5e9; color:#fff; font-weight:700; cursor:pointer;
-      text-align:center; text-decoration:none;
-      box-shadow:var(--shadow);
-    }
-    .btn-primary:hover{ filter:brightness(0.95); }
-    .btn-primary:active{ transform:translateY(1px); }
+      /* ===== Welcome hero (首頁左右欄) ===== */
+      .hero {
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+      }
+      .hero-left {
+        flex: 0 0 340px; /* 左欄寬：可調整 320~380 */
+      }
+      .game-preview {
+        background: #14161a;
+        border: 1px solid #2b2d31;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        aspect-ratio: 4 / 3; /* 預覽比例；可改 16/9 */
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        color: var(--muted);
+        user-select: none;
+      }
+      .game-cta {
+        margin-top: 12px;
+      }
+      .btn-primary {
+        display: block;
+        padding: 12px 16px;
+        border: 0;
+        border-radius: 12px;
+        background: #0ea5e9;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: var(--shadow);
+      }
+      .btn-primary:hover {
+        filter: brightness(0.95);
+      }
+      .btn-primary:active {
+        transform: translateY(1px);
+      }
 
-    /* RWD：手機直式改為上下堆疊 */
-    @media (max-width: 991.98px){
-      .hero{ flex-direction:column; }
-      .hero-left{ flex:unset; width:100%; }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <div class="left">
-        <!-- 漢堡鍵（只在手機顯示） -->
-        <button class="hamburger" id="openMenu" aria-label="開啟主選單" aria-controls="drawer" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
-        </button>
-        <div class="brand">
-          <a href="#welcome">Beacon <span>OF</span> Love</a>
-        </div>
-      </div>
-      <div class="tagline">
-        <a href="#welcome">最即時的愛滋資訊整合網站</a>
-      </div>
-    </header>
+      /* RWD：手機直式改為上下堆疊 */
+      @media (max-width: 991.98px) {
+        .hero {
+          flex-direction: column;
+        }
+        .hero-left {
+          flex: unset;
+          width: 100%;
+        }
+      }
 
-    <!-- 桌面版導覽（維持你原本樣式） -->
-    <nav class="nav-desktop" aria-label="桌面導覽">
-      <div class="nav-card">
-        <label for="m1">認識 HIV</label>
-        <select id="m1">
-          <option value="">請選擇⋯</option>
-          <option value="about-hiv">什麼是 HIV？什麼是 AIDS？</option>
-          <option value="transmission">HIV 如何傳染？</option>
-          <option value="myths">常見迷思與破解</option>
-        </select>
-      </div>
-      <div class="nav-card">
-        <label for="m2">誰需要 HIV 篩檢？</label>
-        <select id="m2">
-          <option value="">請選擇⋯</option>
-          <option value="why-testing">篩檢為什麼重要</option>
-          <option value="who-testing">誰需要進行 HIV 篩檢？</option>
-          <option value="delay">延誤篩檢的後果</option>
-        </select>
-      </div>
-      <div class="nav-card">
-        <label for="m3">篩檢後的下一步</label>
-        <select id="m3">
-          <option value="">請選擇⋯</option>
-          <option value="negative">如果篩檢是陰性</option>
-          <option value="positive">如果篩檢是陽性</option>
-        </select>
-      </div>
-      <div class="nav-card">
-        <label for="m4">我要篩檢</label>
-        <select id="m4">
-          <option value="">請選擇⋯</option>
-          <option value="redirect:screening.html">實體篩檢站 →</option>
-          <option value="redirect:selftester.html">篩檢試劑（自我篩檢） →</option>
-        </select>
-      </div>
-      <div class="nav-card">
-        <a href="consult.html" class="btn">前往諮詢服務 →</a>
-      </div>
-    </nav>
+      /* ===== 合作社群（頁尾） ===== */
+      .partners {
+        margin: 16px 0 28px;
+        background: var(--panel);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 18px 16px 14px;
+      }
+      .partners h2 {
+        margin: 0 0 12px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .partner-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+      }
+      @media (max-width: 1199.98px) {
+        .partner-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      @media (max-width: 767.98px) {
+        .partner-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
 
-    <!-- 手機版抽屜選單 -->
-    <div class="overlay" id="overlay"></div>
-    <nav class="drawer" id="drawer" aria-label="手機抽屜選單">
-      <div class="drawer-header">
-        <div class="drawer-title">網站選單</div>
-        <button class="drawer-close" id="closeMenu" aria-label="關閉主選單">✕</button>
-      </div>
-      <div class="drawer-body">
-        <ul class="menu">
-          <li>
-            <details class="menu-node" id="node-1">
-              <summary class="menu-head">認識 HIV</summary>
-              <div class="submenu">
-                <button class="menu-link" data-target="about-hiv">什麼是 HIV？什麼是 AIDS？</button>
-                <button class="menu-link" data-target="transmission">HIV 如何傳染？</button>
-                <button class="menu-link" data-target="myths">常見迷思與破解</button>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details class="menu-node" id="node-2">
-              <summary class="menu-head">誰需要 HIV 篩檢？</summary>
-              <div class="submenu">
-                <button class="menu-link" data-target="why-testing">篩檢為什麼重要</button>
-                <button class="menu-link" data-target="who-testing">誰需要進行 HIV 篩檢？</button>
-                <button class="menu-link" data-target="delay">延誤篩檢的後果</button>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details class="menu-node" id="node-3">
-              <summary class="menu-head">篩檢後的下一步</summary>
-              <div class="submenu">
-                <button class="menu-link" data-target="negative">如果篩檢是陰性</button>
-                <button class="menu-link" data-target="positive">如果篩檢是陽性</button>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details class="menu-node" id="node-4">
-              <summary class="menu-head">我要篩檢</summary>
-              <div class="submenu">
-                <a class="menu-link" href="screening.html">實體篩檢站 →</a>
-                <a class="menu-link" href="selftester.html">篩檢試劑（自我篩檢） →</a>
-              </div>
-            </details>
-          </li>
-          <li>
-            <a class="menu-link consult-link" href="consult.html">我要諮詢 →</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      .partner-card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border: 1px solid #2b2d31;
+        border-radius: 12px;
+        background: #14161a;
+        text-decoration: none;
+        color: var(--text);
+        transition: transform 0.08s ease, background 0.12s ease,
+          border-color 0.12s ease;
+      }
+      .partner-card:hover {
+        background: #0f1115;
+        border-color: #3a3d44;
+        transform: translateY(-1px);
+      }
+      .partner-card:active {
+        transform: translateY(0);
+      }
+      .partner-card:focus-visible {
+        outline: 2px solid var(--brand);
+        outline-offset: 2px;
+      }
 
-    <!-- 內容區 -->
-    <main id="content" tabindex="-1" aria-live="polite">
-      <!-- 首頁 hero 版型 -->
-      <section id="welcome" class="active" aria-labelledby="welcome-title">
-        <div class="hero">
-          <!-- 左欄：遊戲預覽 + CTA -->
-          <aside class="hero-left">
-            <div class="game-preview" aria-label="遊戲預覽圖">
-              遊戲預覽圖
-            </div>
-            <div class="game-cta">
-              <!-- 依你的實際連結調整 href -->
-              <a class="btn-primary" href="https://aids-protect-game.vercel.app/" id="game-cta">點擊體驗遊戲</a>
-            </div>
-          </aside>
-          <!-- 右欄：標題與內文 -->
-          <div class="hero-body">
-            <h1 id="welcome-title">關於這個平台</h1>
-            <p>我們建立這個平台的初衷，是希望解決愛滋相關資訊分散、更新不易的問題。許多人在自我評估、篩檢或尋求諮詢時，常因缺乏整合資訊而感到困惑與不安。</p>
-            <p>本平台匯集政府機構、專業醫療院所與非政府組織的可靠資源，同時提供北、中、南各地的服務據點。無論你需要快速自我檢測、專人線上回覆，或進一步預約篩檢，都能在這裡找到最合適的管道。</p>
-            <p>除了資訊，我們也設計了互動遊戲，以輕鬆有趣的方式帶你了解愛滋防治的重要觀念。誠摯邀請你邊玩邊學，並鼓勵身邊的朋友一起參與。</p>
-            <p>我們強調匿名、免費與友善，確保隱私安全，讓每個人都能安心獲得支持。未來，我們也期望這個平台能成為大眾了解愛滋、減少恐懼與誤解的重要入口。</p>
+      .partner-icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 4px;
+        background: #0f0f11;
+        flex: 0 0 22px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+      }
+      .partner-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .partner-meta {
+        display: grid;
+        gap: 2px;
+        min-width: 0;
+      }
+      .partner-name {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .partner-domain {
+        font-size: 12px;
+        color: var(--muted);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="left">
+          <!-- 漢堡鍵（只在手機顯示） -->
+          <button
+            class="hamburger"
+            id="openMenu"
+            aria-label="開啟主選單"
+            aria-controls="drawer"
+            aria-expanded="false"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z" />
+            </svg>
+          </button>
+          <div class="brand">
+            <a href="#welcome">Beacon <span>OF</span> Love</a>
           </div>
         </div>
-      </section>
+        <div class="tagline">
+          <a href="#welcome">最即時的愛滋資訊整合網站</a>
+        </div>
+      </header>
 
-      <!-- 認識 HIV / 什麼是 -->
-      <section id="about-hiv" aria-labelledby="about-hiv-title">
-        <h1 id="about-hiv-title">什麼是 HIV？什麼是 AIDS？</h1>
-        <p>HIV（人類免疫缺乏病毒） 是一種專門攻擊免疫系統的病毒，主要會破壞「CD4 T 淋巴球」。CD4 T 淋巴球是協助人體對抗細菌、病毒等外來威脅的重要免疫細胞，隨著這些細胞逐漸減少，人體的免疫防禦力就會被削弱。</p>
-        <p>如果 HIV 感染者沒有接受治療，長期下來免疫系統會越來越脆弱，當身體無法有效抵抗各種機會性感染（例如肺炎、腸胃道感染、腦部感染）或某些癌症時，就可能進展為 AIDS（愛滋病，後天免疫缺乏症候群）。</p>
-        <h2>HIV 感染 ≠ AIDS</h2>
-        <p>很多人會把「感染 HIV」和「得到 AIDS」混為一談，但其實兩者並不相同。HIV 感染只代表體內有病毒，初期通常沒有明顯症狀。AIDS則是指免疫力被嚴重破壞後，出現一連串因免疫不足引起的疾病。</p>
-        <p>在過去，感染 HIV 幾乎等同於會發展成 AIDS，但隨著醫療科技進步，這樣的觀念早已過時。現在的藥物治療已經可以有效抑制病毒複製，幫助 CD4 細胞維持在安全範圍。只要及早發現、規律服藥，HIV 感染者的壽命與健康狀態幾乎和一般人無異。甚至透過治療，可以將體內病毒量壓低到 &lt; 200 copies/ml 的程度，達到 U=U（Undetectable = Untransmittable，不可測 = 不具傳染力），使感染者在持續治療下，不會把病毒傳染給伴侶。</p>
-      </section>
+      <!-- 桌面版導覽（維持你原本樣式） -->
+      <nav class="nav-desktop" aria-label="桌面導覽">
+        <div class="nav-card">
+          <label for="m1">認識 HIV</label>
+          <select id="m1">
+            <option value="">請選擇⋯</option>
+            <option value="about-hiv">什麼是 HIV？什麼是 AIDS？</option>
+            <option value="transmission">HIV 如何傳染？</option>
+            <option value="myths">常見迷思與破解</option>
+          </select>
+        </div>
+        <div class="nav-card">
+          <label for="m2">誰需要 HIV 篩檢？</label>
+          <select id="m2">
+            <option value="">請選擇⋯</option>
+            <option value="why-testing">篩檢為什麼重要</option>
+            <option value="who-testing">誰需要進行 HIV 篩檢？</option>
+            <option value="delay">延誤篩檢的後果</option>
+          </select>
+        </div>
+        <div class="nav-card">
+          <label for="m3">篩檢後的下一步</label>
+          <select id="m3">
+            <option value="">請選擇⋯</option>
+            <option value="negative">如果篩檢是陰性</option>
+            <option value="positive">如果篩檢是陽性</option>
+          </select>
+        </div>
+        <div class="nav-card">
+          <label for="m4">我要篩檢</label>
+          <select id="m4">
+            <option value="">請選擇⋯</option>
+            <option value="redirect:screening.html">實體篩檢站 →</option>
+            <option value="redirect:selftester.html">
+              篩檢試劑（自我篩檢） →
+            </option>
+          </select>
+        </div>
+        <div class="nav-card">
+          <a href="consult.html" class="btn">前往諮詢服務 →</a>
+        </div>
+      </nav>
 
-      <!-- 認識 HIV / 傳染 -->
-      <section id="transmission" aria-labelledby="transmission-title">
-        <h1 id="transmission-title">HIV 如何傳染？</h1>
-        <p>HIV 的傳染方式其實非常明確，必須透過<strong>含有病毒的體液</strong>進入人體，才有可能造成感染。這些體液主要包括：血液、精液、陰道分泌物、肛門分泌物與母乳。只要沒有和這些體液直接接觸，就不會被傳染。</p>
-        <h2>✔️ 會傳染的主要途徑</h2>
-        <p>常見的傳染途徑有：</p>
-        <ul>
-          <li>性行為：未使用保險套的陰道或肛交。</li>
-          <li>血液：共用針具、輸入未檢驗的血液製品。</li>
-          <li>母子垂直傳染：孕期、分娩或哺乳時病毒由母體傳給嬰兒。</li>
-        </ul>
-        <h2>❌ 不會傳染的日常互動</h2>
-        <p>HIV 並不像一般感冒或流感一樣容易透過日常生活傳染，以下情況並不會造成感染：</p>
-        <ul>
-          <li>擁抱、親吻、握手、咳嗽、打噴嚏。</li>
-          <li>共用餐具、食物、馬桶座、毛巾、床單。</li>
-          <li>在游泳池游泳、一起運動、被蚊子或其他昆蟲叮咬。</li>
-        </ul>
-        <p>這些行為雖然會讓人彼此接觸，但並沒有病毒進入體內的途徑，因此不必擔心。在日常社交中，與 HIV 感染者相處、工作、用餐完全不會造成感染，正確理解傳染途徑，才能避免不必要的擔心，也能減少對感染者的歧視。</p>
-      </section>
+      <!-- 手機版抽屜選單 -->
+      <div class="overlay" id="overlay"></div>
+      <nav class="drawer" id="drawer" aria-label="手機抽屜選單">
+        <div class="drawer-header">
+          <div class="drawer-title">網站選單</div>
+          <button class="drawer-close" id="closeMenu" aria-label="關閉主選單">
+            ✕
+          </button>
+        </div>
+        <div class="drawer-body">
+          <ul class="menu">
+            <li>
+              <details class="menu-node" id="node-1">
+                <summary class="menu-head">認識 HIV</summary>
+                <div class="submenu">
+                  <button class="menu-link" data-target="about-hiv">
+                    什麼是 HIV？什麼是 AIDS？
+                  </button>
+                  <button class="menu-link" data-target="transmission">
+                    HIV 如何傳染？
+                  </button>
+                  <button class="menu-link" data-target="myths">
+                    常見迷思與破解
+                  </button>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="menu-node" id="node-2">
+                <summary class="menu-head">誰需要 HIV 篩檢？</summary>
+                <div class="submenu">
+                  <button class="menu-link" data-target="why-testing">
+                    篩檢為什麼重要
+                  </button>
+                  <button class="menu-link" data-target="who-testing">
+                    誰需要進行 HIV 篩檢？
+                  </button>
+                  <button class="menu-link" data-target="delay">
+                    延誤篩檢的後果
+                  </button>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="menu-node" id="node-3">
+                <summary class="menu-head">篩檢後的下一步</summary>
+                <div class="submenu">
+                  <button class="menu-link" data-target="negative">
+                    如果篩檢是陰性
+                  </button>
+                  <button class="menu-link" data-target="positive">
+                    如果篩檢是陽性
+                  </button>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="menu-node" id="node-4">
+                <summary class="menu-head">我要篩檢</summary>
+                <div class="submenu">
+                  <a class="menu-link" href="screening.html">實體篩檢站 →</a>
+                  <a class="menu-link" href="selftester.html"
+                    >篩檢試劑（自我篩檢） →</a
+                  >
+                </div>
+              </details>
+            </li>
+            <li>
+              <a class="menu-link consult-link" href="consult.html"
+                >我要諮詢 →</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-      <!-- 認識 HIV / 迷思 -->
-      <section id="myths" aria-labelledby="myths-title">
-        <h1 id="myths-title">常見迷思與破解</h1>
-        <h2>迷思一：只有特定族群才會感染 HIV？</h2>
-        <p>錯誤。HIV 與性傾向或身分無關，只要有高風險行為（如無保護性行為），任何人都有可能感染。</p>
+      <!-- 內容區 -->
+      <main id="content" tabindex="-1" aria-live="polite">
+        <!-- 首頁 hero 版型 -->
+        <section id="welcome" class="active" aria-labelledby="welcome-title">
+          <div class="hero">
+            <!-- 左欄：遊戲預覽 + CTA -->
+            <aside class="hero-left">
+              <div class="game-preview" aria-label="遊戲預覽圖">遊戲預覽圖</div>
+              <div class="game-cta">
+                <!-- 依你的實際連結調整 href -->
+                <a
+                  class="btn-primary"
+                  href="https://aids-protect-game.vercel.app/"
+                  id="game-cta"
+                  >點擊體驗遊戲</a
+                >
+              </div>
+            </aside>
+            <!-- 右欄：標題與內文 -->
+            <div class="hero-body">
+              <h1 id="welcome-title">關於這個平台</h1>
+              <p>
+                我們建立這個平台的初衷，是希望解決愛滋相關資訊分散、更新不易的問題。許多人在自我評估、篩檢或尋求諮詢時，常因缺乏整合資訊而感到困惑與不安。
+              </p>
+              <p>
+                本平台匯集政府機構、專業醫療院所與非政府組織的可靠資源，同時提供北、中、南各地的服務據點。無論你需要快速自我檢測、專人線上回覆，或進一步預約篩檢，都能在這裡找到最合適的管道。
+              </p>
+              <p>
+                除了資訊，我們也設計了互動遊戲，以輕鬆有趣的方式帶你了解愛滋防治的重要觀念。誠摯邀請你邊玩邊學，並鼓勵身邊的朋友一起參與。
+              </p>
+              <p>
+                我們強調匿名、免費與友善，確保隱私安全，讓每個人都能安心獲得支持。未來，我們也期望這個平台能成為大眾了解愛滋、減少恐懼與誤解的重要入口。
+              </p>
+            </div>
+          </div>
+        </section>
 
-        <h2>迷思二：感染 HIV 就等於生命結束？</h2>
-        <p>錯誤。早期HIV感染確實有很高的致死率，許多人也因此留下危險的印象，但自從1995年「雞尾酒療法」提出以後，HIV治療已有極大的進步，已不再是致命的疾病。現今藥物治療非常有效，只要規律服藥，病毒量能降到「不可測」的程度，也就是所謂的 U=U（Undetectable = Untransmittable，不可測＝不具傳染力）。這代表感染者能維持健康，也不會把病毒傳染給伴侶。</p>
+        <!-- 認識 HIV / 什麼是 -->
+        <section id="about-hiv" aria-labelledby="about-hiv-title">
+          <h1 id="about-hiv-title">什麼是 HIV？什麼是 AIDS？</h1>
+          <p>
+            HIV（人類免疫缺乏病毒）
+            是一種專門攻擊免疫系統的病毒，主要會破壞「CD4 T 淋巴球」。CD4 T
+            淋巴球是協助人體對抗細菌、病毒等外來威脅的重要免疫細胞，隨著這些細胞逐漸減少，人體的免疫防禦力就會被削弱。
+          </p>
+          <p>
+            如果 HIV
+            感染者沒有接受治療，長期下來免疫系統會越來越脆弱，當身體無法有效抵抗各種機會性感染（例如肺炎、腸胃道感染、腦部感染）或某些癌症時，就可能進展為
+            AIDS（愛滋病，後天免疫缺乏症候群）。
+          </p>
+          <h2>HIV 感染 ≠ AIDS</h2>
+          <p>
+            很多人會把「感染 HIV」和「得到
+            AIDS」混為一談，但其實兩者並不相同。HIV
+            感染只代表體內有病毒，初期通常沒有明顯症狀。AIDS則是指免疫力被嚴重破壞後，出現一連串因免疫不足引起的疾病。
+          </p>
+          <p>
+            在過去，感染 HIV 幾乎等同於會發展成
+            AIDS，但隨著醫療科技進步，這樣的觀念早已過時。現在的藥物治療已經可以有效抑制病毒複製，幫助
+            CD4 細胞維持在安全範圍。只要及早發現、規律服藥，HIV
+            感染者的壽命與健康狀態幾乎和一般人無異。甚至透過治療，可以將體內病毒量壓低到
+            &lt; 200 copies/ml 的程度，達到 U=U（Undetectable =
+            Untransmittable，不可測 =
+            不具傳染力），使感染者在持續治療下，不會把病毒傳染給伴侶。
+          </p>
+        </section>
 
-        <h2>迷思三：和感染者一起吃飯、同住很危險？</h2>
-        <p>錯誤。日常生活接觸完全不會造成感染，生活中的歧視反而可能讓人遠離檢測與治療，增加額外的風險。</p>
-      </section>
+        <!-- 認識 HIV / 傳染 -->
+        <section id="transmission" aria-labelledby="transmission-title">
+          <h1 id="transmission-title">HIV 如何傳染？</h1>
+          <p>
+            HIV
+            的傳染方式其實非常明確，必須透過<strong>含有病毒的體液</strong>進入人體，才有可能造成感染。這些體液主要包括：血液、精液、陰道分泌物、肛門分泌物與母乳。只要沒有和這些體液直接接觸，就不會被傳染。
+          </p>
+          <h2>✔️ 會傳染的主要途徑</h2>
+          <p>常見的傳染途徑有：</p>
+          <ul>
+            <li>性行為：未使用保險套的陰道或肛交。</li>
+            <li>血液：共用針具、輸入未檢驗的血液製品。</li>
+            <li>母子垂直傳染：孕期、分娩或哺乳時病毒由母體傳給嬰兒。</li>
+          </ul>
+          <h2>❌ 不會傳染的日常互動</h2>
+          <p>
+            HIV
+            並不像一般感冒或流感一樣容易透過日常生活傳染，以下情況並不會造成感染：
+          </p>
+          <ul>
+            <li>擁抱、親吻、握手、咳嗽、打噴嚏。</li>
+            <li>共用餐具、食物、馬桶座、毛巾、床單。</li>
+            <li>在游泳池游泳、一起運動、被蚊子或其他昆蟲叮咬。</li>
+          </ul>
+          <p>
+            這些行為雖然會讓人彼此接觸，但並沒有病毒進入體內的途徑，因此不必擔心。在日常社交中，與
+            HIV
+            感染者相處、工作、用餐完全不會造成感染，正確理解傳染途徑，才能避免不必要的擔心，也能減少對感染者的歧視。
+          </p>
+        </section>
 
-      <!-- 誰需要 / 為什麼重要 -->
-      <section id="why-testing" aria-labelledby="why-testing-title">
-        <h1 id="why-testing-title">篩檢為什麼重要</h1>
-        <p>早期發現，早期治療</p>
-        <p>HIV 感染初期通常沒有明顯症狀，有些人甚至多年都沒有異狀。但病毒仍會持續破壞免疫系統。只有透過篩檢，才能知道自己是否感染。</p>
-        <p>及早篩檢並開始治療，能帶來許多好處：</p>
-        <ul>
-          <li>免疫力能被保護，不會進展到 AIDS。</li>
-          <li>維持健康，壽命和一般人幾乎相同。</li>
-          <li>服藥後病毒量降到「不可測」，不會傳染給伴侶。</li>
-        </ul>
-      </section>
+        <!-- 認識 HIV / 迷思 -->
+        <section id="myths" aria-labelledby="myths-title">
+          <h1 id="myths-title">常見迷思與破解</h1>
+          <h2>迷思一：只有特定族群才會感染 HIV？</h2>
+          <p>
+            錯誤。HIV
+            與性傾向或身分無關，只要有高風險行為（如無保護性行為），任何人都有可能感染。
+          </p>
 
-      <!-- 誰需要 / 誰需要篩檢 -->
-      <section id="who-testing" aria-labelledby="who-testing-title">
-        <h1 id="who-testing-title">誰需要進行 HIV 篩檢？</h1>
-        <p>台灣疾管署建議以下族群應該主動接受檢驗：</p>
-        <ul>
-          <li>有性行為者，建議至少進行1次愛滋篩檢。</li>
-          <li>有不安全性行為者，建議每年至少進行1次愛滋篩檢</li>
-          <li>若有感染風險行為（如感染性病、多重性伴侶、使用成癮性藥物、與人共用針具或稀釋液等）、或性伴侶有前述任一情形者，建議每3至6個月篩檢1次。</li>
-        </ul>
-        <p>「篩檢沒有限於特定族群，任何曾有風險行為的人都應該檢查，才能更好的保護自己和身邊重要的人。」</p>
-      </section>
+          <h2>迷思二：感染 HIV 就等於生命結束？</h2>
+          <p>
+            錯誤。早期HIV感染確實有很高的致死率，許多人也因此留下危險的印象，但自從1995年「雞尾酒療法」提出以後，HIV治療已有極大的進步，已不再是致命的疾病。現今藥物治療非常有效，只要規律服藥，病毒量能降到「不可測」的程度，也就是所謂的
+            U=U（Undetectable =
+            Untransmittable，不可測＝不具傳染力）。這代表感染者能維持健康，也不會把病毒傳染給伴侶。
+          </p>
 
-      <!-- 誰需要 / 延誤後果 -->
-      <section id="delay" aria-labelledby="delay-title">
-        <h1 id="delay-title">延誤篩檢的後果</h1>
-        <p>根據疾管署資料，台灣每年有超過三成的新確診者有延遲診斷的情形，又以65歲以上年長者居多。儘管新增感染人數中，女性比例較少，但延遲診斷比例也高於男性，也應多注意。</p>
-        <p>延誤篩檢會導致嚴重的後果：</p>
-        <ul>
-          <li><strong>個人健康：</strong>錯過早期治療黃金期，免疫力已受損。</li>
-          <li><strong>公共衛生：</strong>在不知情的情況下，可能持續將病毒傳染給伴侶。</li>
-        </ul>
-        <p>篩檢是保護自己、伴侶與社群的第一步，也是邁向健康、安心生活的關鍵。現在篩檢方式也越來越便利，包含醫療院所的實體篩檢站點，以及愛滋自我篩檢計畫。</p>
-      </section>
+          <h2>迷思三：和感染者一起吃飯、同住很危險？</h2>
+          <p>
+            錯誤。日常生活接觸完全不會造成感染，生活中的歧視反而可能讓人遠離檢測與治療，增加額外的風險。
+          </p>
+        </section>
 
-      <!-- 下一步 / 陰性 -->
-      <section id="negative" aria-labelledby="negative-title">
-        <h1 id="negative-title">如果篩檢是陰性</h1>
-        <p>當篩檢呈現陰性時，通常表示在這次檢驗中沒有檢測到 HIV 的抗體或抗原。</p>
-        <p>不過需要特別留意「空窗期」，也就是從感染一直到病毒量足以檢驗出結果的時間差，通常約在3到12週之間，這段時間是無法檢驗出感染的，因此如果你最近曾有過高風險行為，建議可於空窗期後再次檢驗。空窗期間雖然無法檢驗出感染，但體內的病毒已具傳染力，因此在這段期間要注意避免與他人發生不安全性行為。</p>
-        <p>未來若有進行無套性行為，建議每年至少檢驗1次，若有感染風險行為（如與人共用針具、多重性伴侶、合併使用成癮性藥物、感染性病等），則建議每3至6個月檢驗1次。</p>
-        <p>預防HIV感染最基本也是最有效的方法，依然是正確使用保險套，保持穩定的伴侶關係、避免共用針具等。如果你屬於高風險族群，可以與醫師討論是否適合使用 PrEP（暴露前預防用藥），為自己多一層保護，並將篩檢納入定期體檢一般的日常習慣，也能更加安心。</p>
-      </section>
+        <!-- 誰需要 / 為什麼重要 -->
+        <section id="why-testing" aria-labelledby="why-testing-title">
+          <h1 id="why-testing-title">篩檢為什麼重要</h1>
+          <p>早期發現，早期治療</p>
+          <p>
+            HIV
+            感染初期通常沒有明顯症狀，有些人甚至多年都沒有異狀。但病毒仍會持續破壞免疫系統。只有透過篩檢，才能知道自己是否感染。
+          </p>
+          <p>及早篩檢並開始治療，能帶來許多好處：</p>
+          <ul>
+            <li>免疫力能被保護，不會進展到 AIDS。</li>
+            <li>維持健康，壽命和一般人幾乎相同。</li>
+            <li>服藥後病毒量降到「不可測」，不會傳染給伴侶。</li>
+          </ul>
+        </section>
 
-      <!-- 下一步 / 陽性 -->
-      <section id="positive" aria-labelledby="positive-title">
-        <h1 id="positive-title">如果篩檢是陽性</h1>
-        <p>若檢驗結果為陽性，這並不代表人生就此被定義或結束。</p>
-        <p>隨著醫療進步，HIV 已經是一種可以長期控制的慢性疾病。透過持續治療與規律服藥，病毒量能被壓制到 &lt; 200 copies/ml 的程度。而這正是「U=U」（Undetectable = Untransmittable，不可測＝不具傳染力）的核心概念：當病毒量被控制在不可測時，你將不會把病毒傳染給伴侶。</p>
-        <p>在台灣 HIV 的治療已納入健保，服用藥物的頻率也大多能簡化至每日一次，降低了生活負擔。規律回診、檢測病毒量與免疫指標，能讓醫師根據你的身體狀況調整最合適的治療方案。除了醫療支持，社會上也有許多 NGO 與同儕團體，能提供心理陪伴與資源，幫助感染者在學業、工作甚至感情上，都能繼續擁有穩定而正常的生活。</p>
-      </section>
-    </main>
-  </div>
+        <!-- 誰需要 / 誰需要篩檢 -->
+        <section id="who-testing" aria-labelledby="who-testing-title">
+          <h1 id="who-testing-title">誰需要進行 HIV 篩檢？</h1>
+          <p>台灣疾管署建議以下族群應該主動接受檢驗：</p>
+          <ul>
+            <li>有性行為者，建議至少進行1次愛滋篩檢。</li>
+            <li>有不安全性行為者，建議每年至少進行1次愛滋篩檢</li>
+            <li>
+              若有感染風險行為（如感染性病、多重性伴侶、使用成癮性藥物、與人共用針具或稀釋液等）、或性伴侶有前述任一情形者，建議每3至6個月篩檢1次。
+            </li>
+          </ul>
+          <p>
+            「篩檢沒有限於特定族群，任何曾有風險行為的人都應該檢查，才能更好的保護自己和身邊重要的人。」
+          </p>
+        </section>
 
-  <script>
-    // ===== 共用：section 切換 =====
-    const sections = Array.from(document.querySelectorAll('main section'));
-    function showSection(id){
-      sections.forEach(s => s.classList.toggle('active', s.id === id));
-      history.replaceState(null, '', id ? '#'+id : '#');
-      // 高亮手機抽屜的目前項目
-      document.querySelectorAll('.menu-link').forEach(el=>{
-        el.classList.toggle('active', el.dataset?.target === id);
+        <!-- 誰需要 / 延誤後果 -->
+        <section id="delay" aria-labelledby="delay-title">
+          <h1 id="delay-title">延誤篩檢的後果</h1>
+          <p>
+            根據疾管署資料，台灣每年有超過三成的新確診者有延遲診斷的情形，又以65歲以上年長者居多。儘管新增感染人數中，女性比例較少，但延遲診斷比例也高於男性，也應多注意。
+          </p>
+          <p>延誤篩檢會導致嚴重的後果：</p>
+          <ul>
+            <li>
+              <strong>個人健康：</strong>錯過早期治療黃金期，免疫力已受損。
+            </li>
+            <li>
+              <strong>公共衛生：</strong
+              >在不知情的情況下，可能持續將病毒傳染給伴侶。
+            </li>
+          </ul>
+          <p>
+            篩檢是保護自己、伴侶與社群的第一步，也是邁向健康、安心生活的關鍵。現在篩檢方式也越來越便利，包含醫療院所的實體篩檢站點，以及愛滋自我篩檢計畫。
+          </p>
+        </section>
+
+        <!-- 下一步 / 陰性 -->
+        <section id="negative" aria-labelledby="negative-title">
+          <h1 id="negative-title">如果篩檢是陰性</h1>
+          <p>
+            當篩檢呈現陰性時，通常表示在這次檢驗中沒有檢測到 HIV 的抗體或抗原。
+          </p>
+          <p>
+            不過需要特別留意「空窗期」，也就是從感染一直到病毒量足以檢驗出結果的時間差，通常約在3到12週之間，這段時間是無法檢驗出感染的，因此如果你最近曾有過高風險行為，建議可於空窗期後再次檢驗。空窗期間雖然無法檢驗出感染，但體內的病毒已具傳染力，因此在這段期間要注意避免與他人發生不安全性行為。
+          </p>
+          <p>
+            未來若有進行無套性行為，建議每年至少檢驗1次，若有感染風險行為（如與人共用針具、多重性伴侶、合併使用成癮性藥物、感染性病等），則建議每3至6個月檢驗1次。
+          </p>
+          <p>
+            預防HIV感染最基本也是最有效的方法，依然是正確使用保險套，保持穩定的伴侶關係、避免共用針具等。如果你屬於高風險族群，可以與醫師討論是否適合使用
+            PrEP（暴露前預防用藥），為自己多一層保護，並將篩檢納入定期體檢一般的日常習慣，也能更加安心。
+          </p>
+        </section>
+
+        <!-- 下一步 / 陽性 -->
+        <section id="positive" aria-labelledby="positive-title">
+          <h1 id="positive-title">如果篩檢是陽性</h1>
+          <p>若檢驗結果為陽性，這並不代表人生就此被定義或結束。</p>
+          <p>
+            隨著醫療進步，HIV
+            已經是一種可以長期控制的慢性疾病。透過持續治療與規律服藥，病毒量能被壓制到
+            &lt; 200 copies/ml 的程度。而這正是「U=U」（Undetectable =
+            Untransmittable，不可測＝不具傳染力）的核心概念：當病毒量被控制在不可測時，你將不會把病毒傳染給伴侶。
+          </p>
+          <p>
+            在台灣 HIV
+            的治療已納入健保，服用藥物的頻率也大多能簡化至每日一次，降低了生活負擔。規律回診、檢測病毒量與免疫指標，能讓醫師根據你的身體狀況調整最合適的治療方案。除了醫療支持，社會上也有許多
+            NGO
+            與同儕團體，能提供心理陪伴與資源，幫助感染者在學業、工作甚至感情上，都能繼續擁有穩定而正常的生活。
+          </p>
+        </section>
+      </main>
+
+      <!-- 合作社群與夥伴 -->
+      <footer class="partners" aria-labelledby="partners-title">
+        <h2 id="partners-title">感謝以下合作夥伴協助推廣本平台</h2>
+        <div class="partner-grid" id="partnerGrid" role="list"></div>
+      </footer>
+    </div>
+
+    <script>
+      // ===== 共用：section 切換 =====
+      const sections = Array.from(document.querySelectorAll("main section"));
+      function showSection(id) {
+        sections.forEach((s) => s.classList.toggle("active", s.id === id));
+        history.replaceState(null, "", id ? "#" + id : "#");
+        // 高亮手機抽屜的目前項目
+        document.querySelectorAll(".menu-link").forEach((el) => {
+          el.classList.toggle("active", el.dataset?.target === id);
+        });
+        closeDrawer();
+      }
+      function fromHash() {
+        const id = decodeURIComponent(location.hash.replace("#", ""));
+        if (id && document.getElementById(id)) showSection(id);
+      }
+      window.addEventListener("hashchange", fromHash);
+      // 初始顯示
+      if (location.hash) {
+        fromHash();
+      } else {
+        showSection("welcome");
+      }
+
+      // ===== 桌面版 select 操作（維持原本行為）=====
+      const selects = Array.from(
+        document.querySelectorAll(".nav-desktop select")
+      );
+      selects.forEach((sel) => {
+        sel.addEventListener("change", (e) => {
+          const value = e.target.value;
+          if (!value) return;
+          if (value.startsWith("redirect:")) {
+            window.location.href = value.replace("redirect:", "");
+            return;
+          }
+          showSection(value);
+          selects
+            .filter((s) => s !== sel)
+            .forEach((s) => (s.selectedIndex = 0));
+        });
       });
-      closeDrawer();
-    }
-    function fromHash(){
-      const id = decodeURIComponent(location.hash.replace('#',''));
-      if(id && document.getElementById(id)) showSection(id);
-    }
-    window.addEventListener('hashchange', fromHash);
-    // 初始顯示
-    if(location.hash){ fromHash(); } else { showSection('welcome'); }
 
-    // ===== 桌面版 select 操作（維持原本行為）=====
-    const selects = Array.from(document.querySelectorAll('.nav-desktop select'));
-    selects.forEach(sel=>{
-      sel.addEventListener('change', e=>{
-        const value = e.target.value;
-        if(!value) return;
-        if(value.startsWith('redirect:')){
-          window.location.href = value.replace('redirect:','');
-          return;
-        }
-        showSection(value);
-        selects.filter(s=>s!==sel).forEach(s=>s.selectedIndex = 0);
+      // ===== 手機抽屜：開合 =====
+      const drawer = document.getElementById("drawer");
+      const overlay = document.getElementById("overlay");
+      const openBtn = document.getElementById("openMenu");
+      const closeBtn = document.getElementById("closeMenu");
+
+      function openDrawer() {
+        document.getElementById("drawer").classList.add("open");
+        document.getElementById("overlay").classList.add("show");
+        document
+          .getElementById("openMenu")
+          ?.setAttribute("aria-expanded", "true");
+        // 預設展開第一節
+        const first = document.getElementById("node-1");
+        if (first) first.open = true;
+      }
+      function closeDrawer() {
+        document.getElementById("drawer").classList.remove("open");
+        document.getElementById("overlay").classList.remove("show");
+        document
+          .getElementById("openMenu")
+          ?.setAttribute("aria-expanded", "false");
+      }
+      // 綁定事件（確保元素存在）
+      if (openBtn) {
+        openBtn.addEventListener("click", openDrawer);
+      }
+      if (closeBtn) {
+        closeBtn.addEventListener("click", closeDrawer);
+      }
+      if (overlay) {
+        overlay.addEventListener("click", closeDrawer);
+      }
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeDrawer();
       });
-    });
 
-    // ===== 手機抽屜：開合 =====
-    const drawer = document.getElementById('drawer');
-    const overlay = document.getElementById('overlay');
-    const openBtn = document.getElementById('openMenu');
-    const closeBtn = document.getElementById('closeMenu');
-
-    function openDrawer(){
-      document.getElementById('drawer').classList.add('open');
-      document.getElementById('overlay').classList.add('show');
-      document.getElementById('openMenu')?.setAttribute('aria-expanded','true');
-      // 預設展開第一節
-      const first = document.getElementById('node-1');
-      if(first) first.open = true;
-    }
-    function closeDrawer(){
-      document.getElementById('drawer').classList.remove('open');
-      document.getElementById('overlay').classList.remove('show');
-      document.getElementById('openMenu')?.setAttribute('aria-expanded','false');
-    }
-    // 綁定事件（確保元素存在）
-    if(openBtn){ openBtn.addEventListener('click', openDrawer); }
-    if(closeBtn){ closeBtn.addEventListener('click', closeDrawer); }
-    if(overlay){ overlay.addEventListener('click', closeDrawer); }
-    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeDrawer(); });
-
-    // 手機抽屜子選單 → 顯示對應 section
-    document.querySelectorAll('.submenu button.menu-link').forEach(btn=>{
-      btn.addEventListener('click', () => {
-        const id = btn.dataset.target;
-        if(id) showSection(id);
+      // 手機抽屜子選單 → 顯示對應 section
+      document.querySelectorAll(".submenu button.menu-link").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.target;
+          if (id) showSection(id);
+        });
       });
-    });
-  </script>
-</body>
+
+      function renderPartners() {
+        const grid = document.getElementById("partnerGrid");
+        if (!grid) return;
+        grid.innerHTML = "";
+
+        fetch("/communities.csv")
+          .then((r) => r.text())
+          .then((csv) => {
+            let result = Papa.parse(csv, {
+              header: false,
+              skipEmptyLines: true,
+              comments: "#",
+            });
+            result.data.forEach((item) => {
+              let {0: communityName, 1: communityIcon, 2: communityURL,} = item;
+
+              const a = document.createElement("a");
+              a.className = "partner-card";
+              if (communityURL) {
+                a.href = communityURL;
+                a.target = "_blank";
+                a.rel = "noopener noreferrer";
+                a.setAttribute("role", "listitem");
+                a.setAttribute("aria-label", `${communityName}（開新視窗）`);
+              }
+
+              const iconWrap = document.createElement("span");
+              iconWrap.className = "partner-icon";
+
+              if (communityIcon) {
+                const img = document.createElement("img");
+                img.alt = "";
+                img.loading = "lazy";
+                img.decoding = "async";
+                img.src = communityIcon;
+
+                img.onerror = () => {
+                  iconWrap.innerHTML = "🔗";
+                };
+                iconWrap.appendChild(img);
+              } else if (communityURL) {
+                iconWrap.innerHTML = "🔗";
+              }
+
+              const meta = document.createElement("span");
+              meta.className = "partner-meta";
+
+              const name = document.createElement("span");
+              name.className = "partner-name";
+              name.textContent = communityName;
+              meta.appendChild(name);
+
+              if (communityURL) {
+                const domain = document.createElement("span");
+                domain.className = "partner-domain";
+                domain.textContent = new URL(communityURL).host.replace(/^www\./, ""); // 顯示純網域
+                meta.appendChild(domain);
+              }
+
+
+              a.appendChild(iconWrap);
+              a.appendChild(meta);
+              grid.appendChild(a);
+            });
+          });
+      }
+
+      // 在 DOM 讀取完成後渲染（你的主程式已在尾端，這裡直接呼叫即可）
+      renderPartners();
+    </script>
+  </body>
 </html>
