@@ -200,19 +200,25 @@
         padding: 0 1px;
         border-radius: 2px;
       }
-      .details,
-      .show,
-      .hide:target {
+      .toggle ~ .details {
         display: none;
       }
-      .hide:target + .show,
-      .hide:target ~ .details {
+      .toggle:not(.active) > .collapsed,
+      .toggle.active > .expanded {
+        display: none;
+      }
+      .toggle.active > .collapsed,
+      .toggle:not(.active) > .expanded {
+        display: inline;
+      }
+      .toggle.active ~ .details {
         display: block;
       }
       .expand-collapse-text {
         text-decoration: none;
         cursor: pointer;
         color: #333;
+        user-select: none;
       }
     </style>
   </head>
@@ -237,8 +243,15 @@
 
     <!-- 行政區控制面板 -->
     <div class="admin-panel" role="form" aria-label="行政區選擇">
-      <a id="admin-panel-hide" href="#admin-panel-hide" class="hide expand-collapse-text" onclick="javascript:history.replaceState(null, '', '#admin-panel-hide')">▶ 行政區選擇</a>
-      <a id="admin-panel-show" href="#admin-panel-show" class="show expand-collapse-text" onclick="javascript:history.replaceState(null, '', '#admin-panel-show')">▼ 行政區選擇</a>
+      <span
+        id="admin-panel-toggle"
+        class="toggle expand-collapse-text" 
+        onclick="javascript:document.querySelector('#admin-panel-toggle').classList.toggle('active')"
+      >
+        <span class="icon collapsed">▶</span>
+        <span class="icon expanded">▼</span>
+        行政區選擇
+      </span>
       <div class="details">
         <div class="admin-panel-item">
           <label for="countySelect">縣市</label>
