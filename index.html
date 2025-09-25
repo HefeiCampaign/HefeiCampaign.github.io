@@ -55,22 +55,24 @@
         font-weight: 800;
         letter-spacing: 0.2px;
       }
-      .brand span {
+      .brand span.text-alt {
         color: var(--brand);
       }
-      .brand a {
+      .brand span.text {
         color: var(--text);
         text-decoration: none;
         font-size: 20px;
+        cursor: pointer;
       }
       .tagline {
         opacity: 0.85;
         font-size: 20px;
       }
-      .tagline a {
+      .tagline span.text {
         color: var(--text);
         text-decoration: none;
         font-size: 20px;
+        cursor: pointer;
       }
 
       /* ===== Desktop nav (你的原樣式) ===== */
@@ -342,6 +344,8 @@
         font-weight: 700;
         color: var(--muted);
         user-select: none;
+        max-height: 50vh;
+        margin: auto;
       }
       .game-cta {
         margin-top: 12px;
@@ -490,11 +494,11 @@
             </svg>
           </button>
           <div class="brand">
-            <a href="#welcome" onclick="javascript:history.replaceState(null, '', '#welcome')">Beacon <span>OF</span> Love</a>
+            <span class="text" onclick="javascript:showSection('welcome')">Beacon <span class="text-alt">OF</span> Love</span>
           </div>
         </div>
         <div class="tagline">
-          <a href="#welcome" onclick="javascript:history.replaceState(null, '', '#welcome')">最即時的愛滋資訊整合網站</a>
+          <span class="text" onclick="javascript:showSection('welcome')">最即時的愛滋資訊整合網站</span>
         </div>
       </header>
 
@@ -531,9 +535,7 @@
           <select id="m4">
             <option value="">請選擇⋯</option>
             <option value="redirect:screening.html">實體篩檢站 →</option>
-            <option value="redirect:selftester.html">
-              篩檢試劑（自我篩檢） →
-            </option>
+            <option value="redirect:selftester.html">篩檢試劑（自我篩檢）→</option>
           </select>
         </div>
         <div class="nav-card">
@@ -601,17 +603,13 @@
               <details class="menu-node" id="node-4">
                 <summary class="menu-head">我要篩檢</summary>
                 <div class="submenu">
-                  <a class="menu-link" href="screening.html">實體篩檢站 →</a>
-                  <a class="menu-link" href="selftester.html"
-                    >篩檢試劑（自我篩檢） →</a
-                  >
+                  <button class="menu-link" data-target="redirect:screening.html">實體篩檢站 →</button>
+                  <button class="menu-link" data-target="redirect:selftester.html">篩檢試劑（自我篩檢）→</button>
                 </div>
               </details>
             </li>
             <li>
-              <a class="menu-link consult-link" href="consult.html"
-                >我要諮詢 →</a
-              >
+              <a class="menu-link consult-link" href="consult.html">我要諮詢 →</a>
             </li>
           </ul>
         </div>
@@ -917,8 +915,13 @@
       // 手機抽屜子選單 → 顯示對應 section
       document.querySelectorAll(".submenu button.menu-link").forEach((btn) => {
         btn.addEventListener("click", () => {
-          const id = btn.dataset.target;
-          if (id) showSection(id);
+          const value = btn.dataset.target;
+          if (!value) return;
+          if (value.startsWith("redirect:")) {
+            window.location.href = value.replace("redirect:", "");
+            return;
+          }
+          showSection(value);
         });
       });
 
