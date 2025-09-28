@@ -661,7 +661,6 @@
       fetch("/data/aids_anonymous.json")
         .then((r) => r.json())
         .then((data) => {
-          const markers = [];
           (data || []).forEach((item) => {
             if (item.geo_point == null) {
               return;
@@ -673,17 +672,7 @@
               icon: iconBase("blue"),
             }).addTo(map);
             marker.bindPopup(createSitePopup(item));
-            markers.push(marker);
           });
-
-          if (markers.length) {
-            const group = L.featureGroup(markers);
-            map.fitBounds(group.getBounds().pad(0.15));
-          } else {
-            console.warn(
-              "No valid marker locations found in aids_anonymous.json"
-            );
-          }
         })
         .catch((err) =>
           console.error("Failed to load aids_anonymous.json:", err)
@@ -692,7 +681,6 @@
       fetch("/data/monthly_screening.json")
         .then((r) => r.json())
         .then((data) => {
-          const markers = [];
           (data || []).forEach((item) => {
             if (item.geo_point == null) {
               return;
@@ -704,17 +692,7 @@
               icon: iconBase("blue"),
             }).addTo(map);
             marker.bindPopup(createMobileSitePopup(item));
-            markers.push(marker);
           });
-
-          if (markers.length) {
-            const group = L.featureGroup(markers);
-            map.fitBounds(group.getBounds().pad(0.15));
-          } else {
-            console.warn(
-              "No valid marker locations found in monthly_screening.json"
-            );
-          }
         })
         .catch((err) =>
           console.error("Failed to load monthly_screening.json:", err)

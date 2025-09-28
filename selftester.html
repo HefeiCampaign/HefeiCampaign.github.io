@@ -705,22 +705,13 @@
       fetch("/data/selftester.json")
         .then((r) => r.json())
         .then((data) => {
-          const markers = [];
           (data || []).forEach((item) => {
             if (!item.geo_point) return;
             const [lat, lng] = item.geo_point;
             const color = colorByStock(item.stock);
             const marker = L.marker([lat, lng], { icon: ICONS[color] }).addTo(map);
             marker.bindPopup(createPopupHTML(item));
-            markers.push(marker);
           });
-
-          if (markers.length) {
-            const group = L.featureGroup(markers);
-            map.fitBounds(group.getBounds().pad(0.15));
-          } else {
-            console.warn("No valid marker locations found in selftester.json");
-          }
         })
         .catch((err) => console.error("Failed to load selftester.json:", err));
 
