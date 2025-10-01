@@ -72,6 +72,13 @@
         color: var(--text);
         text-decoration: none;
         font-size: 20px;
+      }
+      a {
+        color: var(--brand);
+        text-decoration: none;
+        word-wrap: break-word;
+      }
+      .pointer {
         cursor: pointer;
       }
 
@@ -106,16 +113,6 @@
         border-radius: 10px;
         padding: 10px 12px;
         font-size: 14px;
-      }
-      a.btn {
-        display: inline-block;
-        padding: 10px 14px;
-        color: #fff;
-        text-decoration: none;
-        font-weight: 700;
-        border-radius: 10px;
-        font-size: 18px;
-        width: 100%;
       }
 
       /* ===== Mobile hamburger + drawer ===== */
@@ -235,7 +232,6 @@
         background: #14161a;
         border-top: 1px solid #2b2d31;
       }
-      .submenu a,
       .submenu button {
         width: 100%;
         text-align: left;
@@ -247,7 +243,6 @@
         display: block;
         font-size: 15px;
       }
-      .submenu a:hover,
       .submenu button:hover {
         background: #0f1115;
       }
@@ -494,11 +489,11 @@
             </svg>
           </button>
           <div class="brand">
-            <span class="text" onclick="javascript:showSection('welcome')">Beacon <span class="text-alt">OF</span> Love</span>
+            <span class="text pointer" onclick="showSection('welcome')">Beacon <span class="text-alt">OF</span> Love</span>
           </div>
         </div>
         <div class="tagline">
-          <span class="text" onclick="javascript:showSection('welcome')">最即時的愛滋資訊整合網站</span>
+          <span class="text pointer" onclick="showSection('welcome')">最即時的愛滋資訊整合網站</span>
         </div>
       </header>
 
@@ -539,7 +534,7 @@
           </select>
         </div>
         <div class="nav-card">
-          <a href="consult.html" class="btn">前往諮詢服務 →</a>
+          <span class="text pointer" onclick="showSection('consult')">我要諮詢</span>
         </div>
       </nav>
 
@@ -609,7 +604,7 @@
               </details>
             </li>
             <li>
-              <a class="menu-link consult-link" href="consult.html">我要諮詢 →</a>
+              <a class="menu-link consult-link" onclick="showSection('consult')">我要諮詢</a>
             </li>
           </ul>
         </div>
@@ -823,6 +818,75 @@
             與同儕團體，能提供心理陪伴與資源，幫助感染者在學業、工作甚至感情上，都能繼續擁有穩定而正常的生活。
           </p>
         </section>
+
+        <!-- 諮詢（站內 Section） -->
+        <section id="consult" aria-labelledby="consult-title">
+          <h1 id="consult-title">線上諮詢</h1>
+          <p>
+            如果你想先快速了解自身情況，建議優先使用<strong>疾病管制署 HIV 自我風險評估平台</strong>：<a href="https://hiva.cdc.gov.tw/" target="_blank" rel="noopener">https://hiva.cdc.gov.tw</a><br/>
+            此平台操作簡單，能幫助你自我檢測是否需要進一步篩檢與諮詢。
+          </p>
+          <p>
+            若還有疑問，可以透過以下線上或電話資源獲得協助：
+          </p>
+          <h2>社團法人台灣基地協會</h2>
+          <ul>
+            <li>網站：<a href="https://www.gdi.org.tw/consultation" target="_blank" rel="noopener">https://www.gdi.org.tw/consultation</a></li>
+            <li>電話：<a href="tel:04-2233-3252">(04) 2233-3252</a></li>
+            <li>LINE：<a href="https://line.me/ti/p/@wkc0951q" target="_blank" rel="noopener">@wkc0951q</a></li>
+            <li>現場諮詢：週二至週六 13:30–21:30</li>
+            <li>地址：<a href="https://maps.app.goo.gl/Pp4h4REAqckTVmF5A" target="_blank" rel="noopener">台中市北區雙十路二段82號</a></li>
+            <li>信箱：<a href="mailto:lgbt@gdi.org.tw">lgbt@gdi.org.tw</a></li>
+          </ul>
+
+          <h2>愛滋感染者權益促進會</h2>
+          <ul>
+            <li>網站：<a href="https://praatw.org/contact-us" target="_blank" rel="noopener">https://praatw.org/contact-us</a></li>
+            <li>諮詢專線：<a href="tel:02-2550-5963">(02) 2550-5963</a></li>
+            <li>服務時間：週一至週五 13:30–17:30（12:00–13:30 午休；國定假日休息）</li>
+          </ul>
+
+          <h2>同志諮詢熱線協會</h2>
+          <ul>
+            <li>網站：<a href="https://hotline.org.tw/services/115" target="_blank" rel="noopener">https://hotline.org.tw/services/115</a></li>
+            <li>提供多元性別、性健康與愛滋相關之電話與線上資源</li>
+          </ul>
+
+          <h2>地方政府資源</h2>
+          <ul>
+            <li>新北市衛生局：<a href="https://www.health.ntpc.gov.tw/basic/?node=10029" target="_blank" rel="noopener">愛滋防治／心理衛生諮詢</a></li>
+            <li>豐原醫院：<a href="https://www.fengyuanphc.taichung.gov.tw/1183104/post" target="_blank" rel="noopener">愛滋防治諮詢服務</a></li>
+          </ul>
+
+          <h1>篩檢 + 諮詢</h1>
+
+          <h2>北部地區</h2>
+          <ul>
+            <li>台大醫院感染科：<a href="https://www.ntuh.gov.tw/Fpage.action?muid=3262&fid=3188" target="_blank" rel="noopener">門診資訊</a></li>
+            <li>馬偕紀念醫院：<a href="https://www.hc.mmh.org.tw/departmain3.php?id=160" target="_blank" rel="noopener">感染科服務</a></li>
+            <li>新北市立聯合醫院：<a href="https://tpech.gov.taipei/mp109231/" target="_blank" rel="noopener">院所入口</a></li>
+            <li>羅東聖母醫院：<a href="https://www.smh.org.tw/?aid=98&pid=132" target="_blank" rel="noopener">感染科服務</a></li>
+          </ul>
+
+          <h2>中部地區</h2>
+          <ul>
+            <li>林新醫院：<a href="http://www.lshosp.com.tw/%E9%86%AB%E7%99%82%E5%9C%98%E9%9A%8A/%E6%84%9F%E6%9F%93%E7%A7%91/%E9%86%AB%E7%99%82%E6%9C%8D%E5%8B%99/" target="_blank" rel="noopener">感染科／服務資訊</a></li>
+          </ul>
+
+          <h2>南部地區</h2>
+          <ul>
+            <li>屏東縣衛生局：<a href="https://www.ptshb.gov.tw/News_Content.aspx?n=C297F558751D811A&sms=5C5A2981C9F189EF&s=E75236C8CEADDC28" target="_blank" rel="noopener">愛滋防治相關</a></li>
+            <li>高雄醫學大學附設醫院（預約：<a href="tel:07-321-4227">(07) 321-4227</a>／<a href="tel:0965-076-209">0965-076-209</a>）：<a href="https://www.kmuh.org.tw/web/kmuhdept/featured/%E6%84%9B%E6%BB%8B%E7%97%85%E9%98%B2%E6%B2%BB%E6%9A%A8%E7%85%A7%E8%AD%B7.aspx" target="_blank" rel="noopener">防治與照護專頁</a>
+            </li>
+          </ul>
+
+          <h2>全國資源</h2>
+          <ul>
+            <li>疾病管制署（全國 HIV 愛滋篩檢與諮詢資源彙整）：<a href="https://www.cdc.gov.tw/Category/MPage/gH7NyWhq3ulASakaq5DDIQ" target="_blank" rel="noopener">前往查詢</a>
+            </li>
+          </ul>
+        </section>
+
       </main>
 
       <!-- 合作社群與夥伴 -->
@@ -913,7 +977,7 @@
       });
 
       // 手機抽屜子選單 → 顯示對應 section
-      document.querySelectorAll(".submenu button.menu-link").forEach((btn) => {
+      document.querySelectorAll("button.menu-link").forEach((btn) => {
         btn.addEventListener("click", () => {
           const value = btn.dataset.target;
           if (!value) return;
