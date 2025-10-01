@@ -908,9 +908,12 @@
     </div>
 
     <script>
-      // ===== 共用：section 切換 =====
       const sections = Array.from(document.querySelectorAll("main section"));
-      function showSection(id) {
+      const selects = Array.from(document.querySelectorAll(".nav-desktop select"));
+      const detailsMenus = Array.from(document.querySelectorAll("details.menu-node"));
+
+      // ===== 共用：section 切換 =====
+      function showSection(id, excludeSelect) {
         sections.forEach((s) => s.classList.toggle("active", s.id === id));
         history.replaceState(null, "", id ? "#" + id : "#");
         // 高亮手機抽屜的目前項目
@@ -918,6 +921,7 @@
           el.classList.toggle("active", el.dataset?.target === id);
         });
         closeDrawer();
+        resetSelects(excludeSelect);
       }
       function fromHash() {
         const id = decodeURIComponent(location.hash.replace("#", ""));
@@ -932,23 +936,24 @@
       }
 
       // ===== 桌面版 select 操作（維持原本行為）=====
-      const selects = Array.from(
-        document.querySelectorAll(".nav-desktop select")
-      );
       selects.forEach((sel) => {
         sel.addEventListener("change", (e) => {
           const value = e.target.value;
           if (!value) return;
           if (value.startsWith("redirect:")) {
+            resetSelects(sel);
             window.location.href = value.replace("redirect:", "");
             return;
           }
-          showSection(value);
-          selects
-            .filter((s) => s !== sel)
-            .forEach((s) => (s.selectedIndex = 0));
+          showSection(value, sel);
         });
       });
+
+      function resetSelects(exclude) {
+        selects
+          .filter((s) => s !== exclude)
+          .forEach((s) => (s.selectedIndex = 0));
+      }
 
       // ===== 手機抽屜：開合 =====
       const drawer = document.getElementById("drawer");
@@ -962,9 +967,6 @@
         document
           .getElementById("openMenu")
           ?.setAttribute("aria-expanded", "true");
-        // 預設展開第一節
-        const first = document.getElementById("node-1");
-        if (first) first.open = true;
       }
       function closeDrawer() {
         document.getElementById("drawer").classList.remove("open");
@@ -985,6 +987,17 @@
       }
       window.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeDrawer();
+      });
+
+      detailsMenus.forEach((d) => {
+        d.addEventListener("toggle", () => {
+          // 只展開一個
+          if (d.open) {
+            detailsMenus
+              .filter((x) => x !== d)
+              .forEach((x) => (x.open = false));
+          }
+        });
       });
 
       // 手機抽屜子選單 → 顯示對應 section
