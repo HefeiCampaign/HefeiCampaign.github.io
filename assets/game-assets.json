@@ -1,0 +1,12 @@
+{
+  "game": {
+    "url": "https://aids-protect-game.vercel.app/",
+    "ctaText": "點擊體驗遊戲"
+  },
+  "previews": [
+    { "src": "./assets/game-preview-1.png" },
+    { "src": "./assets/game-preview-2.png" },
+    { "src": "./assets/game-preview-3.png" }
+  ],
+  "intervalMs": 5000
+}

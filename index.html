@@ -339,18 +339,31 @@
         flex: 0 0 340px; /* 左欄寬：可調整 320~380 */
       }
       .game-preview {
+        position: relative;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
         background: #14161a;
         border: 1px solid #2b2d31;
         border-radius: 12px;
         box-shadow: var(--shadow);
-        aspect-ratio: 4 / 3; /* 預覽比例；可改 16/9 */
-        display: grid;
-        place-items: center;
-        font-weight: 700;
-        color: var(--muted);
-        user-select: none;
+        width: 100%;
+      }
+      .game-preview img {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 100%;
         max-height: 50vh;
-        margin: auto;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 10px;
+        background: #0f0f11;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .game-preview.ready .preview-fallback {
+        display: none;
       }
       .game-cta {
         margin-top: 12px;
@@ -499,11 +512,15 @@
             </svg>
           </button>
           <div class="brand">
-            <span class="text pointer" onclick="showSection('welcome')">Beacon <span class="text-alt">OF</span> Love</span>
+            <span class="text pointer" onclick="showSection('welcome')"
+              >Beacon <span class="text-alt">OF</span> Love</span
+            >
           </div>
         </div>
         <div class="tagline">
-          <span class="text pointer" onclick="showSection('welcome')">最即時的愛滋資訊整合網站</span>
+          <span class="text pointer" onclick="showSection('welcome')"
+            >最即時的愛滋資訊整合網站</span
+          >
         </div>
       </header>
 
@@ -540,11 +557,15 @@
           <select id="m4">
             <option value="">請選擇⋯</option>
             <option value="redirect:screening.html">實體篩檢站 →</option>
-            <option value="redirect:selftester.html">篩檢試劑（自我篩檢）→</option>
+            <option value="redirect:selftester.html">
+              篩檢試劑（自我篩檢）→
+            </option>
           </select>
         </div>
         <div class="nav-card">
-          <span class="text pointer" onclick="showSection('consult')">我要諮詢</span>
+          <span class="text pointer" onclick="showSection('consult')"
+            >我要諮詢</span
+          >
         </div>
       </nav>
 
@@ -608,14 +629,28 @@
               <details class="menu-node" id="node-4">
                 <summary class="menu-head">我要篩檢</summary>
                 <div class="submenu">
-                  <button class="menu-link" data-target="redirect:screening.html">實體篩檢站 →</button>
-                  <button class="menu-link" data-target="redirect:selftester.html">篩檢試劑（自我篩檢）→</button>
+                  <button
+                    class="menu-link"
+                    data-target="redirect:screening.html"
+                  >
+                    實體篩檢站 →
+                  </button>
+                  <button
+                    class="menu-link"
+                    data-target="redirect:selftester.html"
+                  >
+                    篩檢試劑（自我篩檢）→
+                  </button>
                 </div>
               </details>
             </li>
             <li>
-              <a class="menu-link consult-link" onclick="showSection('consult')">我要諮詢</a>
-              
+              <a
+                class="menu-link consult-link"
+                data-target="consult"
+                onclick="showSection('consult')"
+                >我要諮詢</a
+              >
             </li>
           </ul>
         </div>
@@ -628,9 +663,17 @@
           <div class="hero">
             <!-- 左欄：遊戲預覽 + CTA -->
             <aside class="hero-left">
-              <div class="game-preview" aria-label="遊戲預覽圖">遊戲預覽圖</div>
+              <div
+                class="game-preview"
+                id="game-preview"
+                aria-label="遊戲預覽圖"
+              >
+                <img id="game-preview-img" alt="遊戲預覽圖" decoding="async" />
+                <div class="preview-fallback" aria-hidden="true">
+                  遊戲預覽圖
+                </div>
+              </div>
               <div class="game-cta">
-                <!-- 依你的實際連結調整 href -->
                 <a
                   class="btn-primary"
                   href="https://aids-protect-game.vercel.app/"
@@ -897,28 +940,34 @@
             </li>
           </ul>
         </section>
-
       </main>
 
       <!-- 合作社群與夥伴 -->
       <footer class="partners" aria-labelledby="partners-title">
         <h2 id="partners-title">感謝以下合作夥伴協助推廣本平台</h2>
-        <div class="partner-grid" id="partnerGrid" role="list"></div>
+        <div class="partner-grid" id="partner-grid" role="list"></div>
       </footer>
     </div>
 
     <script>
       const sections = Array.from(document.querySelectorAll("main section"));
-      const selects = Array.from(document.querySelectorAll(".nav-desktop select"));
-      const detailsMenus = Array.from(document.querySelectorAll("details.menu-node"));
+      const selects = Array.from(
+        document.querySelectorAll(".nav-desktop select")
+      );
+      const detailsMenus = Array.from(
+        document.querySelectorAll("details.menu-node")
+      );
+
+      const COMMUNITIES_CSV_URL = "./assets/communities.csv";
+      const GAME_JSON_URL = "./assets/game-assets.json";
 
       // ===== 共用：section 切換 =====
       function showSection(id, excludeSelect) {
         sections.forEach((s) => s.classList.toggle("active", s.id === id));
         history.replaceState(null, "", id ? "#" + id : "#");
         // 高亮手機抽屜的目前項目
-        document.querySelectorAll(".menu-link").forEach((el) => {
-          el.classList.toggle("active", el.dataset?.target === id);
+        document.querySelectorAll(".menu-link[data-target]").forEach((el) => {
+          el.classList.toggle("active", el.dataset.target === id);
         });
         closeDrawer();
         resetSelects(excludeSelect);
@@ -1013,12 +1062,126 @@
         });
       });
 
+      const previewEl = document.getElementById("game-preview");
+      const previewImg = document.getElementById("game-preview-img");
+      const gameCta = document.getElementById("game-cta");
+
+      const slideshow = {
+        items: [],
+        idx: 0,
+        timer: null,
+        intervalMs: 5000,
+        lastSrc: null,
+      };
+
+      function startSlideshow() {
+        if (!slideshow.items.length) return;
+        stopSlideshow(); // 避免重複啟動
+        renderSlide(slideshow.idx); // 先渲染第一張
+        slideshow.timer = setInterval(nextSlide, slideshow.intervalMs);
+      }
+
+      function stopSlideshow() {
+        if (slideshow.timer) {
+          clearInterval(slideshow.timer);
+          slideshow.timer = null;
+        }
+      }
+
+      function nextSlide() {
+        slideshow.idx = (slideshow.idx + 1) % slideshow.items.length;
+        renderSlide(slideshow.idx);
+      }
+
+      function renderSlide(i) {
+        if (!previewImg || !slideshow.items.length) return;
+        const item = slideshow.items[i];
+
+        // 先隱形，等 onload 再顯示
+        previewImg.style.opacity = "0";
+        previewImg.onload = () => {
+          previewImg.alt = item.alt || "遊戲預覽圖";
+          previewEl?.classList.add("ready");
+          previewImg.style.opacity = "1";
+        };
+        previewImg.onerror = () => {
+          // 圖片錯誤就略過顯示，避免整個區塊消失
+          previewImg.style.opacity = "1";
+        };
+
+        // 為了讓同一張圖也能觸發 onload（避免 cache 不觸發）
+        if (slideshow.lastSrc === item.src) {
+          previewImg.src = "";
+        }
+        previewImg.src = item.src;
+        slideshow.lastSrc = item.src;
+      }
+
+      function preloadImages(list) {
+        list.forEach((it) => {
+          const im = new Image();
+          im.src = it.src;
+        });
+      }
+
+      // 標準化 URL（僅允許 http/https；相對路徑也 OK）
+      function toHttpUrlMaybe(raw) {
+        if (!raw) return null;
+        const s = String(raw).trim();
+        if (/^https?:\/\//i.test(s)) return s;
+        if (/^[/.]/.test(s)) return s; // 相對或根目錄路徑
+        return `https://${s}`;
+      }
+
+      async function loadGameAssets() {
+        try {
+          const r = await fetch(GAME_JSON_URL, { cache: "no-store" });
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          const data = await r.json();
+
+          // 1) 套用遊戲 CTA
+          if (data?.game?.url) gameCta.href = toHttpUrlMaybe(data.game.url);
+          if (data?.game?.ctaText) gameCta.textContent = data.game.ctaText;
+
+          // 2) 建立預覽清單
+          const raw = Array.isArray(data?.previews) ? data.previews : [];
+          slideshow.items = raw
+            .filter((i) => i && i.src)
+            .map((i) => ({
+              src: toHttpUrlMaybe(i.src),
+              alt: i.alt || "遊戲預覽圖",
+            }));
+
+          if (Number.isFinite(data?.intervalMs) && data.intervalMs > 0) {
+            slideshow.intervalMs = data.intervalMs;
+          }
+
+          // 3) 預載 + 開始輪播
+          if (slideshow.items.length) {
+            preloadImages(slideshow.items);
+            startSlideshow();
+          }
+        } catch (err) {
+          console.error("載入 game-assets.json 失敗：", err);
+          // fallback: 沒有 JSON 時維持原本 CTA 與 fallback 文字
+        }
+      }
+
+      // 視窗可見性：背景分頁時暫停輪播，回來再繼續
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stopSlideshow();
+        else startSlideshow();
+      });
+
+      // 啟動載入
+      loadGameAssets();
+
       function renderPartners() {
-        const grid = document.getElementById("partnerGrid");
+        const grid = document.getElementById("partner-grid");
         if (!grid) return;
         grid.innerHTML = "";
 
-        fetch("/communities.csv")
+        fetch(COMMUNITIES_CSV_URL)
           .then((r) => r.text())
           .then((csv) => {
             let result = Papa.parse(csv, {
@@ -1027,7 +1190,11 @@
               comments: "#",
             });
             result.data.forEach((item) => {
-              let {0: communityName, 1: communityIcon, 2: communityURL,} = item;
+              let {
+                0: communityName,
+                1: communityIcon,
+                2: communityURL,
+              } = item;
 
               const a = document.createElement("a");
               a.className = "partner-card";
@@ -1068,10 +1235,12 @@
               if (communityURL) {
                 const domain = document.createElement("span");
                 domain.className = "partner-domain";
-                domain.textContent = new URL(communityURL).host.replace(/^www\./, ""); // 顯示純網域
+                domain.textContent = new URL(communityURL).host.replace(
+                  /^www\./,
+                  ""
+                ); // 顯示純網域
                 meta.appendChild(domain);
               }
-
 
               a.appendChild(iconWrap);
               a.appendChild(meta);
@@ -1080,7 +1249,6 @@
           });
       }
 
-      // 在 DOM 讀取完成後渲染（你的主程式已在尾端，這裡直接呼叫即可）
       renderPartners();
     </script>
   </body>
