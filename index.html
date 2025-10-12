@@ -1200,6 +1200,7 @@
 
               const a = document.createElement("a");
               a.className = "partner-card";
+              a.title = communityName || "";
               if (communityURL) {
                 a.href = communityURL;
                 a.target = "_blank";
@@ -1218,7 +1219,12 @@
                 img.decoding = "async";
                 img.src = communityIcon;
 
-                img.onerror = () => {
+                img.onerror = (e) => {
+                  console.error(
+                    `載入 ${communityName} 的 logo 失敗：`,
+                    e,
+                    communityIcon
+                  );
                   iconWrap.innerHTML = "🔗";
                 };
                 iconWrap.appendChild(img);
