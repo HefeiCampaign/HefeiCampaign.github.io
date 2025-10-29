@@ -658,7 +658,7 @@
       `;
       }
 
-      fetch("/data/aids_anonymous.json")
+      fetch("./data/aids_anonymous.json")
         .then((r) => r.json())
         .then((data) => {
           (data || []).forEach((item) => {
@@ -678,7 +678,7 @@
           console.error("Failed to load aids_anonymous.json:", err)
         );
 
-      fetch("/data/monthly_screening.json")
+      fetch("./data/monthly_screening.json")
         .then((r) => r.json())
         .then((data) => {
           (data || []).forEach((item) => {
@@ -763,7 +763,7 @@
       // ===== 行政區選單 =====
       async function loadRegions() {
         try {
-          const r = await fetch("/data/tw-region.json", { cache: "no-store" });
+          const r = await fetch("./data/tw-region.json", { cache: "no-store" });
           if (!r.ok) throw new Error("tw-region.json not found");
           REGIONS = await r.json();
         } catch (e) {
